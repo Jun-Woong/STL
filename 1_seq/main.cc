@@ -11,58 +11,58 @@ int main () {
     cout << " *** VECTOR *** " << endl;
     cout << endl;
 
-    vector_t<string> v1;
-    vector_t<string> v2;
-
-    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
-    cout << "cap    : " << v1.capacity() << endl; 
-    cout << "size   : " << v1.size() << endl; 
-    cout << endl;
-
-    v1.reserve(2);
-    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
-    cout << "cap    : " << v1.capacity() << endl; 
-    cout << "size   : " << v1.size() << endl;
-    cout << endl;
-
-    v1.push_back("16");
-    v1.push_back("32");
-    v1.push_back("64");
-    cout << endl;
-
-    v1.pop_back();
-    for (size_t i = 0; i < v1.size(); i++) {
-        cout << "v1[" << i << "]  : " << v1[i] << endl; //여기서 operator[] 사용
-    }
-    cout << endl;
-
-    v1.insert(v1.end(), "128");
-    v1.insert(--v1.end(), "256");
+//    vector_t<string> v1;
+//    vector_t<string> v2;
+//
+//    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
+//    cout << "cap    : " << v1.capacity() << endl; 
+//    cout << "size   : " << v1.size() << endl; 
+//    cout << endl;
+//
+//    v1.reserve(2);
+//    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
+//    cout << "cap    : " << v1.capacity() << endl; 
+//    cout << "size   : " << v1.size() << endl;
+//    cout << endl;
+//
+//    v1.push_back("16");
+//    v1.push_back("32");
+//    v1.push_back("64");
+//    cout << endl;
+//
+//    v1.pop_back();
+//    for (size_t i = 0; i < v1.size(); i++) {
+//        cout << "v1[" << i << "]  : " << v1[i] << endl; //여기서 operator[] 사용
+//    }
+//    cout << endl;
+//
+//    v1.insert(v1.end(), "128");
+//    v1.insert(--v1.end(), "256");
     // v1.erase(v1.begin()+2);
-    for (size_t i = 0; i < v1.size(); i++) {
-        cout << "v1[" << i << "]  : " << v1[i] << endl;
-    }
-    cout << endl;
-
-    v2 = v1;
-    vector_t<string> v3(v1);
-
-    v1.clear();
-    cout << "cap    : " << v1.capacity() << endl; 
-    cout << "size   : " << v1.size() << endl;
-    cout << endl;
-
-    cout << "front  : " << (v2.front() == v3.front() ? "yes" : "no") << endl; 
-    cout << "back   : " << (v2.back() == v3.back() ? "yes" : "no") << endl; 
-    cout << endl;
-
-    for(vector_t<string>::iterator it = v2.begin(); it != v2.end(); it++) {
-        cout << "*it    : " << *it << endl;
-    }
-    cout << endl;
-
-    v2.clear();
-    v3.clear();
+ //   for (size_t i = 0; i < v1.size(); i++) {
+ //       cout << "v1[" << i << "]  : " << v1[i] << endl;
+ //   }
+ //   cout << endl;
+ //
+ //   v2 = v1;
+ //   vector_t<string> v3(v1);
+ //
+ //   v1.clear();
+ //   cout << "cap    : " << v1.capacity() << endl; 
+ //   cout << "size   : " << v1.size() << endl;
+ //   cout << endl;
+ //
+ //   cout << "front  : " << (v2.front() == v3.front() ? "yes" : "no") << endl; 
+ //   cout << "back   : " << (v2.back() == v3.back() ? "yes" : "no") << endl; 
+ //   cout << endl;
+ //
+ //   for(vector_t<string>::iterator it = v2.begin(); it != v2.end(); it++) {
+ //       cout << "*it    : " << *it << endl;
+ //   }
+ //   cout << endl;
+ //
+ //   v2.clear();
+ //   v3.clear();
 
 //    cout << " *** DEQUE *** " << endl;
 //    cout << endl;
