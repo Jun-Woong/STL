@@ -72,7 +72,7 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
     iterator_t<T> iter;
-    iter.ptr = array + sizeof(array*);
+    iter.ptr = array + sizeof(array);
     return iter;
 }
 
