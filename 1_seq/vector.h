@@ -30,7 +30,7 @@ template<typename T>
 inline bool vector_t<T>::empty() const
 {
     cout << "test empty : " << static_cast<int>((sizeof(array) / sizeof(*array))) << " type is : " << typeid((static_cast<int>(sizeof(array) / sizeof(*array)))).name() << endl;
-    array_size = static_cast<int>((sizeof(array) / sizeof(*array)));
+    this.array_size = static_cast<int>((sizeof(array) / sizeof(*array)));
     if (array_size == 0) {
         return true;
     }
