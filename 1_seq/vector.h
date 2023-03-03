@@ -27,13 +27,6 @@ vector_t<T>::vector_t(const vector_t& v)
 template<typename T>
 vector_t<T>::~vector_t() { free(array); }
 
-
-template<typename T>
-inline iterator vector_t<T>::begin() const
-{
-    return iterator();
-}
-
 template<typename T>
 size_t vector_t<T>::size() const
 {
