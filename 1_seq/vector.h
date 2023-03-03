@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "vector-def.h"
+#include <typeinfo>
 
 using namespace std;
 
@@ -28,7 +29,7 @@ inline vector_t<T>::~vector_t() {}
 template<typename T>
 inline bool vector_t<T>::empty() const
 {
-    cout << "test empty : " << (sizeof(array) / sizeof(*array)) << " type is : " << typeid(sizeof(array) / sizeof(*array)) << endl;
+    cout << "test empty : " << (sizeof(array) / sizeof(*array)) << " type is : " << typeid((sizeof(array) / sizeof(*array))) << endl;
     if (array_size == 0) {
         return true;
     }
