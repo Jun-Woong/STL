@@ -26,7 +26,7 @@ template<typename T>
 inline T& iterator_t<T>::operator*() const
 {
     cout << "((((" << endl;
-    return *ptr;
+    return ptr;
 }
 
 template<typename T>
