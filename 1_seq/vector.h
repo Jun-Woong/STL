@@ -136,7 +136,7 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         array_size = num_elements;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
-        for (size_t i = 0; i < (num_elements - 1); i++)
+        for (size_t i = 0; i < (num_elements); i++)
         {
             if (pos.ptr == (array + i)) {
                 newArray[index++] = v;
