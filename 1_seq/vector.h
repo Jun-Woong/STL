@@ -19,15 +19,19 @@ inline vector_t<T>::vector_t(const vector_t& v)
 }
 
 template<typename T>
-inline vector_t<T>::~vector_t()
-{
-}
+inline vector_t<T>::~vector_t() {}
 
 
 template<typename T>
-bool vector_t<T>::empty() const
+inline bool vector_t<T>::empty() const
 {
-    return false;
+    array_size = (sizeof(array) / sizeof(*array));
+    if (array_size == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 #endif
