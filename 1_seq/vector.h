@@ -56,13 +56,13 @@ inline void vector_t<T>::reserve(size_t s)
 {
     if (array_size < s) {
         array_size = s;
-        T* newArray = new T[s](); // T* newArray = (T*)malloc(s * sizeof(T));
+        T* newArray = (T*)malloc(s * sizeof(T));
 
         for (size_t i = 0; i < num_elements; i++)
         {
             newArray[i] = array[i];
         }
-        delete array; // free(array)
+        free(array); // free(array)
         array = newArray;
         newArray = NULL;
     }
@@ -82,7 +82,7 @@ inline void vector_t<T>::push_back(const T& v)
     if (array_size < num_elements) {
         array_size = num_elements;
         cout << "@@@" << endl;
-        T* newArray = new T[num_elements]();
+        T* newArray = (T*)malloc(s * sizeof(T));
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
             cout << "###" << endl;
@@ -90,7 +90,7 @@ inline void vector_t<T>::push_back(const T& v)
         }
         newArray[num_elements - 1] = v;
         cout << "AAAA" << endl;
-        delete array;
+        free(array);
         cout << "BBBB" << endl;
         array = newArray;
         cout << "CCCC" << endl;
@@ -108,14 +108,14 @@ inline void vector_t<T>::pop_back()
     if (num_elements >= 1) {
         num_elements--;
         cout << "!!!" << endl;
-        T* newArray = new T[num_elements]();
+        T* newArray = (T*)malloc(s * sizeof(T));
         for (size_t i = 0; i < num_elements; i++)
         {
             cout << "@@@" << endl;
             newArray[i] = array[i];
         }
         cout << "###" << endl;
-        delete array;
+        free(array);
         cout << "$$$" << endl;
         array = newArray;
         newArray = NULL;
