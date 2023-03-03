@@ -57,6 +57,9 @@ inline iterator_t<T> vector_t<T>::begin() const
 template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
+    iterator_t<T> iter;
+    iter.ptr = array + ((num_elements - 1) * sizeof(T));
+    return iter;
 }
 
 template<typename T>
