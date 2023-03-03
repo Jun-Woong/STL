@@ -56,7 +56,7 @@ void vector_t<T>::reserve(size_t s)
 {
     if (array_size < s) {
         array_size = s;
-        T* newArray = (T*)malloc(s * sizeof(T));
+        T *newArray = (T*)malloc(s * sizeof(T));
 
         for (size_t i = 0; i < num_elements; i++)
         {
@@ -80,7 +80,7 @@ void vector_t<T>::push_back(const T& v)
     num_elements++;
     if (array_size < num_elements) {
         array_size = num_elements;
-        T* newArray = (T*)malloc(num_elements * sizeof(T));
+        T *newArray = (T*)malloc(num_elements * sizeof(T));
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
             newArray[i] = array[i];
@@ -100,7 +100,7 @@ void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        T* popArray = (T*)malloc(num_elements * sizeof(T));
+        T *popArray = (T*)malloc(num_elements * sizeof(T));
         for (size_t i = num_elements-1; i > 0; i--)
         {
             cout << "@@@ popArray 0" << popArray[0] << endl;
