@@ -56,7 +56,7 @@ inline void vector_t<T>::reserve(size_t s)
 {
     if (array_size < s) {
         array_size = s;
-        int* newArray = new int[s](); // T* newArray = (T*)malloc(s * sizeof(T));
+        T* newArray = new T[s](); // T* newArray = (T*)malloc(s * sizeof(T));
 
         for (size_t i = 0; i < num_elements; i++)
         {
@@ -80,7 +80,7 @@ inline void vector_t<T>::push_back(const T& v)
     num_elements++;
     if (array_size < num_elements) {
         array_size = num_elements;
-        int* newArray = new int[num_elements]();
+        T* newArray = new T[num_elements]();
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
             newArray[i] = array[i];
@@ -100,7 +100,7 @@ inline void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        int* newArray = new int[num_elements]();
+        T* newArray = new T[num_elements]();
         for (size_t i = 0; i < num_elements; i++)
         {
             newArray[i] = array[i];
