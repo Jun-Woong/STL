@@ -8,8 +8,22 @@
 
 using namespace std;
 
+template<typename T>
+inline iterator_t<T>::iterator_t() :
+    ptr(0) {
+}
+
+template<typename T>
+inline iterator_t<T>::iterator_t(const iterator_t<T>& it)
+{
+
+}
+
+template<typename T>
+inline iterator_t<T>::~iterator_t() { free(prt) }
+
 template <typename T>
-vector_t<T>::vector_t() :
+inline vector_t<T>::vector_t() :
     array(0),
     array_size(0),
     num_elements(0) {
@@ -18,14 +32,27 @@ vector_t<T>::vector_t() :
 // your answer
 
 template<typename T>
-vector_t<T>::vector_t(const vector_t& v)
+inline vector_t<T>::vector_t(const vector_t& v)
 {
     // copy
     // array = new T[s]();
 }
 
 template<typename T>
-vector_t<T>::~vector_t() { free(array); }
+inline vector_t<T>::~vector_t() { free(array); }
+
+template<typename T>
+inline iterator vector_t<T>::begin() const
+{
+    ptr = array;
+    return ptr;
+}
+
+template<typename T>
+inline iterator vector_t<T>::end() const
+{
+    return iterator();
+}
 
 template<typename T>
 size_t vector_t<T>::size() const
@@ -34,7 +61,7 @@ size_t vector_t<T>::size() const
 }
 
 template<typename T>
-bool vector_t<T>::empty() const
+inline bool vector_t<T>::empty() const
 {
     if (num_elements == 0) {
         return true;
@@ -45,13 +72,13 @@ bool vector_t<T>::empty() const
 }
 
 template<typename T>
-size_t vector_t<T>::capacity() const
+inline size_t vector_t<T>::capacity() const
 {
     return array_size;
 }
 
 template<typename T>
-void vector_t<T>::reserve(size_t s)
+inline void vector_t<T>::reserve(size_t s)
 {
     if (array_size < s) {
         array_size = s;
@@ -68,13 +95,13 @@ void vector_t<T>::reserve(size_t s)
 }
 
 template<typename T>
-T& vector_t<T>::operator[](size_t s) const
+inline T& vector_t<T>::operator[](size_t s) const
 {
     return array[s];
 }
 
 template<typename T>
-void vector_t<T>::push_back(const T& v)
+inline void vector_t<T>::push_back(const T& v)
 {
     num_elements++;
     if (array_size < num_elements) {
@@ -95,7 +122,7 @@ void vector_t<T>::push_back(const T& v)
 }
 
 template<typename T>
-void vector_t<T>::pop_back()
+inline void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
@@ -105,5 +132,7 @@ void vector_t<T>::pop_back()
         cout << "error!!!" << endl;
     }
 }
+
+
 
 #endif
