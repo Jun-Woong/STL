@@ -25,7 +25,6 @@ inline iterator_t<T>::~iterator_t() { }
 template<typename T>
 inline T& iterator_t<T>::operator*() const
 {
-    cout << "((((" << *ptr << endl;
     return *ptr;
 }
 
@@ -33,7 +32,6 @@ template<typename T>
 inline iterator_t<T> iterator_t<T>::operator-(int s)
 {
     ptr = ptr - s;
-    cout << "&&& " << *ptr << endl;
     iterator_t<T> iter;
     iter.ptr = ptr;
     return iter;
@@ -62,10 +60,7 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
     iterator_t<T> iter;
-    cout << "!!!" << iter.ptr << endl;
-    iter.ptr = &array[0];
-    cout << "@@@" << iter.ptr << endl;
-    cout << "@@@" << *iter.ptr <<endl;
+    iter.ptr = &array;
     return iter;
 }
 
@@ -73,9 +68,7 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
     iterator_t<T> iter;
-    cout << "###" << iter.ptr << endl;
-    iter.ptr = &array[num_elements];
-    cout << "$$$" << iter.ptr << endl;
+    iter.ptr = &array + num_elements;
     return iter;
 }
 
