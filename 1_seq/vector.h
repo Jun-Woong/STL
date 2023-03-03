@@ -65,7 +65,7 @@ inline void vector_t<T>::reserve(size_t s)
         }
         free(array);
         array = newArray;
-        newArray = NULL;
+        newArray = nullptr; // if free, error
     }
 }
 
