@@ -100,11 +100,14 @@ inline void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
+        cout << "!!!" << endl;
         T* newArray = new T[num_elements]();
         for (size_t i = 0; i < num_elements; i++)
         {
+            cout << "@@@" << endl;
             newArray[i] = array[i];
         }
+        cout << "###" << endl;
         delete array;
         array = newArray;
         newArray = NULL;
