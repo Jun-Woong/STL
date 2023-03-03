@@ -12,15 +12,19 @@ vector_t<T>::vector_t() :
 }
 
 // your answer
-vector_t<T>::vector_t(const vector_t& v)
+
+template<typename T>
+inline vector_t<T>::vector_t(const vector_t& v)
+{
+}
+
+template<typename T>
+inline vector_t<T>::~vector_t()
 {
 }
 
 
-vector_t<T>::~vector_t()
-{
-}
-
+template<typename T>
 bool vector_t<T>::empty() const
 {
     return false;
