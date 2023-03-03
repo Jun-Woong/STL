@@ -38,13 +38,13 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline iterator_t<T> vector_t<T>::begin() const
+inline vector_t<T>::iterator vector_t<T>::begin() const
 {
-    return ptr;
+    return iterator_t<T>::ptr;
 }
 
 template<typename T>
-inline iterator_t<T> vector_t<T>::end() const
+inline vector_t<T>::iterator vector_t<T>::end() const
 {
     return array;
 }
