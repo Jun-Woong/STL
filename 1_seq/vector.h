@@ -25,7 +25,7 @@ inline vector_t<T>::~vector_t() {}
 template<typename T>
 inline bool vector_t<T>::empty() const
 {
-    static_cast<int>(array_size) = (sizeof(array) / sizeof(*array));
+    cout << "test empty" << (sizeof(array) / sizeof(*array)) << endl;
     if (array_size == 0) {
         return true;
     }
