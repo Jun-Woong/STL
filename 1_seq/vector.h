@@ -131,7 +131,7 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::insert(const iterator& pos, const T& v)
 {
     iterator_t<T> iter;
-    cout << pos.ptr << " !!!! " << v;
+    cout << (*pos).ptr << " !!!! " << v;
     return iter;
 }
 
