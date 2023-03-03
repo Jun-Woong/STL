@@ -15,15 +15,15 @@ int main () {
     vector_t<string> v2;
 
     cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
-//    cout << "cap    : " << v1.capacity() << endl; 
-//    cout << "size   : " << v1.size() << endl; 
-//    cout << endl;
-//
-//    v1.reserve(2);
-//    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
-//    cout << "cap    : " << v1.capacity() << endl; 
-//    cout << "size   : " << v1.size() << endl;
-//    cout << endl;
+    cout << "cap    : " << v1.capacity() << endl; 
+    cout << "size   : " << v1.size() << endl; 
+    cout << endl;
+
+    v1.reserve(2);
+    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
+    cout << "cap    : " << v1.capacity() << endl; 
+    cout << "size   : " << v1.size() << endl;
+    cout << endl;
 //
 //    v1.push_back("16");
 //    v1.push_back("32");
