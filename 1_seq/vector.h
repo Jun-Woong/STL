@@ -89,8 +89,11 @@ inline void vector_t<T>::push_back(const T& v)
             newArray[i] = array[i];
         }
         newArray[num_elements - 1] = v;
+        cout << "AAAA" << endl;
         delete array;
+        cout << "BBBB" << endl;
         array = newArray;
+        cout << "CCCC" << endl;
         newArray = NULL;
     }
     else {
