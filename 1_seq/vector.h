@@ -94,7 +94,6 @@ inline void vector_t<T>::push_back(const T& v)
         newArray = NULL; // if free, error
     }
     else {
-        num_elements++;
         array[num_elements - 1] = v;
     }
 }
