@@ -18,24 +18,24 @@ vector_t<T>::vector_t() :
 // your answer
 
 template<typename T>
-inline vector_t<T>::vector_t(const vector_t& v)
+vector_t<T>::vector_t(const vector_t& v)
 {
     // copy
     // array = new T[s]();
 }
 
 template<typename T>
-inline vector_t<T>::~vector_t() { free(array); }
+vector_t<T>::~vector_t() { free(array); }
 
 
 template<typename T>
-inline size_t vector_t<T>::size() const
+size_t vector_t<T>::size() const
 {
     return num_elements;
 }
 
 template<typename T>
-inline bool vector_t<T>::empty() const
+bool vector_t<T>::empty() const
 {
     if (num_elements == 0) {
         return true;
@@ -46,13 +46,13 @@ inline bool vector_t<T>::empty() const
 }
 
 template<typename T>
-inline size_t vector_t<T>::capacity() const
+size_t vector_t<T>::capacity() const
 {
     return array_size;
 }
 
 template<typename T>
-inline void vector_t<T>::reserve(size_t s)
+void vector_t<T>::reserve(size_t s)
 {
     if (array_size < s) {
         array_size = s;
@@ -69,54 +69,45 @@ inline void vector_t<T>::reserve(size_t s)
 }
 
 template<typename T>
-inline T& vector_t<T>::operator[](size_t s) const
+T& vector_t<T>::operator[](size_t s) const
 {
     return array[s];
 }
 
 template<typename T>
-inline void vector_t<T>::push_back(const T& v)
+void vector_t<T>::push_back(const T& v)
 {
     num_elements++;
-    cout << "!!!" << endl;
     if (array_size < num_elements) {
         array_size = num_elements;
-        cout << "@@@" << endl;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
-            cout << "###" << endl;
             newArray[i] = array[i];
         }
         newArray[num_elements - 1] = v;
-        cout << "AAAA" << endl;
         free(array);
-        cout << "BBBB" << endl;
         array = newArray;
-        cout << "CCCC" << endl;
         newArray = NULL;
     }
     else {
-        cout << "$$$" << endl;
         array[num_elements - 1] = v;
     }
 }
 
 template<typename T>
-inline void vector_t<T>::pop_back()
+void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        cout << "!!!" << endl;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
-        for (size_t i = 0; i < num_elements; i++)
+        for (size_t i = num_elements-1; i > 0; i--)
         {
-            cout << "@@@" << endl;
+            cout << "@@@ newArray " << newArray[i] << endl;
+            cout << "@@@ array" << array[i] << endl;
             newArray[i] = array[i];
         }
-        cout << "###" << endl;
         free(array);
-        cout << "$$$" << endl;
         array = newArray;
         newArray = NULL;
     }
