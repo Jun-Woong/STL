@@ -2,7 +2,6 @@
 #define _VECTOR_H_
 
 #include <cstdlib>
-#include <iosteam>
 #include "vector-def.h"
 
 template<typename T>
