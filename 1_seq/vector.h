@@ -100,16 +100,16 @@ void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        T* newArray = (T*)malloc(num_elements * sizeof(T));
+        T* popArray = (T*)malloc(num_elements * sizeof(T));
         for (size_t i = num_elements-1; i > 0; i--)
         {
-            cout << "@@@ newArray " << newArray[i] << endl;
+            cout << "@@@ newArray " << popArray[i] << endl;
             cout << "@@@ array" << array[i] << endl;
-            newArray[i] = array[i];
+            popArray[i] = array[i];
         }
         free(array);
-        array = newArray;
-        newArray = NULL;
+        array = popArray;
+        popArray = NULL;
     }
     else {
         cout << "error!!!" << endl;
