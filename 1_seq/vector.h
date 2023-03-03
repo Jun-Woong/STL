@@ -3,6 +3,9 @@
 
 #include <cstdlib>
 #include "vector-def.h"
+#include <iostream>
+
+using namespace std;
 
 template<typename T>
 inline iterator_t<T>::iterator_t() :
@@ -21,6 +24,7 @@ inline iterator_t<T>::~iterator_t() { free(ptr); }
 template<typename T>
 inline T& iterator_t<T>::operator*() const
 {
+    cout << "D" << endl;
     return *ptr;
 }
 
@@ -46,8 +50,11 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
+    cout << "AAAA" << endl;
     iterator_t<T> iter;
+    cout << "BBB" << endl;
     iter.ptr = array;
+    cout << "CC" << endl;
     return iter;
 }
 
