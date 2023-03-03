@@ -28,21 +28,18 @@ int main () {
     v1.push_back("16");
     v1.push_back("32");
     v1.push_back("64");
-
+    cout << endl;
+    
+    v1.pop_back();
     for (size_t i = 0; i < v1.size(); i++) {
         cout << "v1[" << i << "]  : " << v1[i] << endl; //여기서 operator[] 사용
     }
     cout << endl;
 
-
-    //cout << endl;
-
-    //v1.pop_back();
-
-//
-//    v1.insert(v1.end(), "128");
-//    v1.insert(--v1.end(), "256");
-    // v1.erase(v1.begin()+2);
+ //
+ //    v1.insert(v1.end(), "128");
+ //    v1.insert(--v1.end(), "256");
+ // v1.erase(v1.begin()+2);
  //   for (size_t i = 0; i < v1.size(); i++) {
  //       cout << "v1[" << i << "]  : " << v1[i] << endl;
  //   }
