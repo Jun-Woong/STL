@@ -29,6 +29,15 @@ inline T& iterator_t<T>::operator*() const
 }
 
 template<typename T>
+inline iterator_t<T> iterator_t<T>::operator+(int s)
+{
+    ptr = ptr + s;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
 inline iterator_t<T> iterator_t<T>::operator-(int s)
 {
     ptr = ptr - s;
@@ -116,6 +125,22 @@ template<typename T>
 inline T& vector_t<T>::operator[](size_t s) const
 {
     return array[s];
+}
+
+template<typename T>
+inline iterator_t<T> vector_t<T>::insert(const iterator& pos, const T& v)
+{
+    iterator_t<T> iter;
+    cout << pos << " !!!! " << v;
+    return iter;
+}
+
+template<typename T>
+inline iterator_t<T> vector_t<T>::erase(const iterator pos)
+{
+    iterator_t<T> iter;
+
+    return iter;
 }
 
 template<typename T>

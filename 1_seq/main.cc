@@ -36,15 +36,13 @@ int main () {
     }
     cout << endl;
 
-    cout << "!!begin : " << *(v1.begin()) << " end : " << *(v1.end() - 1) << endl;
-
-     // v1.insert(v1.end(), "128");
-     // v1.insert(--v1.end(), "256");
- //  v1.erase(v1.begin()+2);
- //   for (size_t i = 0; i < v1.size(); i++) {
- //       cout << "v1[" << i << "]  : " << v1[i] << endl;
- //   }
- //   cout << endl;
+    v1.insert(v1.end(), "128");
+    v1.insert(--v1.end(), "256");
+    // v1.erase(v1.begin()+2);
+    for (size_t i = 0; i < v1.size(); i++) {
+        cout << "v1[" << i << "]  : " << v1[i] << endl;
+    }
+    cout << endl;
  //
  //   v2 = v1;
  //   vector_t<string> v3(v1);
