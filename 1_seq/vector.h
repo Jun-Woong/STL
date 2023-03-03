@@ -108,7 +108,7 @@ inline void vector_t<T>::pop_back()
         //    newArray[i] = array[i];
         //}
         //free(array);
-        array = newArray;
+        //array = newArray;
 
         //newArray = NULL; // if free, error
     }
