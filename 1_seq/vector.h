@@ -7,7 +7,6 @@
 template<typename T>
 inline iterator_t<T>::iterator_t() :
     ptr(0) {
-    return ptr;
 }
 
 template<typename T>
