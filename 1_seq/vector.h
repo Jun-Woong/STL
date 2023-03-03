@@ -95,7 +95,7 @@ inline void vector_t<T>::push_back(const T& v)
     }
     else {
         num_elements++;
-        newArray[num_elements - 1] = v;
+        array[num_elements - 1] = v;
     }
 }
 
