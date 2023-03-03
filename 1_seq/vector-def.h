@@ -49,7 +49,7 @@ public:
     T& front() const;
     T& back() const;
     T& operator[](size_t s) const;
-    iterator insert(const iterator &pos, const T &v);
+    iterator insert(const iterator pos, const T &v);
     iterator erase(const iterator pos);
     void push_back(const T &v);
     void pop_back();
