@@ -12,7 +12,15 @@ vector_t<T>::vector_t() :
 }
 
 // your answer
-template<typename T>
+vector_t<T>::vector_t(const vector_t& v)
+{
+}
+
+
+vector_t<T>::~vector_t()
+{
+}
+
 bool vector_t<T>::empty() const
 {
     return false;
