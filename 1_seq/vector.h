@@ -106,11 +106,11 @@ inline void vector_t<T>::pop_back()
         T* newArray;
         newArray = (T*)malloc(num_elements * sizeof(T));
         
-        for (size_t i = 0; i < num_elements; i++)
-        {
-            newArray[i] = array[i];
-            cout << i << " : " << newArray[i] << endl;
-        }
+        //for (size_t i = 0; i < num_elements; i++)
+        //{
+        //    newArray[i] = array[i];
+        //    cout << i << " : " << newArray[i] << endl;
+        //}
     }
 }
 
