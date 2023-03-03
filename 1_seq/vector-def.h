@@ -14,7 +14,7 @@ public:
     iterator_t<T> operator++();
     iterator_t<T> operator+(int s);
     iterator_t<T> operator--();
-    iterator_t<T> operator-(int);
+    iterator_t<T> operator-(int s);
     bool operator!=(const iterator_t<T> &it) const;
     bool operator==(const iterator_t<T> &it) const;
 
