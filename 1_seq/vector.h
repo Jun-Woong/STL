@@ -81,17 +81,17 @@ inline void vector_t<T>::push_back(const T& v)
     num_elements++;
     if (array_size < num_elements) {
         array_size = num_elements;
-        T* pushArray;
-        pushArray = (T*)malloc(num_elements * sizeof(T));
+        T* newArray;
+        newArray = (T*)malloc(num_elements * sizeof(T));
 
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
-            pushArray[i] = array[i];
+            newArray[i] = array[i];
         }
-        pushArray[num_elements - 1] = v;
+        newArray[num_elements - 1] = v;
         free(array);
-        array = pushArray;
-        pushArray = NULL; // if free, error
+        array = newArray;
+        newArray = NULL; // if free, error
     }
     else {
         array[num_elements - 1] = v;
@@ -103,14 +103,14 @@ inline void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        T* popArray;
-        popArray = (T*)malloc(num_elements * sizeof(T));
+        T* newArray;
+        newArray = (T*)malloc(num_elements * sizeof(T));
         
-        for (size_t i = 0; i < num_elements; i++)
-        {
-            cout << i << " : " << popArray[i] << endl;
-            popArray[i] = array[i];
-        }
+        cout << "!!!" << newArray[0]; << endl;
+        // for (size_t i = 0; i < num_elements; i++)
+        // {
+        //     newArray[i] = array[i];
+        // }
     }
 }
 
