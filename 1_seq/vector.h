@@ -99,7 +99,7 @@ void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        array[num_elements] = static_cast<T>(NULL);
+        array[num_elements] = static_cast<T>(-1);
     }
     else {
         cout << "error!!!" << endl;
