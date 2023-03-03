@@ -28,6 +28,14 @@ inline T& iterator_t<T>::operator*() const
     return *ptr;
 }
 
+template<typename T>
+inline iterator_t<T> iterator_t<T>::operator-(int s)
+{
+    iterator_t<T> iter;
+    iter.ptr = iter.ptr - s;
+    return iter;
+}
+
 template <typename T>
 inline vector_t<T>::vector_t() :
     array(0),
