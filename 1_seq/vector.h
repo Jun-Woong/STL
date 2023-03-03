@@ -101,6 +101,7 @@ inline void vector_t<T>::push_back(const T& v)
 template<typename T>
 inline void vector_t<T>::pop_back()
 {
+    out << "!!!!!!!" << endl;
     if (num_elements >= 1) {
         num_elements--;
         T* newArray;
