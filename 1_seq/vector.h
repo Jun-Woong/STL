@@ -19,7 +19,7 @@ inline iterator_t<T>::iterator_t(const iterator_t<T>& it)
 }
 
 template<typename T>
-inline iterator_t<T>::~iterator_t() { free(ptr) }
+inline iterator_t<T>::~iterator_t() { free(ptr); }
 
 template <typename T>
 inline vector_t<T>::vector_t() :
