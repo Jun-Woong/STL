@@ -78,11 +78,14 @@ template<typename T>
 inline void vector_t<T>::push_back(const T& v)
 {
     num_elements++;
+    cout << "!!!" << endl;
     if (array_size < num_elements) {
         array_size = num_elements;
+        cout << "@@@" << endl;
         T* newArray = new T[num_elements]();
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
+            cout << "###" << endl;
             newArray[i] = array[i];
         }
         newArray[num_elements - 1] = v;
@@ -91,6 +94,7 @@ inline void vector_t<T>::push_back(const T& v)
         newArray = NULL;
     }
     else {
+        cout << "$$$" << endl;
         array[num_elements - 1] = v;
     }
 }
