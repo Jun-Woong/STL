@@ -11,10 +11,10 @@ int main () {
     cout << " *** VECTOR *** " << endl;
     cout << endl;
 
-//    vector_t<string> v1;
-//    vector_t<string> v2;
-//
-//    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
+    vector_t<string> v1;
+    vector_t<string> v2;
+
+    cout << "empty? : " << (v1.empty() ? "yes" : "no") << endl; 
 //    cout << "cap    : " << v1.capacity() << endl; 
 //    cout << "size   : " << v1.size() << endl; 
 //    cout << endl;

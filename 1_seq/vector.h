@@ -12,5 +12,10 @@ vector_t<T>::vector_t() :
 }
 
 // your answer
+template<typename T>
+bool vector_t<T>::empty() const
+{
+    return false;
+}
 
 #endif
