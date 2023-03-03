@@ -48,7 +48,7 @@ inline bool vector_t<T>::empty() const
 template<typename T>
 inline size_t vector_t<T>::capacity() const
 {
-    return array_size();
+    return array_size;
 }
 
 template<typename T>
