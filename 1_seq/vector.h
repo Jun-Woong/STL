@@ -63,9 +63,9 @@ inline void vector_t<T>::reserve(size_t s)
         {
             newArray[i] = array[i];
         }
-        free(array);
-        array = newArray;
-        free(newArray);
+        // free(array);
+        // array = newArray;
+        // free(newArray);
     }
 }
 
