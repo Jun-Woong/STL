@@ -101,11 +101,13 @@ inline void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        T* newArray = new T[num_elements]();
-        for (size_t i = 0; i < num_elements; i++)
-        {
-            newArray[i] = array[i];
-        }
+        T* newArray;
+        newArray = (T*)malloc(s * sizeof(T));
+        //for (size_t i = 0; i < num_elements; i++)
+        //{
+        //    newArray[i] = array[i];
+        //}
+        free(array);
         array = newArray;
         //newArray = NULL; // if free, error
     }
