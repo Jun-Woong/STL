@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <iostream>
 #include "vector-def.h"
-#include <typeinfo>
 
 using namespace std;
 
@@ -44,7 +43,7 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline iterator vector_t<T>::begin() const
 {
-    ptr = array;
+    iterator::ptr = array;
     return ptr;
 }
 
