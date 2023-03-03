@@ -105,6 +105,7 @@ inline void vector_t<T>::pop_back()
     if (num_elements >= 1) {
         num_elements--;
         T* newArray;
+        cout << "pop_back(size) : " << num_elements << endl;
         newArray = (T*)malloc(num_elements * sizeof(T));
         for (size_t i = 0; i < num_elements; i++)
         {
