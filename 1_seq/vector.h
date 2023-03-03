@@ -38,13 +38,13 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline iterator vector_t<T>::begin() const
+inline iterator_t<T> vector_t<T>::begin() const
 {
     return array;
 }
 
 template<typename T>
-inline iterator vector_t<T>::end() const
+inline iterator_t<T> vector_t<T>::end() const
 {
     return array;
 }
@@ -83,7 +83,7 @@ inline void vector_t<T>::reserve(size_t s)
         {
             newArray[i] = array[i];
         }
-        free(array); // free(array)
+        free(array);
         array = newArray;
         newArray = NULL;
     }
