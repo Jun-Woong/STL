@@ -36,7 +36,7 @@ int main () {
     }
     cout << endl;
 
-    cout << "AAAA" << *(v1.begin()) <<" BBBB" << *(v1.end()) << endl;
+    cout << "AAAA" << &(v1[0]) <<" BBBB" << &(v1[1]) << endl;
 
      // v1.insert(v1.end(), "128");
      // v1.insert(--v1.end(), "256");
