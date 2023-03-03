@@ -140,11 +140,9 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         {
             if (pos.ptr == (array + i)) {
                 newArray[index++] = v;
-                cout << "!!!!" << endl;
             }
             else {
                 newArray[index++] = array[i];
-                cout << "@@@@@" << endl;
             }
         }
         free(array);
@@ -158,11 +156,9 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         {
             if (pos.ptr == (array + i)) {
                 newArray[index++] = v;
-                cout << "#####" << endl;
             }
             else {
                 newArray[index++] = array[i];
-                cout << "$$$$$" << endl;
             }
         }
         free(array);
