@@ -10,6 +10,7 @@ using namespace std;
 template<typename T>
 inline iterator_t<T>::iterator_t() :
     ptr(0) {
+
 }
 
 template<typename T>
@@ -61,15 +62,17 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
-    iterator.ptr = &array[0];
-    return iterator;
+    iterator_t<T> iter;
+    iter.ptr = &array[0];
+    return iter;
 }
 
 template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
-    iterator.ptr = &array[num_elements];
-    return iterator;
+    iterator_t<T> iter;
+    iter.ptr = array + sizeof(T);
+    return iter;
 }
 
 template<typename T>
