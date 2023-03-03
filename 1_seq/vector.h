@@ -2,6 +2,7 @@
 #define _VECTOR_H_
 
 #include <cstdlib>
+#include <iosteam>
 #include "vector-def.h"
 
 template<typename T>
@@ -124,7 +125,7 @@ inline void vector_t<T>::pop_back()
         array[num_elements] = static_cast<T>("");
     }
     else {
-        cout << "error!!!" << endl;
+        throw "error!!!";
     }
 }
 
