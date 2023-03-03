@@ -62,9 +62,9 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
     iterator_t<T> iter;
-    cout << "!!!" << endl;
+    cout << "!!!" << iter.ptr << endl;
     iter.ptr = &array[0];
-    cout << "@@@" << endl;
+    cout << "@@@" << iter.ptr <<endl;
     return iter;
 }
 
@@ -72,9 +72,9 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
     iterator_t<T> iter;
-    cout << "###" << endl;
+    cout << "###" << iter.ptr << endl;
     iter.ptr = &array[num_elements];
-    cout << "$$$" << endl;
+    cout << "$$$" << iter.ptr << endl;
     return iter;
 }
 
