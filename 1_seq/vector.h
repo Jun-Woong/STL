@@ -102,8 +102,8 @@ template<typename T>
 inline void vector_t<T>::pop_back()
 {
     cout << "!!!!!!!" << endl;
-    if (num_elements >= 1) {
-        num_elements--;
+    num_elements--;
+    if (num_elements >= 0) {
         T* newArray;
         newArray = (T*)malloc(num_elements * sizeof(T));
         
@@ -112,6 +112,9 @@ inline void vector_t<T>::pop_back()
         // {
         //     newArray[i] = array[i];
         // }
+    }
+    else {
+        cout << "error!!!" << endl;
     }
 }
 
