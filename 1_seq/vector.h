@@ -47,9 +47,7 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
-    iterator iter;
-    iter::ptr = array;
-    return iter;
+    ptr = array;
 }
 
 template<typename T>
