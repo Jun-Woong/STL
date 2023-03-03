@@ -41,16 +41,17 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline iterator vector_t<T>::begin() const
+inline iterator_t vector_t<T>::begin() const
 {
-    iterator::ptr = array;
+    ptr = array;
     return ptr;
 }
 
 template<typename T>
-inline iterator vector_t<T>::end() const
+inline iterator_t vector_t<T>::end() const
 {
-    return iterator();
+    ptr = array;
+    return ptr;
 }
 
 template<typename T>

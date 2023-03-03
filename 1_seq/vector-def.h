@@ -40,8 +40,8 @@ public:
 
     typedef iterator_t<T> iterator;
 
-    iterator begin() const;
-    iterator end() const;
+    iterator_t begin() const;
+    iterator_t end() const;
     size_t size() const;
     bool empty() const;
     size_t capacity() const;
@@ -49,8 +49,8 @@ public:
     T& front() const;
     T& back() const;
     T& operator[](size_t s) const;
-    iterator insert(const iterator &pos, const T &v);
-    iterator erase(const iterator pos);
+    iterator_t insert(const iterator &pos, const T &v);
+    iterator_t erase(const iterator pos);
     void push_back(const T &v);
     void pop_back();
     void clear();
