@@ -109,6 +109,7 @@ inline void vector_t<T>::pop_back()
         }
         cout << "###" << endl;
         delete array;
+        cout << "$$$" << endl;
         array = newArray;
         newArray = NULL;
     }
