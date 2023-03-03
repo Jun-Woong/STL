@@ -59,13 +59,13 @@ inline void vector_t<T>::reserve(size_t s)
         T* newArray; 
         newArray = (T*)malloc(s * sizeof(T));
         
-        for (size_t i = 0; i < array_size; i++)
+        for (size_t i = 0; i < num_elements; i++)
         {
             newArray[i] = array[i];
         }
-        //free(array);
-        //array = newArray;
-        //newArray = NULL;
+        free(array);
+        array = newArray;
+        free(newArray);
     }
 }
 
