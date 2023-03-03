@@ -29,6 +29,12 @@ vector_t<T>::~vector_t() { free(array); }
 
 
 template<typename T>
+inline iterator vector_t<T>::begin() const
+{
+    return iterator();
+}
+
+template<typename T>
 size_t vector_t<T>::size() const
 {
     return num_elements;
@@ -100,7 +106,7 @@ void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        array[num_elements] = "";
+        array[num_elements] = static_cast<T>(NULL);
     }
     else {
         cout << "error!!!" << endl;
