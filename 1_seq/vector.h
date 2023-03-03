@@ -28,18 +28,6 @@ inline T& iterator_t<T>::operator*() const
     return *ptr;
 }
 
-template<typename T>
-inline iterator_t<T> iterator_t<T>::operator+(int)
-{
-    return iterator_t<T>();
-}
-
-template<typename T>
-inline iterator_t<T> iterator_t<T>::operator-(int)
-{
-    return iterator_t<T>();
-}
-
 template <typename T>
 inline vector_t<T>::vector_t() :
     array(0),
@@ -63,7 +51,7 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
     iterator_t<T> iter;
-    iter.ptr = &array[0];
+    iter.ptr = array;
     return iter;
 }
 
@@ -71,7 +59,7 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
     iterator_t<T> iter;
-    iter.ptr = &array[num_elements - 1];
+    iter.ptr = array + num_elements;
     return iter;
 }
 
