@@ -36,7 +36,7 @@ int main () {
     }
     cout << endl;
 
-    cout << "!!!!begin : " << *(v1.begin()) << " end : " << *(v1.end() - 1) << endl;
+    cout << "!!begin : " << *(v1.begin()) << " end : " << *(v1.end() - 1) << endl;
 
      // v1.insert(v1.end(), "128");
      // v1.insert(--v1.end(), "256");
