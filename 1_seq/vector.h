@@ -142,6 +142,4 @@ inline void vector_t<T>::pop_back()
     }
 }
 
-
-
 #endif
