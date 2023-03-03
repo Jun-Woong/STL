@@ -87,7 +87,6 @@ inline void vector_t<T>::push_back(const T& v)
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
             newArray[i] = array[i];
-            cout << i << " : " << newArray[i] << endl;
         }
         newArray[num_elements - 1] = v;
         free(array);
@@ -102,17 +101,15 @@ inline void vector_t<T>::push_back(const T& v)
 template<typename T>
 inline void vector_t<T>::pop_back()
 {
-    cout << "pop_back(size) : " << num_elements << endl;
     if (num_elements >= 1) {
         num_elements--;
         T* newArray;
-        cout << "pop_back(size) : " << num_elements << endl;
         newArray = (T*)malloc(num_elements * sizeof(T));
         
         for (size_t i = 0; i < num_elements; i++)
         {
             //newArray[i] = array[i];
-            cout << i << " : " << newArray[i] << endl;
+            cout << i << " : " << endl;
         }
         free(array);
         array = newArray;
