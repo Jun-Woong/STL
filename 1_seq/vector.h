@@ -108,12 +108,9 @@ inline void vector_t<T>::pop_back()
         
         for (size_t i = 0; i < num_elements; i++)
         {
-            //newArray[i] = array[i];
-            cout << i << " : " << endl;
+            newArray[i] = array[i];
+            cout << i << " : " << newArray[i] << endl;
         }
-        free(array);
-        array = newArray;
-        newArray = NULL; // if free, error
     }
 }
 
