@@ -26,6 +26,12 @@ int main () {
     cout << endl;
 
     v1.push_back("16");
+
+    for (size_t i = 0; i < v1.size(); i++) {
+        cout << "v1[" << i << "]  : " << v1[i] << endl; //여기서 operator[] 사용
+    }
+    cout << endl;
+
     //v1.push_back("32");
     //v1.push_back("64");
     //cout << endl;
