@@ -2,7 +2,10 @@
 #define _VECTOR_H_
 
 #include <cstdlib>
+#include <iostream>
 #include "vector-def.h"
+
+using namespace std;
 
 template <typename T>
 vector_t<T>::vector_t() :
