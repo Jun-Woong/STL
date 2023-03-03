@@ -69,4 +69,51 @@ inline void vector_t<T>::reserve(size_t s)
     }
 }
 
+template<typename T>
+inline T& vector_t<T>::operator[](size_t s) const
+{
+    return array[s];
+}
+
+template<typename T>
+inline void vector_t<T>::push_back(const T& v)
+{
+    num_elements++;
+    if (array_size < num_elements) {
+        array_size = num_elements;
+        T* newArray;
+        newArray = (T*)malloc(num_elements * sizeof(T));
+
+        for (size_t i = 0; i < (num_elements - 1); i++)
+        {
+            newArray[i] = array[i];
+        }
+        newArray[num_elements - 1] = v;
+        free(array);
+        array = newArray;
+        newArray = NULL; // if free, error
+    }
+    else {
+        num_elements++;
+        newArray[num_elements - 1] = v;
+    }
+}
+
+template<typename T>
+inline void vector_t<T>::pop_back()
+{
+    if (num_elements > 1) {
+        num_elements--;
+        T* newArray;
+        newArray = (T*)malloc(num_elements * sizeof(T));
+        for (size_t i = 0; i < num_elements; i++)
+        {
+            newArray[i] = array[i];
+        }
+        free(array);
+        array = newArray;
+        newArray = NULL; // if free, error
+    }
+}
+
 #endif
