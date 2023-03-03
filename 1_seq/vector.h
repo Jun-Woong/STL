@@ -87,6 +87,7 @@ inline void vector_t<T>::push_back(const T& v)
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
             newArray[i] = array[i];
+            cout << i << " : " << newArray[i] << endl;
         }
         newArray[num_elements - 1] = v;
         free(array);
