@@ -100,7 +100,7 @@ void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
         num_elements--;
-        array[num_elements] = NULL;
+        array[num_elements] = "";
     }
     else {
         cout << "error!!!" << endl;
