@@ -32,10 +32,7 @@ inline T& iterator_t<T>::operator*() const
 template<typename T>
 inline iterator_t<T> iterator_t<T>::operator-(int s)
 {
-    iterator_t<T> iter;
-    cout << "%%%" << endl;
-    iter.ptr = iter.ptr;
-    cout << "&&& " << *iter.ptr << endl;
+    cout << "&&& " << *ptr << endl;
     return iter;
 }
 
