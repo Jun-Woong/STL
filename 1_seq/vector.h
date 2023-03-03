@@ -7,6 +7,7 @@
 template<typename T>
 inline iterator_t<T>::iterator_t() :
     ptr(0) {
+    return ptr;
 }
 
 template<typename T>
@@ -40,14 +41,12 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline iterator_t<T> vector_t<T>::begin() const
 {
-    iterator_t<T> iter;
-    return iter;
+    return ptr;
 }
 
 template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
-    return array;
 }
 
 template<typename T>
