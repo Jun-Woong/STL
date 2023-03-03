@@ -2,10 +2,7 @@
 #define _VECTOR_H_
 
 #include <cstdlib>
-#include <iostream>
 #include "vector-def.h"
-
-using namespace std;
 
 template<typename T>
 inline iterator_t<T>::iterator_t() :
@@ -43,16 +40,13 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline iterator vector_t<T>::begin() const
 {
-    iterator b = nullptr;
-    return b;
+    return array;
 }
 
 template<typename T>
 inline iterator vector_t<T>::end() const
 {
-    iterator a = nullptr;
-
-    return a;
+    return array;
 }
 
 template<typename T>
