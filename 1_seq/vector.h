@@ -63,7 +63,7 @@ inline iterator_t<T> vector_t<T>::begin() const
 {
     iterator_t<T> iter;
     cout << "!!!" << endl;
-    iter.ptr = array;
+    iter.ptr = &array[0];
     cout << "@@@" << endl;
     return iter;
 }
@@ -73,7 +73,7 @@ inline iterator_t<T> vector_t<T>::end() const
 {
     iterator_t<T> iter;
     cout << "###" << endl;
-    iter.ptr = array + num_elements;
+    iter.ptr = &array[num_elements];
     cout << "$$$" << endl;
     return iter;
 }
