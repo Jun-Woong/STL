@@ -102,7 +102,7 @@ template<typename T>
 inline void vector_t<T>::pop_back()
 {
     if (num_elements >= 1) {
-        num_elements--;
+        // num_elements--;
         T* newArray;
         newArray = (T*)malloc(num_elements * sizeof(T));
         
