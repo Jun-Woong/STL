@@ -38,7 +38,7 @@ public:
     deque_t();
     deque_t(const deque_t &v);
     ~deque_t();
-    deque_t& operator=(const deque_t v);
+    void operator=(const deque_t<T>& v);
     
     typedef iterator_dq<T> iterator;
 

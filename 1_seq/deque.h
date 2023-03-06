@@ -108,6 +108,18 @@ inline deque_t<T>::~deque_t()
 }
 
 template<typename T>
+inline void deque_t<T>::operator=(const deque_t<T>& v)
+{
+    num_elements = v.num_elements;
+    free(array);
+    array = (T*)calloc(num_elements, sizeof(T));
+    for (size_t i = 0; i < num_elements; i++)
+    {
+        array[i] = v.array[i];
+    }
+}
+
+template<typename T>
 inline iterator_dq<T> deque_t<T>::begin() const
 {
     iterator_dq<T> iter;
@@ -249,9 +261,8 @@ inline void deque_t<T>::pop_front()
 template<typename T>
 inline void deque_t<T>::clear()
 {
-    free(array);
-    array = (T*)calloc(num_elements, sizeof(T));
     num_elements = 0;
+    free(array);
 }
 
 #endif
