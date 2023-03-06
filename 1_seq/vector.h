@@ -108,7 +108,7 @@ inline vector_t<T>::vector_t(const vector_t<T>& v)
 }
 
 template<typename T>
-inline vector_t<T>::~vector_t() { free(array); }
+inline vector_t<T>::~vector_t() { array_size = 0; num_elements = 0; free(array); }
 
 template<typename T>
 inline void vector_t<T>::operator=(const vector_t<T>& v)

@@ -64,20 +64,20 @@ int main () {
     v2.clear();
     v3.clear();
 
-//    cout << " *** DEQUE *** " << endl;
-//    cout << endl;
-//
-//    deque_t<string> d1;
-//    deque_t<string> d2;
-//
-//    d1.push_back("16");
-//    d1.push_back("32");
-//    d1.push_front("128");
-//    d1.push_front("256");
-//    cout << "empty? : " << (d1.empty() ? "yes" : "no") << endl; 
-//    cout << "size   : " << d1.size() << endl; 
-//    cout << endl;
-//
+    cout << " *** DEQUE *** " << endl;
+    cout << endl;
+
+    deque_t<string> d1;
+    deque_t<string> d2;
+
+    d1.push_back("16");
+    d1.push_back("32");
+    d1.push_front("128");
+    d1.push_front("256");
+    cout << "empty? : " << (d1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << d1.size() << endl; 
+    cout << endl;
+
 //    d1.pop_back();
 //    d1.pop_front();
 //    cout << "size   : " << d1.size() << endl; 
