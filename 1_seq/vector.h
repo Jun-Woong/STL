@@ -85,7 +85,7 @@ inline vector_t<T>& vector_t<T>::operator=(const vector_t v)
     {
         newArray[i] = v.array[i];
     }
-    free(nv.array);
+    free(array);
     nv.array = newArray;
     newArray = NULL;
     return nv;
