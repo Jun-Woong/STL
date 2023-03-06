@@ -48,7 +48,7 @@ inline bool list_t<T>::empty() const
 template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
-    if (array.size() == 0) {
+    if (array.length == 0) {
         array[0].value = d;
     }
     else {
