@@ -58,7 +58,7 @@ inline void deque_t<T>::push_back(const T& d)
     {
         cout << i << endl;
         cout << array[i] << endl;
-        cout << newArray[0] << endl;
+        cout << num_elements << endl;
         newArray[i] = array[i];
     }
     cout << " @@@@ " << endl;
