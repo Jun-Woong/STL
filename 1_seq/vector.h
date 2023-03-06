@@ -79,11 +79,13 @@ inline void vector_t<T>::operator=(const vector_t v)
 {
     array_size = v.array_size;
     num_elements = v.num_elements;
+    cout << " !!!!!!! " << endl;
     T* newArray = (T*)malloc(num_elements * sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         newArray[i] = v.array[i];
     }
+    cout << " !!!!!!! " << endl;
     array = newArray;
     newArray = NULL; 
 }
