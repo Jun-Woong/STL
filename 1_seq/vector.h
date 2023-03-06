@@ -77,9 +77,9 @@ inline vector_t<T>::~vector_t() { free(array); }
 template<typename T>
 inline void vector_t<T>::operator=(const vector_t v)
 {
-    array_size = v.array_size;
-    num_elements = v.num_elements;
-    cout << " !!!!!!! " << num_elements << "AAAAAAAAA" << v.num_elements << endl;
+    array_size = v.capacity();
+    num_elements = v.size();
+    cout << " !!!!!!! " << v.capacity() << " AAAAAAAAA " << v.size() << endl;
     T* newArray = (T*)malloc(num_elements * sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
