@@ -140,7 +140,8 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
 {
     if (array_size == num_elements) {
-        num_elements++;
+        cout << " ^^^^^^^^ " << array_size << " ******* " << num_elements << endl;
+        num_elements++;7
         array_size = num_elements;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
@@ -157,8 +158,8 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         array = newArray;
         newArray = NULL;
     }
-    else {
-        cout << "!!!!!!!! " << num_elements << endl;
+    else if (array_size > num_elements){
+        cout << " ^^^^^^^^ " << array_size << "!!!!!!!! " << num_elements << endl;
         for (size_t i = 0; i < (num_elements); i++)
         {
             if (pos.ptr == (array + i)) {
