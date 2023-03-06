@@ -16,7 +16,6 @@ inline iterator_t<T>::iterator_t() :
 template<typename T>
 inline iterator_t<T>::iterator_t(const iterator_t<T>& it)
 {
-
 }
 
 template<typename T>

@@ -82,11 +82,11 @@ int main () {
     d1.pop_front();
     cout << "size   : " << d1.size() << endl; 
     cout << endl;
-//
-//    d1.insert(d1.end(), "512");
-//    d1.insert(d1.begin()+1, "1024");
-//    d1.insert(d1.begin()+2, "2048");
-//    d1.erase(d1.begin());
+
+    d1.insert(d1.end(), "512");
+    d1.insert(d1.begin()+1, "1024");
+    d1.insert(d1.begin()+2, "2048");
+    d1.erase(d1.begin());
     for (size_t i = 0; i < d1.size(); i++) {
         cout << "d1[" << i << "]  : " << d1[i] << endl;
     }
