@@ -53,7 +53,6 @@ inline void deque_t<T>::push_back(const T& d)
 {
     num_elements++;
     T* newArray = (T*)calloc(num_elements, sizeof(T));
-    cout << " !!!! " << endl;
     for (size_t i = 0; i < (num_elements - 1); i++)
     {
         cout << i << endl;
@@ -61,9 +60,7 @@ inline void deque_t<T>::push_back(const T& d)
         cout << num_elements << endl;
         newArray[i] = array[i];
     }
-    cout << " @@@@ " << endl;
     newArray[num_elements - 1] = d;
-    cout << " #### " << endl;
     free(array);
     array = newArray;
     newArray = NULL;
@@ -73,7 +70,7 @@ template<typename T>
 inline void deque_t<T>::push_front(const T& d)
 {
     num_elements++;
-    T* newArray = (T*)malloc(num_elements * sizeof(T));
+    T* newArray = (T*)calloc(num_elements, sizeof(T));
     for (size_t i = 1; i < (num_elements); i++)
     {
        newArray[i] = array[i - 1];
