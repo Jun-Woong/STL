@@ -67,7 +67,7 @@ inline iterator_t<T> iterator_t<T>::operator-(int s)
 template<typename T>
 inline bool iterator_t<T>::operator!=(const iterator_t<T>& it) const
 {
-    if (it == ptr) {
+    if (it.ptr == ptr) {
         return false;
     }
     else {
@@ -78,7 +78,7 @@ inline bool iterator_t<T>::operator!=(const iterator_t<T>& it) const
 template<typename T>
 inline bool iterator_t<T>::operator==(const iterator_t<T>& it) const
 {
-    if (it == ptr) {
+    if (it.ptr == ptr) {
         return true;
     }
     else {
