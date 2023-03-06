@@ -139,7 +139,6 @@ inline T& vector_t<T>::operator[](size_t s) const
 template<typename T>
 inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
 {
-    iterator_t<T> iter;
     num_elements++;
     if (array_size < num_elements) {
         array_size = num_elements;
@@ -174,15 +173,25 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         array = newArray;
         newArray = NULL;
     }
-    return iter;
+    return pos;
 }
 
 template<typename T>
 inline iterator_t<T> vector_t<T>::erase(const iterator pos)
 {
-    iterator_t<T> iter;
-
-    return iter;
+    for (size_t i = 0; i < (num_elements); i++)
+    {
+        if (pos.ptr == (array + i)) {
+            array[i] = static_cast<T>("");
+            for (size_t j = i; j < num_elements - 1; j++)
+            {
+                array[j] = array[j + 1]
+            }
+            break;
+        }
+    }
+    num_elements--;
+    return pos;
 }
 
 template<typename T>
