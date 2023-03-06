@@ -44,8 +44,8 @@ int main () {
     }
     cout << endl;
  
- //   v2 = v1;
- //   vector_t<string> v3(v1);
+    v2 = v1;
+    //vector_t<string> v3(v1);
  //
  //   v1.clear();
  //   cout << "cap    : " << v1.capacity() << endl; 
