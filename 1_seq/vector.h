@@ -90,7 +90,7 @@ inline vector_t<T>& vector_t<T>::operator=(const vector_t v)
     cout << " %%%%% " << endl;
     nv.array = newArray;
     newArray = NULL;
-    return nv;
+    return *nv;
 }
 
 template<typename T>
