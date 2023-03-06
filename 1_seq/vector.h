@@ -142,17 +142,20 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
     iterator_t<T> iter;
     num_elements++;
     if (array_size < num_elements) {
-        cout << " cccc "  << endl;
+        cout << " !!!!! "  << endl;
         array_size = num_elements;
+        cout << " @@@@@ " << endl;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
         for (size_t i = 0; i < (num_elements); i++)
         {
             if (pos.ptr == (array + i)) {
                 newArray[index++] = v;
+                cout << " #### " << i <<  " %%%% " << v  << endl;
             }
             else {
                 newArray[index++] = array[i];
+                cout << " #### " << i << " $$$$ " << array[i] << endl;
             }
         }
         free(array);
@@ -160,7 +163,6 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         newArray = NULL;
     }
     else {
-        cout << " dddd " << endl;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
         for (size_t i = 0; i < (num_elements); i++)
