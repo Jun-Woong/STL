@@ -59,11 +59,11 @@ inline void list_t<T>::push_back(const T& d)
     else {
         list_element<T>* newElement = new list_element<T>;
         cout << " CCCCCCCCC " << endl;
-        newElement->left = array[num_elements - 1].right;
+        newElement.left = array[num_elements - 1].right;
         cout << " DDDDDDDDD " << endl;
-        newElement->value = "";
+        newElement.value = "";
         cout << " WWWWWWWWWW " << endl;
-        newElement->value = d;
+        newElement.value = d;
         cout << " EEEEEEEEE " << endl;
     }
     num_elements++;
