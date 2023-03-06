@@ -110,17 +110,17 @@ int main () {
     cout << endl;
 
     d2.clear();
-//
-//    cout << " *** LIST *** " << endl;
-//    cout << endl;
-//
-//    list_t<string> l1;
-//    list_t<string> l2;
-//
-//    cout << "empty? : " << (l1.empty() ? "yes" : "no") << endl; 
-//    cout << "size   : " << l1.size() << endl; 
-//    cout << endl;
-//
+
+    cout << " *** LIST *** " << endl;
+    cout << endl;
+
+    list_t<string> l1;
+    list_t<string> l2;
+
+    cout << "empty? : " << (l1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << l1.size() << endl; 
+    cout << endl;
+
 //    l1.push_back("2");
 //    l1.push_back("4");
 //    l1.push_front("8");
