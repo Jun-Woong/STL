@@ -96,14 +96,14 @@ int main () {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
-//
-//    d2 = d1;
-//    d1.clear();
-//    d2.erase(d2.begin());
-//        for (size_t i = 0; i < d2.size(); i++) {
-//        cout << "d2[" << i << "] : " << d2[i] << endl;
-//    }
-//    cout << endl;
+
+    d2 = d1;
+    d1.clear();
+    d2.erase(d2.begin());
+        for (size_t i = 0; i < d2.size(); i++) {
+        cout << "d2[" << i << "] : " << d2[i] << endl;
+    }
+    cout << endl;
 //
 //    cout << "front : " << d2.front() << endl;
 //    cout << "back  : " << d2.back() << endl;
