@@ -251,7 +251,6 @@ inline void deque_t<T>::clear()
 {
     num_elements = 0;
     free(array);
-    array = (T*)calloc(array_size, sizeof(T));
 }
 
 #endif
