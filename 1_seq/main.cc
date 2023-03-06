@@ -87,10 +87,10 @@ int main () {
 //    d1.insert(d1.begin()+1, "1024");
 //    d1.insert(d1.begin()+2, "2048");
 //    d1.erase(d1.begin());
-//    for (size_t i = 0; i < d1.size(); i++) {
-//        cout << "d1[" << i << "]  : " << d1[i] << endl;
-//    }
-//    cout << endl;
+    for (size_t i = 0; i < d1.size(); i++) {
+        cout << "d1[" << i << "]  : " << d1[i] << endl;
+    }
+    cout << endl;
 //
 //    for(deque_t<string>::iterator it = d1.begin(); it != d1.end(); it++) {
 //        cout << "*it    : " << *it << endl;
