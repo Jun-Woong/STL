@@ -19,7 +19,7 @@ value("") {
 template<typename T>
 inline list_t<T>::list_t() :
 num_elements(0) {
-    array = (list_element<T>*)calloc(1, sizeof(list_element<T>));
+    array = new list_element<T>;
     array[0].left = array;
 }
 
