@@ -91,11 +91,11 @@ int main () {
         cout << "d1[" << i << "]  : " << d1[i] << endl;
     }
     cout << endl;
-//
-//    for(deque_t<string>::iterator it = d1.begin(); it != d1.end(); it++) {
-//        cout << "*it    : " << *it << endl;
-//    }
-//    cout << endl;
+
+    for(deque_t<string>::iterator it = d1.begin(); it != d1.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
 //
 //    d2 = d1;
 //    d1.clear();
