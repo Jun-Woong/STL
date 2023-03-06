@@ -40,10 +40,12 @@ inline iterator_t<T> iterator_t<T>::operator+(int s)
 template<typename T>
 inline iterator_t<T> iterator_t<T>::operator--()
 {
-    cout << "aaaaa" << endl;
+    cout << " aaaa " << ptr << endl;
     ptr = ptr - 1;
+    cout << " bbbb " << ptr << endl;
     iterator_t<T> iter;
     iter.ptr = ptr;
+    cout << " cccc " << iter.ptr << endl;
     return iter;
 }
 
@@ -87,7 +89,9 @@ template<typename T>
 inline iterator_t<T> vector_t<T>::end() const
 {
     iterator_t<T> iter;
+    cout << " !!!!! " << iter.ptr << endl;
     iter.ptr = array + num_elements;
+    cout << " ##### " << iter.ptr << endl;
     return iter;
 }
 
