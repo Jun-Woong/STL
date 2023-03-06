@@ -119,13 +119,13 @@ inline iterator_l<T> list_t<T>::begin() const
 template<typename T>
 inline iterator_l<T> list_t<T>::end() const
 {
-    // list_element* tmp = array[0].right;
+    list_element* tmp = array[0].right;
     //while (tmp != NULL) {
     //    tmp = tmp->right;
     //}
-    //iterator_l<T> iter;
+    iterator_l<T> iter;
     //iter.ptr = &(tmp->value);
-    //return iter;
+    return iter;
 }
 
 template<typename T>
