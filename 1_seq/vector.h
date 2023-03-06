@@ -87,7 +87,7 @@ inline vector_t<T>& vector_t<T>::operator=(const vector_t v)
     }
     nv.array = newArray;
     newArray = NULL;
-    return *nv;
+    return &nv;
 }
 
 template<typename T>
