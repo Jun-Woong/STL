@@ -55,8 +55,11 @@ inline void list_t<T>::push_back(const T& d)
         array[0].value = d;
     }
     else {
+        cout << "AAAAAA" << endl;
         list_element<T>* newElement = (list_element<T>*)malloc(sizeof(list_element<T>));
+        cout << "BBBBB" << endl;
         newElement->left = array[num_elements - 1].right;
+        cout << "CCCCC" << endl;
         newElement->value = d;
     }
     num_elements++;
