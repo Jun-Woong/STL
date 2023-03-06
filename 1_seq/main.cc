@@ -105,8 +105,8 @@ int main () {
     }
     cout << endl;
 
-    cout << "front : " << d2.front() << endl;
-    cout << "back  : " << d2.back() << endl;
+    //cout << "front : " << d2.front() << endl;
+    //cout << "back  : " << d2.back() << endl;
     cout << endl;
 
     d2.clear();
