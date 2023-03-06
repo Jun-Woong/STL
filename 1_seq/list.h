@@ -65,6 +65,16 @@ inline void list_t<T>::push_back(const T& d)
 template<typename T>
 inline void list_t<T>::push_front(const T& d)
 {
+    if (num_elements == 0) {
+        array[0].value = d;
+    }
+    else {
+        list_element<T>* newElement = new list_element<T>;
+        newElement->left = array;
+        newElement->right = array[0].left;
+        newElement->value = d;
+    }
+    num_elements++;
 }
 
 #endif
