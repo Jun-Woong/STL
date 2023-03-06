@@ -60,9 +60,9 @@ int main () {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
- //
- //   v2.clear();
- //   v3.clear();
+
+    v2.clear();
+    v3.clear();
 
 //    cout << " *** DEQUE *** " << endl;
 //    cout << endl;
