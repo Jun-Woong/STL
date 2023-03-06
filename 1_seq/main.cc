@@ -38,7 +38,7 @@ int main () {
 
     v1.insert(v1.end(), "128");
     v1.insert(--v1.end(), "256");
-    //v1.erase(v1.begin()+2);
+    v1.erase(v1.begin()+2);
     for (size_t i = 0; i < v1.size(); i++) {
         cout << "v1[" << i << "]  : " << v1[i] << endl;
     }
