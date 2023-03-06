@@ -121,6 +121,7 @@ inline iterator_l<T> list_t<T>::end() const
 {
     list_element<T> *tmp = array[0].right;
     while (tmp != NULL) {
+        cout << " CCCCC " << tmp->value << endl;
         tmp = tmp->right;
     }
     iterator_l<T> iter;
