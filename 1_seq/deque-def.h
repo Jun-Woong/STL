@@ -4,25 +4,25 @@
 template <typename T> class deque_t;
 
 template <typename T>
-class iterator_t {
+class iterator_dq {
 public:
-    iterator_t();
-    iterator_t(const iterator_t<T> &it);
-    ~iterator_t();
+    iterator_dq();
+    iterator_dq(const iterator_dq<T> &it);
+    ~iterator_dq();
 
     T& operator*() const;
-    iterator_t<T> operator++(int);
-    iterator_t<T> operator+(int s);
-    iterator_t<T> operator--();
-    iterator_t<T> operator-(int s);
-    bool operator!=(const iterator_t<T> &it) const;
-    bool operator==(const iterator_t<T> &it) const;
+    iterator_dq<T> operator++(int);
+    iterator_dq<T> operator+(int s);
+    iterator_dq<T> operator--();
+    iterator_dq<T> operator-(int s);
+    bool operator!=(const iterator_dq<T> &it) const;
+    bool operator==(const iterator_dq<T> &it) const;
 
 private:
     T *ptr;
-    friend class deque_t<T>;
-    friend class deque_t<T>;
-    friend class deque_t<T>;
+    friend class deque_dq<T>;
+    friend class deque_dq<T>;
+    friend class deque_dq<T>;
 };
 
 #endif
@@ -40,7 +40,7 @@ public:
     ~deque_t();
     deque_t& operator=(const deque_t v);
     
-    typedef iterator_t<T> iterator;
+    typedef iterator_dq<T> iterator;
 
     iterator begin() const;
     iterator end() const;
