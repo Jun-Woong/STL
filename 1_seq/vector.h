@@ -139,8 +139,8 @@ inline T& vector_t<T>::operator[](size_t s) const
 template<typename T>
 inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
 {
-    num_elements++;
     if (array_size < num_elements) {
+        num_elements++;
         array_size = num_elements;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
@@ -158,20 +158,22 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         newArray = NULL;
     }
     else {
-        T* newArray = (T*)malloc(num_elements * sizeof(T));
-        size_t index = 0;
         for (size_t i = 0; i < (num_elements); i++)
         {
             if (pos.ptr == (array + i)) {
-                newArray[i] = v;
-            }
-            else {
-                newArray[i] = array[index++];
+                size_t tmp = array[i];
+                array[i] = v;
+                num_elements++;
+                size_t now;
+                for (size_t j = i + 1; j < num_elements; j++)
+                {
+                    now = array[j];
+                    array[j] = tmp;
+                    tmp = now;
+                }
+                break;
             }
         }
-        free(array);
-        array = newArray;
-        newArray = NULL;
     }
     return pos;
 }
