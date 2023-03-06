@@ -128,10 +128,12 @@ int main () {
     l1.push_front("32");
     l1.push_front("64");
 
-//    for(list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
-//        cout << "*it    : " << *it << endl;
-//    }
-//    cout << endl;
+    cout << " begin : " << *(l1.begin()) << endl;
+
+    //for(list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
+    //    cout << "*it    : " << *it << endl;
+    //}
+    cout << endl;
 //
 //    list_t<string>::iterator temp_it;
 //    temp_it = l1.begin();

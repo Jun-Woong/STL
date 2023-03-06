@@ -1,25 +1,25 @@
-#ifndef _ITER_
-#define _ITER_
+#ifndef _ITER_L_
+#define _ITER_L_
 
 template <typename T>
-class iterator_t {
+class iterator_l {
 public:
-    iterator_t();
-    iterator_t(const iterator_t<T> &it);
-    ~iterator_t();
+    iterator_l();
+    iterator_l(const iterator_l<T> &it);
+    ~iterator_l();
 
     T& operator*() const;
-    iterator_t<T> operator++();
-    iterator_t<T> operator++(int);
-    iterator_t<T> operator--();
-    iterator_t<T> operator--(int);
-    bool operator!=(const iterator_t<T> &it) const;
-    bool operator==(const iterator_t<T> &it) const;
+    iterator_l<T> operator++();
+    iterator_l<T> operator++(int);
+    iterator_l<T> operator--();
+    iterator_l<T> operator--(int);
+    bool operator!=(const iterator_l<T> &it) const;
+    bool operator==(const iterator_l<T> &it) const;
 
 private:
     T *ptr;
-    friend class vector_t<T>;
-    friend class deque_t<T>;
+    friend class list_t<T>;
+    friend class list_t<T>;
     friend class list_t<T>;
 };
 
@@ -47,7 +47,7 @@ public:
     ~list_t();
     list_t& operator=(const list_t v);
 
-    typedef iterator_t<T> iterator;
+    typedef iterator_l<T> iterator;
 
     iterator begin() const;
     iterator end() const;
