@@ -124,6 +124,7 @@ inline iterator_l<T> list_t<T>::end() const
         tmp = tmp->right;
     }
     iterator_l<T> iter;
+    cout << " AAAAA " << endl;
     iter.ptr = &(tmp->value);
     return iter;
 }
