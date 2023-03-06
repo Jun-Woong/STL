@@ -40,12 +40,9 @@ inline iterator_t<T> iterator_t<T>::operator+(int s)
 template<typename T>
 inline iterator_t<T> iterator_t<T>::operator--()
 {
-    cout << " aaaa " << ptr << endl;
     ptr = ptr - 1;
-    cout << " bbbb " << *ptr << endl;
     iterator_t<T> iter;
     iter.ptr = ptr;
-    cout << " cccc " << *(iter.ptr) << endl;
     return iter;
 }
 
@@ -145,6 +142,7 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
     iterator_t<T> iter;
     num_elements++;
     if (array_size < num_elements) {
+        cout << " cccc "  << endl;
         array_size = num_elements;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
@@ -162,6 +160,7 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         newArray = NULL;
     }
     else {
+        cout << " dddd " << endl;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
         for (size_t i = 0; i < (num_elements); i++)
