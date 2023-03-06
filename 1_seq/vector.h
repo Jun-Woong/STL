@@ -162,6 +162,7 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         cout << " ^^^^^^^^ " << array_size << "!!!!!!!! " << num_elements << endl;
         for (size_t i = 0; i < (num_elements); i++)
         {
+            cout << " (((((( " << (pos.ptr) << " ))))) " << (array + i) << endl;
             if (pos.ptr == (array + i)) {
                 num_elements++;
                 T tmp = array[i];
