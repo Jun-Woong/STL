@@ -29,6 +29,15 @@ inline T& iterator_t<T>::operator*() const
 }
 
 template<typename T>
+inline iterator_t<T> iterator_t<T>::operator++()
+{
+    ptr = ptr + 1;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
 inline iterator_t<T> iterator_t<T>::operator+(int s)
 {
     ptr = ptr + s;
@@ -53,6 +62,28 @@ inline iterator_t<T> iterator_t<T>::operator-(int s)
     iterator_t<T> iter;
     iter.ptr = ptr;
     return iter;
+}
+
+template<typename T>
+inline bool iterator_t<T>::operator!=(const iterator_t<T>& it) const
+{
+    if (it == ptr) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+template<typename T>
+inline bool iterator_t<T>::operator==(const iterator_t<T>& it) const
+{
+    if (it == ptr) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 template <typename T>

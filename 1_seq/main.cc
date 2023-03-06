@@ -55,11 +55,11 @@ int main () {
     cout << "front  : " << (v2.front() == v3.front() ? "yes" : "no") << endl; 
     cout << "back   : " << (v2.back() == v3.back() ? "yes" : "no") << endl; 
     cout << endl;
- //
- //   for(vector_t<string>::iterator it = v2.begin(); it != v2.end(); it++) {
- //       cout << "*it    : " << *it << endl;
- //   }
- //   cout << endl;
+ 
+    for(vector_t<string>::iterator it = v2.begin(); it != v2.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
  //
  //   v2.clear();
  //   v3.clear();
