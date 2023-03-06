@@ -122,7 +122,7 @@ int main () {
     cout << endl;
 
     l1.push_back("2");
-//    l1.push_back("4");
+    l1.push_back("4");
 //    l1.push_front("8");
 //    l1.push_front("16");
 //    l1.push_front("32");
