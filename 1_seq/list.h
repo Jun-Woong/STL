@@ -57,7 +57,7 @@ inline void list_t<T>::push_back(const T& d)
         cout << " BBBBBBBB " << endl;
     }
     else {
-        list_element<T>* newElement = (list_element<T>*)calloc(1,sizeof(list_element<T>));
+        list_element<T>* newElement = new list_element<T>;
         cout << " CCCCCCCCC " << endl;
         newElement->left = array[num_elements - 1].right;
         cout << " DDDDDDDDD " << endl;
