@@ -65,10 +65,16 @@ inline vector_t<T>::vector_t() :
 // your answer
 
 template<typename T>
-inline vector_t<T>::vector_t(const vector_t& v)
+inline vector_t<T>::vector_t(const vector_t<T>& v)
 {
-    // copy
-    // array = new T[s]();
+    array_size = v.array_size;
+    num_elements = v.num_elements;
+    free(array);
+    array = (T*)malloc(array_size * sizeof(T));
+    for (size_t i = 0; i < num_elements; i++)
+    {
+        array[i] = v.array[i];
+    }
 }
 
 template<typename T>

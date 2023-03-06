@@ -49,7 +49,11 @@ int main () {
         cout << "v2[" << i << "]  : " << v2[i] << endl;
     }
     cout << endl;
-    //vector_t<string> v3(v1);
+    vector_t<string> v3(v1);
+    for (size_t i = 0; i < v3.size(); i++) {
+        cout << "v3[" << i << "]  : " << v3[i] << endl;
+    }
+    cout << endl;
  //
  //   v1.clear();
  //   cout << "cap    : " << v1.capacity() << endl; 

@@ -34,7 +34,7 @@ template <typename T>
 class vector_t {
 public:
     vector_t();
-    vector_t(const vector_t &v);
+    vector_t(const vector_t<T>& v);
     ~vector_t();
     void operator=(const vector_t<T> &v);
 
