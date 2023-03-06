@@ -119,8 +119,8 @@ inline iterator_l<T> list_t<T>::begin() const
 template<typename T>
 inline iterator_l<T> list_t<T>::end() const
 {
+    cout << " ZZZZZZ " << endl;
     list_element<T> *tmp = array[0].right;
-    cout << " CCCCC " << tmp->value << endl;
     while (tmp != NULL) {
         cout << " DDDDD " << tmp->value << endl;
         tmp = tmp->right;
