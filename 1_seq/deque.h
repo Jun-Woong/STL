@@ -52,7 +52,7 @@ template<typename T>
 inline void deque_t<T>::push_back(const T& d)
 {
     num_elements++;
-    T* newArray = (T*)malloc(num_elements * sizeof(T));
+    T* newArray = new T[num_elements]{0};
     cout << " !!!! " << endl;
     for (size_t i = 0; i < (num_elements - 1); i++)
     {
@@ -64,7 +64,7 @@ inline void deque_t<T>::push_back(const T& d)
     cout << " @@@@ " << endl;
     newArray[num_elements - 1] = d;
     cout << " #### " << endl;
-    free(array);
+    delete(array);
     array = newArray;
     newArray = NULL;
 }
