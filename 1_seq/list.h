@@ -158,7 +158,7 @@ inline void list_t<T>::push_back(const T& d)
     }
     else {
         list_element<T>* newElement = new list_element<T>;
-        newElement->left = array[num_elements - 1].right;
+        array[num_elements - 1].right = newElement->left;
         newElement->right = NULL;
         newElement->value = d;
     }
