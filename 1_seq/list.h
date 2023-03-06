@@ -113,22 +113,23 @@ inline iterator_l<T> list_t<T>::begin() const
 {
     iterator_l<T> iter;
     iter.ptr = &(array[0].value);
+    cout << " AAAAAA " << array[0].left << " BBBBBBB " << array << endl;
     return iter;
 }
 
 template<typename T>
 inline iterator_l<T> list_t<T>::end() const
 {
-    cout << " ZZZZZZ " << endl;
-    list_element<T> *tmp = array[0].right;
-    cout << " ZZZZZZ " << tmp << endl;
-    while (tmp != NULL) {
-        cout << " DDDDD " << tmp->value << endl;
-        tmp = tmp->right;
-    }
+    //cout << " ZZZZZZ " << endl;
+    //list_element<T> *tmp = array[0].right;
+    //cout << " ZZZZZZ " << tmp << endl;
+    //while (tmp != NULL) {
+    //    cout << " DDDDD " << tmp->value << endl;
+    //    tmp = tmp->right;
+    //}
     iterator_l<T> iter;
-    cout << " AAAAA " << endl;
-    iter.ptr = &(tmp->left->value);
+    //cout << " AAAAA " << endl;
+    //iter.ptr = &(tmp->left->value);
     return iter;
 }
 
