@@ -158,12 +158,12 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         newArray = NULL;
     }
     else {
+        num_elements++;
         for (size_t i = 0; i < (num_elements); i++)
         {
             if (pos.ptr == (array + i)) {
                 T tmp = array[i];
                 array[i] = v;
-                num_elements++;
                 T now;
                 for (size_t j = i + 1; j < num_elements; j++)
                 {
