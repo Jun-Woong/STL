@@ -20,9 +20,9 @@ public:
 
 private:
     T *ptr;
-    friend class deque_dq<T>;
-    friend class deque_dq<T>;
-    friend class deque_dq<T>;
+    friend class deque_t<T>;
+    friend class deque_t<T>;
+    friend class deque_t<T>;
 };
 
 #endif
