@@ -75,18 +75,16 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline vector_t<T>& vector_t<T>::operator=(const vector_t<T>& v)
+inline void vector_t<T>::operator=(const vector_t<T>& v)
 {
-    vector_t<T> nv;
-    nv.array_size = v.array_size;
-    nv.num_elements = v.num_elements;
+    array_size = v.array_size;
+    num_elements = v.num_elements;
     free(array);
     array = (T*)malloc(array_size * sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
     }
-    return nv;
 }
 
 template<typename T>

@@ -45,6 +45,10 @@ int main () {
     cout << endl;
  
     v2 = v1;
+    for (size_t i = 0; i < v2.size(); i++) {
+        cout << "v2[" << i << "]  : " << v2[i] << endl;
+    }
+    cout << endl;
     //vector_t<string> v3(v1);
  //
  //   v1.clear();
