@@ -29,7 +29,7 @@ inline T& iterator_t<T>::operator*() const
 }
 
 template<typename T>
-inline iterator_t<T> iterator_t<T>::operator++()
+inline iterator_t<T> iterator_t<T>::operator++(int)
 {
     ptr = ptr + 1;
     iterator_t<T> iter;
