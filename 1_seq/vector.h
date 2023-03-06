@@ -174,7 +174,6 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
                 break;
             }
         }
-        vector_t<T>::push_back(v);
     }
     return pos;
 }
