@@ -78,13 +78,16 @@ template<typename T>
 inline vector_t<T>& vector_t<T>::operator=(const vector_t v)
 {
     vector_t<T> nv;
+    cout << " !!!! " << endl;
     nv.array_size = v.array_size;
     nv.num_elements = v.num_elements;
     T* newArray = (T*)malloc(num_elements * sizeof(T));
+    cout << " @@@@@@ " << endl;
     for (size_t i = 0; i < num_elements; i++)
     {
         newArray[i] = v.array[i];
     }
+    cout << " %%%%% " << endl;
     nv.array = newArray;
     newArray = NULL;
     return nv;
