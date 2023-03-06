@@ -1,5 +1,5 @@
-#ifndef _ITER_
-#define _ITER_
+#ifndef _ITER_DQ_
+#define _ITER_DQ_
 
 template <typename T> class deque_t;
 
