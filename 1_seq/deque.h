@@ -105,7 +105,6 @@ inline void deque_t<T>::pop_front()
         {
             newArray[i-1] = array[i];
         }
-        newArray[0] = d;
         free(array);
         array = newArray;
         newArray = NULL;
