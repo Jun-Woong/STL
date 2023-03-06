@@ -19,7 +19,7 @@ value("") {
 template<typename T>
 inline list_t<T>::list_t() :
 num_elements(0) {
-    array = (list_element<T>*)calloc(1, sizeof(list_element<T>));
+    array = (list_element<T>*)malloc(sizeof(list_element<T>));
     array[0].left = array;
 }
 
@@ -51,13 +51,11 @@ inline bool list_t<T>::empty() const
 template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
-    cout << " AAAAAAAAAA " << endl;
     if (num_elements == 0) {
         array[0].value = d;
-        cout << " BBBBBBBB " << endl;
     }
     else {
-        list_element<T>* newElement = new list_element<T>;
+        list_element<T>* newElement = (list_element<T>*)malloc(sizeof(list_element<T>));
         newElement->left = array[num_elements - 1].right;
         newElement->value = d;
     }
