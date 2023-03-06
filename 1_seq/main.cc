@@ -80,8 +80,8 @@ int main () {
 
     d1.pop_back();
     d1.pop_front();
-//    cout << "size   : " << d1.size() << endl; 
-//    cout << endl;
+    cout << "size   : " << d1.size() << endl; 
+    cout << endl;
 //
 //    d1.insert(d1.end(), "512");
 //    d1.insert(d1.begin()+1, "1024");
