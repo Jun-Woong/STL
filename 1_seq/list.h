@@ -48,7 +48,7 @@ inline bool list_t<T>::empty() const
 template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
-    if (array.length() == 1) {
+    if (num_elements == 0) {
         array[0].value = d;
     }
     else {
@@ -62,16 +62,6 @@ inline void list_t<T>::push_back(const T& d)
 template<typename T>
 inline void list_t<T>::push_front(const T& d)
 {
-    num_elements++;
-    T* newArray = (T*)calloc(num_elements, sizeof(T));
-    for (size_t i = 1; i < (num_elements); i++)
-    {
-        newArray[i] = array[i - 1];
-    }
-    newArray[0] = d;
-    free(array);
-    array = newArray;
-    newArray = NULL;
 }
 
 #endif
