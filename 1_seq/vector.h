@@ -100,7 +100,7 @@ inline vector_t<T>::vector_t(const vector_t<T>& v)
 {
     array_size = v.array_size;
     num_elements = v.num_elements;
-    array = (T*)malloc(array_size * sizeof(T));
+    array = (T*)calloc(array_size, sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
@@ -116,7 +116,7 @@ inline void vector_t<T>::operator=(const vector_t<T>& v)
     array_size = v.array_size;
     num_elements = v.num_elements;
     free(array);
-    array = (T*)malloc(array_size * sizeof(T));
+    array = (T*)calloc(array_size, sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
@@ -167,7 +167,7 @@ inline void vector_t<T>::reserve(size_t s)
 {
     if (array_size < s) {
         array_size = s;
-        T *newArray = (T*)malloc(s * sizeof(T));
+        T *newArray = (T*)calloc(s, sizeof(T));
 
         for (size_t i = 0; i < num_elements; i++)
         {
@@ -203,7 +203,7 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
     num_elements++;
     if (array_size < num_elements) {
         array_size = num_elements;
-        T* newArray = (T*)malloc(num_elements * sizeof(T));
+        T* newArray = (T*)calloc(num_elements, sizeof(T));
         size_t index = 0;
         for (size_t i = 0; i < (num_elements); i++)
         {
@@ -262,7 +262,7 @@ inline void vector_t<T>::push_back(const T& v)
     num_elements++;
     if (array_size < num_elements) {
         array_size = num_elements;
-        T *newArray = (T*)malloc(num_elements * sizeof(T));
+        T* newArray = (T*)calloc(num_elements, sizeof(T));
         for (size_t i = 0; i < (num_elements - 1); i++)
         {
             newArray[i] = array[i];
@@ -294,7 +294,7 @@ inline void vector_t<T>::clear()
 {
     num_elements = 0;
     free(array);
-    array = (T*)malloc(array_size * sizeof(T));
+    array = (T*)calloc(array_size, sizeof(T));
 }
 
 #endif
