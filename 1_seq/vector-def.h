@@ -21,8 +21,6 @@ public:
 private:
     T *ptr;
     friend class vector_t<T>;
-    friend class deque_t<T>;
-    friend class list_t<T>;
 };
 
 #endif
