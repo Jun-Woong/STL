@@ -69,6 +69,18 @@ inline void deque_t<T>::push_back(const T& d)
 }
 
 template<typename T>
+inline void deque_t<T>::pop_back()
+{
+    if (num_elements >= 1) {
+        num_elements--;
+        array[num_elements] = static_cast<T>("");
+    }
+    else {
+        throw "error!!!";
+    }
+}
+
+template<typename T>
 inline void deque_t<T>::push_front(const T& d)
 {
     num_elements++;
@@ -81,6 +93,26 @@ inline void deque_t<T>::push_front(const T& d)
     free(array);
     array = newArray;
     newArray = NULL;
+}
+
+template<typename T>
+inline void deque_t<T>::pop_front()
+{
+    if (num_elements >= 1) {
+        num_elements--;
+        T* newArray = (T*)calloc(num_elements, sizeof(T));
+        for (size_t i = 1; i <= (num_elements); i++)
+        {
+            newArray[i-1] = array[i];
+        }
+        newArray[0] = d;
+        free(array);
+        array = newArray;
+        newArray = NULL;
+    }
+    else {
+        throw "error!!!";
+    }
 }
 
 #endif

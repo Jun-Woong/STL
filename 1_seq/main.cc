@@ -78,7 +78,7 @@ int main () {
     cout << "size   : " << d1.size() << endl; 
     cout << endl;
 
-//    d1.pop_back();
+    d1.pop_back();
 //    d1.pop_front();
 //    cout << "size   : " << d1.size() << endl; 
 //    cout << endl;
