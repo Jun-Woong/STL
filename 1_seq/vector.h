@@ -150,12 +150,12 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
         {
             cout << " ***** " << (pos.ptr) << " ((((((( " <<(array + i) << endl;
             if (pos.ptr == (array + i)) {
-                newArray[i] = v;
                 cout << " #### " << index << " hihihi " << i << " %%%% " << v << endl;
+                newArray[i] = v;
             }
             else {
+                cout << " #### " << index << " hihihi " << i << " $$$$ " << array[index] << endl;
                 newArray[i] = array[index++];
-                cout << " #### " << index << " hihihi " << i << " $$$$ " << array[i] << endl;
             }
         }
         free(array);
