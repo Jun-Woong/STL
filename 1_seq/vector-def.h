@@ -36,7 +36,7 @@ public:
     vector_t();
     vector_t(const vector_t &v);
     ~vector_t();
-    void operator=(const vector_t v);
+    void operator=(const vector_t<T> v);
 
     typedef iterator_t<T> iterator;
 
