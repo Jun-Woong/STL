@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include "deque-def.h"
+#include "vector.h"
 
 // your answer
 
