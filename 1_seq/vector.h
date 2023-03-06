@@ -38,6 +38,15 @@ inline iterator_t<T> iterator_t<T>::operator+(int s)
 }
 
 template<typename T>
+inline iterator_t<T> iterator_t<T>::operator--()
+{
+    ptr = ptr - 1;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
 inline iterator_t<T> iterator_t<T>::operator-(int s)
 {
     ptr = ptr - s;
