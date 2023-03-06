@@ -141,7 +141,7 @@ inline iterator_t<T> vector_t<T>::insert(const iterator pos, const T& v)
 {
     if (array_size == num_elements) {
         cout << " ^^^^^^^^ " << array_size << " ******* " << num_elements << endl;
-        num_elements++;7
+        num_elements++;
         array_size = num_elements;
         T* newArray = (T*)malloc(num_elements * sizeof(T));
         size_t index = 0;
