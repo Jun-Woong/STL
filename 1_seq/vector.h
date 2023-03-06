@@ -75,19 +75,9 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline void vector_t<T>::operator=(vector_t<T> v)
+inline vector_t& vector_t<T>::operator=(const vector_t v)
 {
-    array_size = v.capacity();
-    num_elements = v.size();
-    cout << " !!!!!!! " << v.capacity() << " AAAAAAAAA " << v.size() << endl;
-    T* newArray = (T*)malloc(num_elements * sizeof(T));
-    for (size_t i = 0; i < num_elements; i++)
-    {
-        newArray[i] = v.array[i];
-    }
-    cout << " @@@@@@ " << endl;
-    array = newArray;
-    newArray = NULL; 
+    // TODO: 여기에 return 문을 삽입합니다.
 }
 
 template<typename T>
