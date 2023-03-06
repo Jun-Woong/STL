@@ -185,7 +185,7 @@ inline iterator_t<T> vector_t<T>::erase(const iterator pos)
             array[i] = static_cast<T>("");
             for (size_t j = i; j < num_elements - 1; j++)
             {
-                array[j] = array[j + 1]
+                array[j] = array[j + 1];
             }
             break;
         }
