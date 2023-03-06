@@ -75,9 +75,11 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline vector_t& vector_t<T>::operator=(const vector_t v)
+inline vector_t<T>& vector_t<T>::operator=(const vector_t<T>& v)
 {
-    // TODO: 여기에 return 문을 삽입합니다.
+    vector_t<T> nv;
+    cout << " !!!!!!! " << v.num_elements << " @@@@@@@@ " << v.array_size << endl;
+    return nv;
 }
 
 template<typename T>
