@@ -75,7 +75,7 @@ template<typename T>
 inline vector_t<T>::~vector_t() { free(array); }
 
 template<typename T>
-inline void vector_t<T>::operator=(const vector_t<T> v)
+inline void vector_t<T>::operator=(vector_t<T> v)
 {
     array_size = v.capacity();
     num_elements = v.size();
