@@ -62,7 +62,7 @@ inline void list_t<T>::push_back(const T& d)
         cout << " CCCCCCCCC " << endl;
         newElement->left = array[num_elements - 1].right;
         cout << " DDDDDDDDD " << endl;
-        &(newElement->value) = d;
+        newElement->value = d;
         cout << " EEEEEEEEE " << endl; 
     }
     num_elements++;
