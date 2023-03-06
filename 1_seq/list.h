@@ -120,12 +120,12 @@ template<typename T>
 inline iterator_l<T> list_t<T>::end() const
 {
     // list_element* tmp = array[0].right;
-    while (tmp != NULL) {
-        tmp = tmp->right;
-    }
-    iterator_l<T> iter;
-    iter.ptr = &(tmp->value);
-    return iter;
+    //while (tmp != NULL) {
+    //    tmp = tmp->right;
+    //}
+    //iterator_l<T> iter;
+    //iter.ptr = &(tmp->value);
+    //return iter;
 }
 
 template<typename T>
@@ -150,7 +150,7 @@ inline void list_t<T>::push_back(const T& d)
 {
     if (num_elements == 0) {
         array[0].value = d;
-        newElement->right = NULL;
+        array[0].right = NULL;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
