@@ -48,12 +48,16 @@ inline bool list_t<T>::empty() const
 template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
+    cout << " AAAAAAAAAA " << endl;
     if (num_elements == 0) {
         array[0].value = d;
+        cout << " BBBBBBBB " << endl;
     }
     else {
         list_element<T> ne;
+        cout << " CCCCCCCCC " << endl;
         array[num_elements - 1].right = ne.left;
+        cout << " DDDDDDDDD " << endl;
         ne.value = d;
     }
     num_elements++;
