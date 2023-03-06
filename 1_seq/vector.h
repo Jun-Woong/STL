@@ -40,6 +40,7 @@ inline iterator_t<T> iterator_t<T>::operator+(int s)
 template<typename T>
 inline iterator_t<T> iterator_t<T>::operator--()
 {
+    cout << "aaaaa" << endl;
     ptr = ptr - 1;
     iterator_t<T> iter;
     iter.ptr = ptr;
