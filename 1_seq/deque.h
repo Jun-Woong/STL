@@ -3,9 +3,86 @@
 
 #include <cstdlib>
 #include "deque-def.h"
-#include "vector.h"
 
 // your answer
+
+template<typename T>
+inline iterator_t<T>::iterator_t() :
+    ptr(0) {
+
+}
+
+template<typename T>
+inline iterator_t<T>::iterator_t(const iterator_t<T>& it)
+{
+}
+
+template<typename T>
+inline iterator_t<T>::~iterator_t() { }
+
+template<typename T>
+inline T& iterator_t<T>::operator*() const
+{
+    return *ptr;
+}
+
+template<typename T>
+inline iterator_t<T> iterator_t<T>::operator++(int)
+{
+    ptr = ptr + 1;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
+inline iterator_t<T> iterator_t<T>::operator+(int s)
+{
+    ptr = ptr + s;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
+inline iterator_t<T> iterator_t<T>::operator--()
+{
+    ptr = ptr - 1;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
+inline iterator_t<T> iterator_t<T>::operator-(int s)
+{
+    ptr = ptr - s;
+    iterator_t<T> iter;
+    iter.ptr = ptr;
+    return iter;
+}
+
+template<typename T>
+inline bool iterator_t<T>::operator!=(const iterator_t<T>& it) const
+{
+    if (it.ptr == ptr) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+template<typename T>
+inline bool iterator_t<T>::operator==(const iterator_t<T>& it) const
+{
+    if (it.ptr == ptr) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 template <typename T>
 inline deque_t<T>::deque_t() :

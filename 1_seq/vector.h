@@ -3,9 +3,8 @@
 
 #include <cstdlib>
 #include "vector-def.h"
-#include <iostream>
 
-using namespace std;
+// your answer
 
 template<typename T>
 inline iterator_t<T>::iterator_t() :
@@ -91,8 +90,6 @@ inline vector_t<T>::vector_t() :
     array_size(0),
     num_elements(0) {
 }
-
-// your answer
 
 template<typename T>
 inline vector_t<T>::vector_t(const vector_t<T>& v)

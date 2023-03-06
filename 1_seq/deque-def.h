@@ -1,6 +1,8 @@
 #ifndef _ITER_
 #define _ITER_
 
+template <typename T> class deque_t;
+
 template <typename T>
 class iterator_t {
 public:
@@ -9,18 +11,18 @@ public:
     ~iterator_t();
 
     T& operator*() const;
-    iterator_t<T> operator++();
     iterator_t<T> operator++(int);
+    iterator_t<T> operator+(int s);
     iterator_t<T> operator--();
-    iterator_t<T> operator--(int);
+    iterator_t<T> operator-(int s);
     bool operator!=(const iterator_t<T> &it) const;
     bool operator==(const iterator_t<T> &it) const;
 
 private:
     T *ptr;
-    friend class vector_t<T>;
-    friend class vector_t<T>;
-    friend class vector_t<T>;
+    friend class deque_t<T>;
+    friend class deque_t<T>;
+    friend class deque_t<T>;
 };
 
 #endif
