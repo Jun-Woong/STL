@@ -8,12 +8,12 @@
 
 template <typename T>
 inline deque_t<T>::deque_t() :
-    array(0),
     num_elements(0) {
+    array = (T*)malloc(sizeof(T));
 }
 
 template<typename T>
-inline deque_t<T>::deque_t(const deque_t& v)
+inline deque_t<T>::deque_t(const deque_t<T>& v)
 {
     num_elements = v.num_elements;
     array = (T*)malloc(num_elements * sizeof(T));
