@@ -17,7 +17,7 @@ template<typename T>
 inline deque_t<T>::deque_t(const deque_t<T>& v)
 {
     num_elements = v.num_elements;
-    array = (T*)malloc(num_elements * sizeof(T));
+    T* newArray = (T*)calloc(num_elements, sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
