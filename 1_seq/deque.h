@@ -6,82 +6,82 @@
 
 // your answer
 
-template<typename T>
-inline iterator_dq<T>::iterator_dq() :
-    ptr(0) {
-}
-
-template<typename T>
-inline iterator_dq<T>::iterator_dq(const iterator_dq<T>& it)
-{
-}
-
-template<typename T>
-inline iterator_dq<T>::~iterator_dq() { }
-
-template<typename T>
-inline T& iterator_dq<T>::operator*() const
-{
-    return *ptr;
-}
-
-template<typename T>
-inline iterator_dq<T> iterator_dq<T>::operator++(int)
-{
-    ptr = ptr + 1;
-    iterator_dq<T> iter;
-    iter.ptr = ptr;
-    return iter;
-}
-
-template<typename T>
-inline iterator_dq<T> iterator_dq<T>::operator+(int s)
-{
-    ptr = ptr + s;
-    iterator_dq<T> iter;
-    iter.ptr = ptr;
-    return iter;
-}
-
-template<typename T>
-inline iterator_dq<T> iterator_dq<T>::operator--()
-{
-    ptr = ptr - 1;
-    iterator_dq<T> iter;
-    iter.ptr = ptr;
-    return iter;
-}
-
-template<typename T>
-inline iterator_dq<T> iterator_dq<T>::operator-(int s)
-{
-    ptr = ptr - s;
-    iterator_dq<T> iter;
-    iter.ptr = ptr;
-    return iter;
-}
-
-template<typename T>
-inline bool iterator_dq<T>::operator!=(const iterator_dq<T>& it) const
-{
-    if (it.ptr == ptr) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-
-template<typename T>
-inline bool iterator_dq<T>::operator==(const iterator_dq<T>& it) const
-{
-    if (it.ptr == ptr) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
+//template<typename T>
+//inline iterator_dq<T>::iterator_dq() :
+//    ptr(0) {
+//}
+//
+//template<typename T>
+//inline iterator_dq<T>::iterator_dq(const iterator_dq<T>& it)
+//{
+//}
+//
+//template<typename T>
+//inline iterator_dq<T>::~iterator_dq() { }
+//
+//template<typename T>
+//inline T& iterator_dq<T>::operator*() const
+//{
+//    return *ptr;
+//}
+//
+//template<typename T>
+//inline iterator_dq<T> iterator_dq<T>::operator++(int)
+//{
+//    ptr = ptr + 1;
+//    iterator_dq<T> iter;
+//    iter.ptr = ptr;
+//    return iter;
+//}
+//
+//template<typename T>
+//inline iterator_dq<T> iterator_dq<T>::operator+(int s)
+//{
+//    ptr = ptr + s;
+//    iterator_dq<T> iter;
+//    iter.ptr = ptr;
+//    return iter;
+//}
+//
+//template<typename T>
+//inline iterator_dq<T> iterator_dq<T>::operator--()
+//{
+//    ptr = ptr - 1;
+//    iterator_dq<T> iter;
+//    iter.ptr = ptr;
+//    return iter;
+//}
+//
+//template<typename T>
+//inline iterator_dq<T> iterator_dq<T>::operator-(int s)
+//{
+//    ptr = ptr - s;
+//    iterator_dq<T> iter;
+//    iter.ptr = ptr;
+//    return iter;
+//}
+//
+//template<typename T>
+//inline bool iterator_dq<T>::operator!=(const iterator_dq<T>& it) const
+//{
+//    if (it.ptr == ptr) {
+//        return false;
+//    }
+//    else {
+//        return true;
+//    }
+//}
+//
+//template<typename T>
+//inline bool iterator_dq<T>::operator==(const iterator_dq<T>& it) const
+//{
+//    if (it.ptr == ptr) {
+//        return true;
+//    }
+//    else {
+//        return false;
+//    }
+//}
 
 template <typename T>
 inline deque_t<T>::deque_t() :
@@ -119,17 +119,17 @@ inline void deque_t<T>::operator=(const deque_t<T>& v)
 }
 
 template<typename T>
-inline iterator_dq<T> deque_t<T>::begin() const
+inline iterator_t<T> deque_t<T>::begin() const
 {
-    iterator_dq<T> iter;
+    iterator_t<T> iter;
     iter.ptr = array;
     return iter;
 }
 
 template<typename T>
-inline iterator_dq<T> deque_t<T>::end() const
+inline iterator_t<T> deque_t<T>::end() const
 {
-    iterator_dq<T> iter;
+    iterator_t<T> iter;
     iter.ptr = array + num_elements;
     return iter;
 }
@@ -170,7 +170,7 @@ inline T& deque_t<T>::operator[](size_t s) const
 }
 
 template<typename T>
-inline iterator_dq<T> deque_t<T>::insert(const iterator& pos, const T& d)
+inline iterator_t<T> deque_t<T>::insert(const iterator& pos, const T& d)
 {
     num_elements++;
     T* newArray = (T*)calloc(num_elements, sizeof(T));
@@ -191,7 +191,7 @@ inline iterator_dq<T> deque_t<T>::insert(const iterator& pos, const T& d)
 }
 
 template<typename T>
-inline iterator_dq<T> deque_t<T>::erase(const iterator pos)
+inline iterator_t<T> deque_t<T>::erase(const iterator pos)
 {
     for (size_t i = 0; i < (num_elements); i++)
     {

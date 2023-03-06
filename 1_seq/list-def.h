@@ -1,6 +1,8 @@
 #ifndef _ITER_L
 #define _ITER_L_
 
+template <typename T> class list_t;
+
 template <typename T>
 class iterator_l {
 public:
@@ -18,8 +20,8 @@ public:
 
 private:
     T *ptr;
-    friend class vector_t<T>;
-    friend class deque_t<T>;
+    friend class list_t<T>;
+    friend class list_t<T>;
     friend class list_t<T>;
 };
 

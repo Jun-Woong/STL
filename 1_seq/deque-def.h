@@ -1,5 +1,5 @@
-#ifndef _ITER_DQ_
-#define _ITER_DQ_
+#ifndef _ITER_
+#define _ITER_
 
 template <typename T> class deque_t;
 
@@ -11,18 +11,18 @@ public:
     ~iterator_dq();
 
     T& operator*() const;
-    iterator_dq<T> operator++(int);
-    iterator_dq<T> operator+(int s);
-    iterator_dq<T> operator--();
-    iterator_dq<T> operator-(int s);
-    bool operator!=(const iterator_dq<T> &it) const;
-    bool operator==(const iterator_dq<T> &it) const;
+    iterator_t<T> operator++(int);
+    iterator_t<T> operator+(int s);
+    iterator_t<T> operator--();
+    iterator_t<T> operator-(int s);
+    bool operator!=(const iterator_t<T> &it) const;
+    bool operator==(const iterator_t<T> &it) const;
 
 private:
     T *ptr;
+    friend class vector_t<T>;
     friend class deque_t<T>;
-    friend class deque_t<T>;
-    friend class deque_t<T>;
+    friend class list_t<T>;
 };
 
 #endif
@@ -38,7 +38,7 @@ public:
     ~deque_t();
     void operator=(const deque_t<T>& v);
     
-    typedef iterator_dq<T> iterator;
+    typedef iterator_t<T> iterator;
 
     iterator begin() const;
     iterator end() const;
