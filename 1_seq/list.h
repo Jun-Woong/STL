@@ -15,8 +15,9 @@ value(0) {
 
 template<typename T>
 inline list_t<T>::list_t() :
-array(0),
 num_elements(0) {
+    array = (list_element<T>*)calloc(1, sizeof(list_element<T>));
+    array[0].left = array;
 }
 
 template<typename T>
@@ -42,6 +43,35 @@ inline bool list_t<T>::empty() const
     else {
         return false;
     }
+}
+
+template<typename T>
+inline void list_t<T>::push_back(const T& d)
+{
+    if (array.size() == 0) {
+        array[0].value = d;
+    }
+    else {
+        list_element<T> ne;
+        array[num_elements - 1].right = ne.left;
+        ne.value = d;
+    }
+    num_elements++;
+}
+
+template<typename T>
+inline void list_t<T>::push_front(const T& d)
+{
+    num_elements++;
+    T* newArray = (T*)calloc(num_elements, sizeof(T));
+    for (size_t i = 1; i < (num_elements); i++)
+    {
+        newArray[i] = array[i - 1];
+    }
+    newArray[0] = d;
+    free(array);
+    array = newArray;
+    newArray = NULL;
 }
 
 #endif

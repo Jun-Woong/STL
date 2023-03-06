@@ -121,13 +121,13 @@ int main () {
     cout << "size   : " << l1.size() << endl; 
     cout << endl;
 
-//    l1.push_back("2");
-//    l1.push_back("4");
+    l1.push_back("2");
+    l1.push_back("4");
 //    l1.push_front("8");
 //    l1.push_front("16");
 //    l1.push_front("32");
 //    l1.push_front("64");
-//
+
 //    for(list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
 //        cout << "*it    : " << *it << endl;
 //    }

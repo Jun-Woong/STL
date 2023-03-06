@@ -27,8 +27,6 @@ private:
 
 #endif
 
-
-
 #ifndef _DEQUE_DEF_H_
 #define _DEQUE_DEF_H_
 

@@ -273,7 +273,7 @@ template<typename T>
 inline void deque_t<T>::clear()
 {
     free(array);
-    array = (T*)calloc(num_elements, sizeof(T)); // chunk size
+    array = (T*)calloc(num_elements, sizeof(T)); // if chunk size is 4
     num_elements = 0;
 }
 
