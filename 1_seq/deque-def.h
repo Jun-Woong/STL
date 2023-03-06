@@ -59,7 +59,7 @@ public:
 
 private:
     T *array;
-    size_t num_elements;
+    size_t num_elements; // chunk_size
 };
 
 #endif

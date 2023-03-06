@@ -9,7 +9,6 @@
 template<typename T>
 inline iterator_dq<T>::iterator_dq() :
     ptr(0) {
-
 }
 
 template<typename T>
@@ -150,6 +149,18 @@ inline bool deque_t<T>::empty() const
     else {
         return false;
     }
+}
+
+template<typename T>
+inline T& deque_t<T>::front() const
+{
+    return array[0];
+}
+
+template<typename T>
+inline T& deque_t<T>::back() const
+{
+    return array[num_elements - 1];
 }
 
 template<typename T>

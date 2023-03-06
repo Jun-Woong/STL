@@ -104,12 +104,12 @@ int main () {
         cout << "d2[" << i << "] : " << d2[i] << endl;
     }
     cout << endl;
-//
-//    cout << "front : " << d2.front() << endl;
-//    cout << "back  : " << d2.back() << endl;
-//    cout << endl;
-//
-//    d2.clear();
+
+    cout << "front : " << d2.front() << endl;
+    cout << "back  : " << d2.back() << endl;
+    cout << endl;
+
+    d2.clear();
 //
 //    cout << " *** LIST *** " << endl;
 //    cout << endl;
