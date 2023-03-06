@@ -51,10 +51,10 @@ int main () {
     cout << "cap    : " << v1.capacity() << endl; 
     cout << "size   : " << v1.size() << endl;
     cout << endl;
- //
- //   cout << "front  : " << (v2.front() == v3.front() ? "yes" : "no") << endl; 
- //   cout << "back   : " << (v2.back() == v3.back() ? "yes" : "no") << endl; 
- //   cout << endl;
+ 
+    cout << "front  : " << (v2.front() == v3.front() ? "yes" : "no") << endl; 
+    cout << "back   : " << (v2.back() == v3.back() ? "yes" : "no") << endl; 
+    cout << endl;
  //
  //   for(vector_t<string>::iterator it = v2.begin(); it != v2.end(); it++) {
  //       cout << "*it    : " << *it << endl;

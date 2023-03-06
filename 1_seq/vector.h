@@ -149,6 +149,18 @@ inline void vector_t<T>::reserve(size_t s)
 }
 
 template<typename T>
+inline T& vector_t<T>::front() const
+{
+    return array[0];
+}
+
+template<typename T>
+inline T& vector_t<T>::back() const
+{
+    return array[num_elements-1];
+}
+
+template<typename T>
 inline T& vector_t<T>::operator[](size_t s) const
 {
     return array[s];
