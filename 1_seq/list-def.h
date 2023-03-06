@@ -43,7 +43,7 @@ template <typename T>
 class list_t {
 public:
     list_t();
-    list_t(const list_t &v);
+    list_t(const list_t<T> &v);
     ~list_t();
     list_t& operator=(const list_t v);
 

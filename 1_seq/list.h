@@ -20,7 +20,7 @@ num_elements(0) {
 }
 
 template<typename T>
-inline list_t<T>::list_t(const list_t<t>& v)
+inline list_t<T>::list_t(const list_t<T>& v)
 {
 }
 
