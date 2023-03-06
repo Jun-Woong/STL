@@ -69,7 +69,6 @@ inline vector_t<T>::vector_t(const vector_t<T>& v)
 {
     array_size = v.array_size;
     num_elements = v.num_elements;
-    free(array);
     array = (T*)malloc(array_size * sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
