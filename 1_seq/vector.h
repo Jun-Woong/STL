@@ -250,7 +250,7 @@ template<typename T>
 inline void vector_t<T>::clear()
 {
     num_elements = 0;
-    free(array);
+    //free(array);
 }
 
 #endif
