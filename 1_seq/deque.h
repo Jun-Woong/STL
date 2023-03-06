@@ -48,6 +48,12 @@ inline bool deque_t<T>::empty() const
 }
 
 template<typename T>
+inline T& deque_t<T>::operator[](size_t s) const
+{
+    return array[s];
+}
+
+template<typename T>
 inline void deque_t<T>::push_back(const T& d)
 {
     num_elements++;
