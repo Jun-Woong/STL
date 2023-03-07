@@ -34,8 +34,8 @@ template <typename T>
 class list_element {
 public:
     list_element();
-    list_element* left;
-    list_element* right;
+    list_element<T>* left;
+    list_element<T>* right;
     T value;
 };
 

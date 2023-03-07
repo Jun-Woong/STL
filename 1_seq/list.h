@@ -89,8 +89,8 @@ inline bool iterator_l<T>::operator==(const iterator_l<T>& it) const
 template<typename T>
 inline list_element<T>::list_element() :
 value("") {
-    left = new list_element;
-    right = new list_element;
+    left = new list_element<T>;
+    right = new list_element<T>;
 }
 
 template<typename T>
