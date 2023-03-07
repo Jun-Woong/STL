@@ -149,6 +149,7 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
     }
     else {
         pos.ptr->left->right = newElement;
+        newElement->right = pos.ptr;
         pos.ptr->left = newElement;
     }
     return pos;
