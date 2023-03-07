@@ -154,7 +154,7 @@ int main () {
     }
     cout << endl;
 
-//    list_t<string> l3(l2);
+    list_t<string> l3(l2);
 //
 //    l2.sort();
 //

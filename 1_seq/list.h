@@ -98,9 +98,15 @@ template<typename T>
 inline list_t<T>::list_t(const list_t<T>& v)
 {
     num_elements = v.num_elements;
+    cout << "AAAAAAAAAAAAAAAA" << endl;
     head->value = v.head->value;
+    cout << "11111111" << endl;
+
     list_element<T>* tmp = v.head->right;
+    cout << "2222222" << endl;
+
     list_element<T>* ntmp = head;
+    cout << "3333333" << endl;
     while (tmp->right != NULL) {
         list_element<T>* newElement = new list_element<T>;
         ntmp->right = newElement;
@@ -108,8 +114,11 @@ inline list_t<T>::list_t(const list_t<T>& v)
         tmp = tmp->right;
         ntmp = ntmp->right;
     }
+    cout << "4444444" << endl;
     list_element<T>* newElement = new list_element<T>;
+    cout << "55555555" << endl;
     ntmp->right = newElement;
+    cout << "66666666" << endl;
     newElement->value = tmp->value;
 }
 
