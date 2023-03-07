@@ -273,11 +273,9 @@ inline void list_t<T>::clear()
 {
     num_elements = 0;
     while (head->right != NULL) {
-        head = head->right;
         delete(head->left);
+        head = head->right;
     }
-    cout << "!!!!!!!!!!!!!!!!!!!!!!!" << head->value <<endl;
-    delete(head);
 }
 
 #endif
