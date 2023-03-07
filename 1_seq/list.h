@@ -103,6 +103,12 @@ template<typename T>
 inline list_t<T>::~list_t() { num_elements = 0; free(head); }
 
 template<typename T>
+inline void list_t<T>::operator=(const list_t<T>& v)
+{
+    num_elements = v.num_elements;
+}
+
+template<typename T>
 inline iterator_l<T> list_t<T>::begin() const
 {
     iterator_l<T> iter;

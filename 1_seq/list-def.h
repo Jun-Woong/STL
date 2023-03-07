@@ -44,7 +44,7 @@ public:
     list_t();
     list_t(const list_t<T> &v);
     ~list_t();
-    list_t& operator=(const list_t v);
+    void operator=(const list_t<T>& v);
 
     typedef iterator_l<T> iterator;
 

@@ -127,6 +127,8 @@ int main () {
     l1.push_front("16");
     l1.push_front("32");
     l1.push_front("64");
+    l1.push_back("99999999");
+
 
     for(list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
         cout << "*it    : " << *it << endl;
