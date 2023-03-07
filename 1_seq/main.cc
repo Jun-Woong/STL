@@ -144,6 +144,7 @@ int main () {
     for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
+    cout << endl;
 
     l2 = l1;
     //l1.clear();
