@@ -275,7 +275,7 @@ inline void list_t<T>::clear()
     list_element<T>* tmp = head;
     while (tmp->right != NULL) {
         tmp = tmp->right;
-        free(tmp->left)
+        free(tmp->left);
     }
     free(tmp);
 }
