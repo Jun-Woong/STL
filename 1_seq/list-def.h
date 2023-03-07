@@ -13,7 +13,6 @@ public:
 
     T& operator*() const;
     iterator_l<T> operator++(int);
-    iterator_l<T>& operator++();
     iterator_l<T> operator+(int s);
     iterator_l<T> operator--();
     iterator_l<T> operator-(int s);
