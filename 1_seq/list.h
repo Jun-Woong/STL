@@ -159,10 +159,12 @@ inline iterator_l<T> list_t<T>::erase(const iterator pos)
 {
     num_elements--;
     if (pos.ptr->left == head) {
+        cout << "AAAAAA" << endl;
         pos.ptr->right->left = pos.ptr->right;
         head = pos.ptr->right;
     }
     else {
+        cout << "VVVVVVV" << endl;
         pos.ptr->left->right = pos.ptr->right;
         pos.ptr->right->left = pos.ptr->left;
     }
