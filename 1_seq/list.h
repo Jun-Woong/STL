@@ -191,6 +191,11 @@ inline void list_t<T>::push_back(const T& d)
 }
 
 template<typename T>
+inline void list_t<T>::pop_back()
+{
+}
+
+template<typename T>
 inline void list_t<T>::push_front(const T& d)
 {
     if (num_elements == 0) {
@@ -205,6 +210,18 @@ inline void list_t<T>::push_front(const T& d)
         newElement->value = d;
     }
     num_elements++;
+}
+
+template<typename T>
+inline void list_t<T>::pop_front()
+{
+    num_elements--;
+    list_element<T>* deleteElement = head;
+    head->right->left = head->right;
+    head = head->right;
+    deleteElement->left = NULL;
+    deleteElement->right = NULL;
+    deleteElement->value = "";
 }
 
 #endif
