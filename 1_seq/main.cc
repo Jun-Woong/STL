@@ -128,8 +128,6 @@ int main () {
     l1.push_front("32");
     l1.push_front("64");
 
-    cout << " begin : " << *(l1.begin()) << endl;
-
     for(list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
@@ -138,17 +136,23 @@ int main () {
     list_t<string>::iterator temp_it;
     temp_it = l1.begin();
 
-//    l1.insert(temp_it++, "100");
+    l1.insert(temp_it++, "100");
+
+    for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
+
 //    l1.erase(temp_it);
 //    l1.pop_front();
 //    l1.pop_back();
 //    l2 = l1;
 //    l1.clear();
 //
-    for(list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
-        cout << "*it    : " << *it << endl;
-    }
-    cout << endl;
+//    for(list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
+//        cout << "*it    : " << *it << endl;
+//    }
+//    cout << endl;
 //
 //    list_t<string> l3(l2);
 //

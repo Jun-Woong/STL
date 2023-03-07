@@ -31,8 +31,8 @@ inline T& iterator_l<T>::operator*() const
 template<typename T>
 inline iterator_l<T> iterator_l<T>::operator++(int)
 {
-    ptr = ptr->right;
     iterator_l<T> iter;
+    ptr = ptr->right;
     iter.ptr = ptr;
     return iter;
 }
@@ -138,6 +138,26 @@ inline bool list_t<T>::empty() const
     else {
         return false;
     }
+}
+
+template<typename T>
+inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
+{
+    num_elements++;
+    list_element<T>* newElement = new list_element<T>;
+    newElement->value = d;
+    
+    if (pos.ptr->left == head) {
+        head[0].left = newElement;
+        newElement->right = head;
+        head = newElement;
+        newElement->left = head;
+    }
+    else {
+        pos.ptr->left->right = newElement;
+        pos.ptr->left = newElement;
+    }
+    return pos;
 }
 
 template<typename T>
