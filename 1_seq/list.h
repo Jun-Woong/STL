@@ -189,7 +189,7 @@ inline void list_t<T>::push_back(const T& d)
     else {
         list_element<T>* newElement = new list_element<T>;
         newElement->value = d;
-        list_element<T>* last = head->right;
+        list_element<T>* last = head;
         while (last->right != NULL) {
             last = last->right;
         }
