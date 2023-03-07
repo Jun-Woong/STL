@@ -211,6 +211,24 @@ inline iterator_dq<T> deque_t<T>::insert(const iterator& pos, const T& d)
 }
 
 template<typename T>
+inline iterator_dq<T> deque_t<T>::erase(const iterator pos)
+{
+    for (size_t i = 0; i < (num_elements); i++)
+    {
+        if (pos.ptr == (array + i)) {
+            array[i] = static_cast<T>("");
+            for (size_t j = i; j < num_elements - 1; j++)
+            {
+                array[j] = array[j + 1];
+            }
+            break;
+        }
+    }
+    num_elements--;
+    return pos;
+}
+
+template<typename T>
 inline void deque_t<T>::push_back(const T& d)
 {
     num_elements++;
