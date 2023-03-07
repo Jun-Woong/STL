@@ -121,14 +121,13 @@ inline iterator_l<T> list_t<T>::begin() const
 template<typename T>
 inline iterator_l<T> list_t<T>::end() const
 {
-    list_element<T> *tmp = array[0].right;
-    cout << " ZZZZZZ " << tmp << endl;
-    while (tmp->right != NULL) {
-        cout << " DDDDD " << tmp->value << endl;
-        tmp = tmp->right;
-    }
+    //list_element<T> *tmp = array[0].right;
+    //while (tmp->right != NULL) {
+    //    tmp = tmp->right;
+    //}
     iterator_l<T> iter;
-    iter.ptr = &(tmp->value);
+    //iter.ptr = &(tmp->value);
+    iter.ptr = NULL;
     return iter;
 }
 
@@ -154,7 +153,6 @@ inline void list_t<T>::push_back(const T& d)
 {
     if (num_elements == 0) {
         array[0].value = d;
-        array[0].right = NULL;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
