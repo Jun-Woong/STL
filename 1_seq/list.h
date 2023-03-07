@@ -166,7 +166,7 @@ inline iterator_l<T> list_t<T>::erase(const iterator pos)
         head = pos.ptr->right;
     }
     else {
-        cout << " VVVVVVV " << (pos.ptr->left)->right << endl;
+        cout << " VVVVVVV " << (pos.ptr->left) << endl;
         pos.ptr->left->right = pos.ptr->right;
         cout << "VVVVVVV" << endl;
         pos.ptr->right->left = pos.ptr->left;
