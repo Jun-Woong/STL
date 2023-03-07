@@ -272,12 +272,11 @@ template<typename T>
 inline void list_t<T>::clear()
 {
     num_elements = 0;
-    list_element<T>* tmp = head;
-    while (tmp->right != NULL) {
-        tmp = tmp->right;
-        delete(tmp->left);
+    while (head->right != NULL) {
+        head = head->right;
+        delete(head->left);
     }
-    delete(tmp);
+    delete(head);
 }
 
 #endif
