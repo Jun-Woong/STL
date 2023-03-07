@@ -91,7 +91,7 @@ template<typename T>
 inline list_t<T>::list_t() :
 num_elements(0) {
     head = new list_element<T>;
-    head[0].left = head;
+    head.left = head;
 }
 
 template<typename T>
@@ -148,13 +148,12 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
     list_element<T>* newElement = new list_element<T>;
     newElement->value = d;
     if (pos.ptr == head) {
-        head[0].left = newElement;
+        head.left = newElement;
         newElement->right = head;
         head = newElement;
         newElement->left = head;
     }
     else {
-
         pos.ptr->left->right = newElement;
         newElement->right = pos.ptr;
         pos.ptr->left = newElement;
@@ -185,13 +184,17 @@ template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
     if (num_elements == 0) {
-        head[0].value = d;
+        head.value = d;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
-        head[num_elements - 1].right = newElement;
-        newElement->left = &(head[num_elements - 1]);
         newElement->value = d;
+        list_element<T>* last = head->right;
+        while (last->right != NULL) {
+            last = last->right;
+        }
+        last->right = newElement;
+        newElement->left = last;
     }
     num_elements++;
 }
@@ -200,7 +203,7 @@ template<typename T>
 inline void list_t<T>::pop_back()
 {
     num_elements--;
-    list_element<T>* deleteElement = head[0].right;
+    list_element<T>* deleteElement = head.right;
     while (deleteElement->right != NULL) {
         deleteElement = deleteElement->right;
     }
@@ -213,11 +216,11 @@ template<typename T>
 inline void list_t<T>::push_front(const T& d)
 {
     if (num_elements == 0) {
-        head[0].value = d;
+        head.value = d;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
-        head[0].left = newElement;
+        head.left = newElement;
         newElement->right = head;
         head = newElement;
         newElement->left = head;
