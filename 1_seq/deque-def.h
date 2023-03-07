@@ -25,7 +25,7 @@ private:
 
 #endif
 
-
+#define CHUNK 4
 
 #ifndef _DEQUE_DEF_H_
 #define _DEQUE_DEF_H_
@@ -57,7 +57,8 @@ public:
 
 private:
     T *array;
-    size_t num_elements; // chunk_size
+    size_t array_size;
+    size_t num_elements;
 };
 
 #endif

@@ -86,14 +86,16 @@ inline bool iterator_dq<T>::operator==(const iterator_dq<T>& it) const
 template <typename T>
 inline deque_t<T>::deque_t() :
     array(0),
-    num_elements(0) {
+    array_size(0) {
+    num_elements(0),
 }
 
 template<typename T>
 inline deque_t<T>::deque_t(const deque_t<T>& v)
 {
+    array_size = v.array_size;
     num_elements = v.num_elements;
-    array = (T*)calloc(num_elements, sizeof(T));
+    array = (T*)calloc(array_size, sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
@@ -101,17 +103,15 @@ inline deque_t<T>::deque_t(const deque_t<T>& v)
 }
 
 template<typename T>
-inline deque_t<T>::~deque_t()
-{
-   num_elements = 0; free(array);
-}
+inline deque_t<T>::~deque_t() { array_size = 0; num_elements = 0; free(array); }
 
 template<typename T>
 inline void deque_t<T>::operator=(const deque_t<T>& v)
 {
+    array_size = v.array_size;
     num_elements = v.num_elements;
     free(array);
-    array = (T*)calloc(num_elements, sizeof(T));
+    array = (T*)calloc(array_size, sizeof(T));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
@@ -173,38 +173,40 @@ template<typename T>
 inline iterator_dq<T> deque_t<T>::insert(const iterator& pos, const T& d)
 {
     num_elements++;
-    T* newArray = (T*)calloc(num_elements, sizeof(T));
-    size_t index = 0;
-    for (size_t i = 0; i < (num_elements); i++)
-    {
-        if (pos.ptr == (array + i)) {
-            newArray[i] = d;
-        }
-        else {
-            newArray[i] = array[index++];
-        }
-    }
-    free(array);
-    array = newArray;
-    newArray = NULL;
-    return pos;
-}
-
-template<typename T>
-inline iterator_dq<T> deque_t<T>::erase(const iterator pos)
-{
-    for (size_t i = 0; i < (num_elements); i++)
-    {
-        if (pos.ptr == (array + i)) {
-            array[i] = static_cast<T>("");
-            for (size_t j = i; j < num_elements - 1; j++)
-            {
-                array[j] = array[j + 1];
+    if (array_size < num_elements) {
+        array_size += CHUNK;
+        T* newArray = (T*)calloc(array_size, sizeof(T));
+        size_t index = 0;
+        for (size_t i = 0; i < (num_elements); i++)
+        {
+            if (pos.ptr == (array + i)) {
+                newArray[i] = v;
             }
-            break;
+            else {
+                newArray[i] = array[index++];
+            }
+        }
+        free(array);
+        array = newArray;
+        newArray = NULL;
+    }
+    else {
+        for (size_t i = 0; i < (num_elements); i++)
+        {
+            if (pos.ptr == (array + i)) {
+                T tmp = array[i];
+                array[i] = v;
+                T now;
+                for (size_t j = i + 1; j < num_elements; j++)
+                {
+                    now = array[j];
+                    array[j] = tmp;
+                    tmp = now;
+                }
+                break;
+            }
         }
     }
-    num_elements--;
     return pos;
 }
 
@@ -212,15 +214,21 @@ template<typename T>
 inline void deque_t<T>::push_back(const T& d)
 {
     num_elements++;
-    T* newArray = (T*)calloc(num_elements, sizeof(T));
-    for (size_t i = 0; i < (num_elements - 1); i++)
-    {
-        newArray[i] = array[i];
+    if (array_size < num_elements) {
+        array_size += CHUNK;
+        T* newArray = (T*)calloc(array_size, sizeof(T));
+        for (size_t i = 0; i < (num_elements - 1); i++)
+        {
+            newArray[i] = array[i];
+        }
+        newArray[num_elements - 1] = v;
+        free(array);
+        array = newArray;
+        newArray = NULL;
     }
-    newArray[num_elements - 1] = d;
-    free(array);
-    array = newArray;
-    newArray = NULL;
+    else {
+        array[num_elements - 1] = v;
+    }
 }
 
 template<typename T>
@@ -239,15 +247,29 @@ template<typename T>
 inline void deque_t<T>::push_front(const T& d)
 {
     num_elements++;
-    T* newArray = (T*)calloc(num_elements, sizeof(T));
-    for (size_t i = 1; i < (num_elements); i++)
-    {
-       newArray[i] = array[i - 1];
+    if (array_size < num_elements) {
+        array_size += CHUNK;
+        T* newArray = (T*)calloc(array_size, sizeof(T));
+        for (size_t i = 1; i < (num_elements); i++)
+        {
+            newArray[i] = array[i - 1];
+        }
+        newArray[0] = d;
+        free(array);
+        array = newArray;
+        newArray = NULL;
     }
-    newArray[0] = d;
-    free(array);
-    array = newArray;
-    newArray = NULL;
+    else {
+        T* newArray = (T*)calloc(array_size, sizeof(T));
+        for (size_t i = 1; i < (num_elements); i++)
+        {
+            newArray[i] = array[i - 1];
+        }
+        newArray[0] = d;
+        free(array);
+        array = newArray;
+        newArray = NULL;
+    }
 }
 
 template<typename T>
@@ -255,7 +277,7 @@ inline void deque_t<T>::pop_front()
 {
     if (num_elements >= 1) {
         num_elements--;
-        T* newArray = (T*)calloc(num_elements, sizeof(T));
+        T* newArray = (T*)calloc(array_size, sizeof(T));
         for (size_t i = 1; i <= (num_elements); i++)
         {
             newArray[i-1] = array[i];
@@ -273,7 +295,7 @@ template<typename T>
 inline void deque_t<T>::clear()
 {
     free(array);
-    array = (T*)calloc(num_elements, sizeof(T)); // chunk size
+    array = (T*)calloc(array_size, sizeof(T));
     num_elements = 0;
 }
 
