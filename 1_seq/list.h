@@ -32,8 +32,7 @@ template<typename T>
 inline iterator_l<T> iterator_l<T>::operator++(int)
 {
     iterator_l<T> iter;
-    ptr = ptr->right;
-    iter.ptr = ptr;
+    iter.ptr = ptr->right;
     return iter;
 }
 
