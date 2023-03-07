@@ -25,10 +25,10 @@ private:
 
 #endif
 
-#define CHUNK 4
-
 #ifndef _DEQUE_DEF_H_
 #define _DEQUE_DEF_H_
+
+#define CHUNK 4
 
 template <typename T>
 class deque_t {
