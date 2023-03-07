@@ -121,12 +121,6 @@ int main () {
     cout << "size   : " << l1.size() << endl; 
     cout << endl;
     
-    cout << "!!!!!!!!!!!!!!!!!!!!!!!" << endl;
-    for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
-        cout << "*it    : " << *it << endl;
-    }
-    cout << endl;
-
     l1.push_back("2");
     l1.push_back("4");
     l1.push_front("8");
@@ -160,13 +154,7 @@ int main () {
     }
     cout << endl;
 
-    cout << "!!!!!!!!!!!!!!!!!!!!!!!" << endl;
-    for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
-        cout << "*it    : " << *it << endl;
-    }
-    cout << endl;
-//
-//    list_t<string> l3(l2);
+    list_t<string> l3(l2);
 //
 //    l2.sort();
 //
