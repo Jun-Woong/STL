@@ -32,7 +32,6 @@ template<typename T>
 inline iterator_l<T> iterator_l<T>::operator++(int)
 {
     iterator_l<T> iter;
-    cout << " location " << ptr << endl;
     ptr = ptr->right;
     iter.ptr = ptr;
     return iter;
