@@ -277,7 +277,6 @@ inline void list_t<T>::clear()
         delete(head->left);
     }
     delete(head->right);
-    delete(head->left);
     delete(head);
 }
 
