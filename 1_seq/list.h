@@ -31,8 +31,9 @@ inline T& iterator_l<T>::operator*() const
 template<typename T>
 inline iterator_l<T> iterator_l<T>::operator++(int)
 {
+    ptr = ptr->right;
     iterator_l<T> iter;
-    iter.ptr = ptr->right;
+    iter.ptr = ptr;
     return iter;
 }
 
