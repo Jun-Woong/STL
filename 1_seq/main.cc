@@ -154,6 +154,7 @@ int main () {
     }
     cout << endl;
 
+    cout << "!!!!!!!!!!!!!!!!!!!!!!!" << endl;
     for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
