@@ -141,7 +141,7 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
     num_elements++;
     list_element<T>* newElement = new list_element<T>;
     newElement->value = d;
-    if (pos.ptr->left == head) {
+    if (pos.ptr == head) {
         head[0].left = newElement;
         newElement->right = head;
         head = newElement;
