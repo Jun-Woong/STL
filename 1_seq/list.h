@@ -32,6 +32,7 @@ template<typename T>
 inline iterator_l<T> iterator_l<T>::operator++(int)
 {
     iterator_l<T> iter;
+    cout << " location " << ptr << endl;
     ptr = ptr->right;
     iter.ptr = ptr;
     return iter;
@@ -168,6 +169,7 @@ inline iterator_l<T> list_t<T>::erase(const iterator pos)
     }
     else {
         cout << " VVVVVVV " << pos.ptr << endl;
+
         pos.ptr->left->right = pos.ptr->right;
         cout << "VVVVVVV" << endl;
         pos.ptr->right->left = pos.ptr->left;
