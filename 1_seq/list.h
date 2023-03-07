@@ -254,4 +254,10 @@ inline void list_t<T>::pop_front()
     deleteElement->value = "";
 }
 
+template<typename T>
+inline void list_t<T>::clear()
+{
+    free(head);
+}
+
 #endif
