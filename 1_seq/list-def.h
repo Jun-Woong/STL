@@ -55,7 +55,7 @@ public:
     T& front() const;
     T& back() const;
     iterator insert(const iterator &pos, const T &d);
-    iterator erase(const iterator pos);
+    iterator erase(const iterator &pos);
     void push_back(const T &d);
     void pop_back();
     void push_front(const T &d);

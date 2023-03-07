@@ -159,7 +159,7 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
 }
 
 template<typename T>
-inline iterator_l<T> list_t<T>::erase(const iterator pos)
+inline iterator_l<T> list_t<T>::erase(const iterator& pos)
 {
     num_elements--;
     cout << "CCCCCCCCCCCCCC" << pos.ptr << endl;
