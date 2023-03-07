@@ -31,9 +31,9 @@ inline T& iterator_l<T>::operator*() const
 template<typename T>
 inline iterator_l<T> iterator_l<T>::operator++(int)
 {
-    ptr = ptr->right;
+    list_element<T>* tmp = ptr->right;
     iterator_t<T> iter;
-    iter.ptr = ptr;
+    iter.ptr = tmp;
     return iter;
 }
 
