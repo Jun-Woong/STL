@@ -193,6 +193,14 @@ inline void list_t<T>::push_back(const T& d)
 template<typename T>
 inline void list_t<T>::pop_back()
 {
+    num_elements--;
+    list_element<T>* deleteElement = head[0].right;
+    while (deleteElement->right != NULL) {
+        deleteElement = deleteElement->right;
+    }
+    deleteElement->left->right = NULL;
+    deleteElement->left = NULL;
+    deleteElement->value = "";
 }
 
 template<typename T>
