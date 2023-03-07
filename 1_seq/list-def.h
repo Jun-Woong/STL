@@ -19,7 +19,7 @@ public:
     bool operator==(const iterator_l<T> &it) const;
 
 private:
-    T *ptr;
+    list_element<T>* ptr;
     friend class list_t<T>;
 };
 
