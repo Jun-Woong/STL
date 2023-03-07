@@ -86,7 +86,7 @@ int main () {
     d1.insert(d1.end(), "512");
     d1.insert(d1.begin()+1, "1024");
     d1.insert(d1.begin()+2, "2048");
-    d1.erase(d1.begin());
+    // d1.erase(d1.begin());
     for (size_t i = 0; i < d1.size(); i++) {
         cout << "d1[" << i << "]  : " << d1[i] << endl;
     }
@@ -99,7 +99,7 @@ int main () {
 
     d2 = d1;
     d1.clear();
-    d2.erase(d2.begin());
+    // d2.erase(d2.begin());
         for (size_t i = 0; i < d2.size(); i++) {
         cout << "d2[" << i << "] : " << d2[i] << endl;
     }
