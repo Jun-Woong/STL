@@ -86,8 +86,8 @@ inline bool iterator_dq<T>::operator==(const iterator_dq<T>& it) const
 template <typename T>
 inline deque_t<T>::deque_t() :
     array(0),
-    array_size(0) {
-    num_elements(0),
+    array_size(0),
+    num_elements(0) {
 }
 
 template<typename T>
@@ -180,7 +180,7 @@ inline iterator_dq<T> deque_t<T>::insert(const iterator& pos, const T& d)
         for (size_t i = 0; i < (num_elements); i++)
         {
             if (pos.ptr == (array + i)) {
-                newArray[i] = v;
+                newArray[i] = d;
             }
             else {
                 newArray[i] = array[index++];
@@ -195,7 +195,7 @@ inline iterator_dq<T> deque_t<T>::insert(const iterator& pos, const T& d)
         {
             if (pos.ptr == (array + i)) {
                 T tmp = array[i];
-                array[i] = v;
+                array[i] = d;
                 T now;
                 for (size_t j = i + 1; j < num_elements; j++)
                 {
@@ -221,13 +221,13 @@ inline void deque_t<T>::push_back(const T& d)
         {
             newArray[i] = array[i];
         }
-        newArray[num_elements - 1] = v;
+        newArray[num_elements - 1] = d;
         free(array);
         array = newArray;
         newArray = NULL;
     }
     else {
-        array[num_elements - 1] = v;
+        array[num_elements - 1] = d;
     }
 }
 
