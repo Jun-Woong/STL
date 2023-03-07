@@ -137,14 +137,13 @@ int main () {
     temp_it = l1.begin();
 
     l1.insert(temp_it++, "100");
-    l1.erase(temp_it);
 
     for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
 
-    
+    l1.erase(temp_it);
 
     for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
         cout << "*it    : " << *it << endl;
