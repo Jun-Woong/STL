@@ -161,7 +161,7 @@ template<typename T>
 inline iterator_l<T> list_t<T>::erase(const iterator pos)
 {
     num_elements--;
-    cout << "CCCCCCCCCCCCCC" << endl;
+    cout << "CCCCCCCCCCCCCC" << pos.ptr << endl;
     if (pos.ptr == head) {
         cout << "AAAAAA" << endl;
         pos.ptr->right->left = pos.ptr->right;
