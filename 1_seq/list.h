@@ -110,11 +110,11 @@ inline void list_t<T>::operator=(const list_t<T>& v)
     list_element<T>* tmp = v.head;
     list_element<T>* ntmp = head;
     while (tmp->right != NULL) {
+        ntmp = ntmp->right;
         list_element<T>* newElement = new list_element<T>;
         ntmp->right = newElement;
         newElement->value = tmp->value;
         tmp = tmp->right;
-        ntmp = ntmp->right;
     }
 }
 
