@@ -276,7 +276,8 @@ inline void list_t<T>::clear()
         head = head->right;
         delete(head->left);
     }
-    delete(&head);
+    cout << "!!!!!!!!!!!!!!!!!!!!!!!" << head->value <<endl;
+    delete(head);
 }
 
 #endif
