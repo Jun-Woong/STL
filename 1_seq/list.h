@@ -99,6 +99,8 @@ inline list_t<T>::list_t(const list_t<T>& v)
 {
     num_elements = v.num_elements;
     cout << "AAAAAAAAAAAAAAAA" << endl;
+    head = new list_element<T>;
+    head->left = head;
     head->value = v.head->value;
     cout << "11111111" << endl;
 
