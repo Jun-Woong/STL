@@ -159,6 +159,7 @@ inline void list_t<T>::push_back(const T& d)
     }
     else {
         list_element<T>* newElement = new list_element<T>;
+        cout << " newElement left : " << newElement->left << " right : " << newElement->right << " header " << newElement << endl;
         array[num_elements - 1].right = newElement->left;
         newElement->right = NULL;
         newElement->value = d;
