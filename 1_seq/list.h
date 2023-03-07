@@ -97,6 +97,20 @@ num_elements(0) {
 template<typename T>
 inline list_t<T>::list_t(const list_t<T>& v)
 {
+    num_elements = v.num_elements;
+    head->value = v.head->value;
+    list_element<T>* tmp = v.head->right;
+    list_element<T>* ntmp = head;
+    while (tmp->right != NULL) {
+        list_element<T>* newElement = new list_element<T>;
+        ntmp->right = newElement;
+        newElement->value = tmp->value;
+        tmp = tmp->right;
+        ntmp = ntmp->right;
+    }
+    list_element<T>* newElement = new list_element<T>;
+    ntmp->right = newElement;
+    newElement->value = tmp->value;
 }
 
 template<typename T>
@@ -257,7 +271,13 @@ inline void list_t<T>::pop_front()
 template<typename T>
 inline void list_t<T>::clear()
 {
-    free(head);
+    num_elements = 0;
+    list_element<T>* tmp = head;
+    while (tmp->right != NULL) {
+        tmp = tmp->right;
+        free(tmp->left)
+    }
+    free(tmp);
 }
 
 #endif
