@@ -28,9 +28,9 @@ inline T& iterator_dq<T>::operator*() const
 template<typename T>
 inline iterator_dq<T> iterator_dq<T>::operator++(int)
 {
-    ptr = ptr + 1;
     iterator_dq<T> iter;
     iter.ptr = ptr;
+    ptr = ptr + 1;
     return iter;
 }
 
