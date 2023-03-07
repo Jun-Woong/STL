@@ -96,8 +96,8 @@ value("") {
 template<typename T>
 inline list_t<T>::list_t() :
 num_elements(0) {
-    array = new list_element<T>;
-    array[0].left = array;
+    head = new list_element<T>;
+    head[0].left = head;
 }
 
 template<typename T>
@@ -106,22 +106,22 @@ inline list_t<T>::list_t(const list_t<T>& v)
 }
 
 template<typename T>
-inline list_t<T>::~list_t() { num_elements = 0; free(array); }
+inline list_t<T>::~list_t() { num_elements = 0; free(head); }
 
 template<typename T>
 inline iterator_l<T> list_t<T>::begin() const
 {
     iterator_l<T> iter;
-    iter.ptr = &(array[0].value);
-    cout << " begin header : " << array << " left : " << array[0].left << " right : " << array[0].right << endl;
-    cout << " next left : " << (array[0].right->left) << " right : " << (array[0].right->right) << " value : " << (array[0].right->value) << endl;
+    iter.ptr = &(head[0].value);
+    cout << " begin header : " << head << " left : " << head[0].left << " right : " << head[0].right << endl;
+    cout << " next left : " << (head[0].right->left) << " right : " << (head[0].right->right) << " value : " << (head[0].right->value) << endl;
     return iter;
 }
 
 template<typename T>
 inline iterator_l<T> list_t<T>::end() const
 {
-    //list_element<T> *tmp = array[0].right;
+    //list_element<T> *tmp = head[0].right;
     //while (tmp->right != NULL) {
     //    tmp = tmp->right;
     //}
@@ -152,12 +152,12 @@ template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
     if (num_elements == 0) {
-        array[0].value = d;
+        head[0].value = d;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
-        array[num_elements - 1].right = newElement;
-        newElement->left = &(array[num_elements - 1]);
+        head[num_elements - 1].right = newElement;
+        newElement->left = &(head[num_elements - 1]);
         newElement->value = d;
     }
     num_elements++;
@@ -167,14 +167,14 @@ template<typename T>
 inline void list_t<T>::push_front(const T& d)
 {
     if (num_elements == 0) {
-        array[0].value = d;
+        head[0].value = d;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
-        array[0].left = newElement;
-        newElement->right = array;
-        array = newElement;
-        newElement->left = array;
+        head[0].left = newElement;
+        newElement->right = head;
+        head = newElement;
+        newElement->left = head;
         newElement->value = d;
     }
     num_elements++;
