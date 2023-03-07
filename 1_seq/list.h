@@ -40,8 +40,8 @@ inline iterator_l<T> iterator_l<T>::operator++(int)
 template<typename T>
 inline iterator_l<T>& iterator_l<T>::operator++()
 {
-    this.ptr = ptr->right;
-    return ptr;
+    ptr = ptr->right;
+    return *this;
 }
 
 template<typename T>
