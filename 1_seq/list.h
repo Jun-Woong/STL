@@ -91,7 +91,7 @@ template<typename T>
 inline list_t<T>::list_t() :
 num_elements(0) {
     head = new list_element<T>;
-    head.left = head;
+    head->left = head;
 }
 
 template<typename T>
@@ -148,7 +148,7 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
     list_element<T>* newElement = new list_element<T>;
     newElement->value = d;
     if (pos.ptr == head) {
-        head.left = newElement;
+        head->left = newElement;
         newElement->right = head;
         head = newElement;
         newElement->left = head;
@@ -184,7 +184,7 @@ template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
     if (num_elements == 0) {
-        head.value = d;
+        head->value = d;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
@@ -203,7 +203,7 @@ template<typename T>
 inline void list_t<T>::pop_back()
 {
     num_elements--;
-    list_element<T>* deleteElement = head.right;
+    list_element<T>* deleteElement = head->right;
     while (deleteElement->right != NULL) {
         deleteElement = deleteElement->right;
     }
@@ -216,11 +216,11 @@ template<typename T>
 inline void list_t<T>::push_front(const T& d)
 {
     if (num_elements == 0) {
-        head.value = d;
+        head->value = d;
     }
     else {
         list_element<T>* newElement = new list_element<T>;
-        head.left = newElement;
+        head->left = newElement;
         newElement->right = head;
         head = newElement;
         newElement->left = head;
