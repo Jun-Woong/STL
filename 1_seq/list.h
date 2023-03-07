@@ -171,8 +171,10 @@ inline void list_t<T>::push_front(const T& d)
     }
     else {
         list_element<T>* newElement = new list_element<T>;
+        array[0].left = newElement;
+        newElement->right = array;
+        array = newElement;
         newElement->left = array;
-        array[0].left = newElement->right;
         newElement->value = d;
     }
     num_elements++;

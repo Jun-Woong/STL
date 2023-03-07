@@ -65,7 +65,7 @@ public:
 
 
 private:
-    class list_element<T>* array;
+    class list_element<T>* head;
     size_t num_elements;
 };
 
