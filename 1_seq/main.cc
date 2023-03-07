@@ -153,6 +153,11 @@ int main () {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
+
+    for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
 //
 //    list_t<string> l3(l2);
 //
