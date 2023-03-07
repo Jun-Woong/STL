@@ -1,32 +1,3 @@
-#ifndef _ITER_L_
-#define _ITER_L_
-
-template <typename T> class list_t;
-
-template <typename T>
-class iterator_l {
-public:
-    iterator_l();
-    iterator_l(const iterator_l<T> &it);
-    ~iterator_l();
-
-    T& operator*() const;
-    iterator_l<T> operator++(int);
-    iterator_l<T> operator+(int s);
-    iterator_l<T> operator--();
-    iterator_l<T> operator-(int s);
-    bool operator!=(const iterator_l<T> &it) const;
-    bool operator==(const iterator_l<T> &it) const;
-
-private:
-    list_element<T>* ptr;
-    friend class list_t<T>;
-};
-
-#endif
-
-
-
 #ifndef _LIST_DEF_H_
 #define _LIST_DEF_H_
 
@@ -67,6 +38,33 @@ public:
 private:
     class list_element<T>* head;
     size_t num_elements;
+};
+
+#endif
+
+#ifndef _ITER_L_
+#define _ITER_L_
+
+template <typename T> class list_t;
+
+template <typename T>
+class iterator_l {
+public:
+    iterator_l();
+    iterator_l(const iterator_l<T>& it);
+    ~iterator_l();
+
+    T& operator*() const;
+    iterator_l<T> operator++(int);
+    iterator_l<T> operator+(int s);
+    iterator_l<T> operator--();
+    iterator_l<T> operator-(int s);
+    bool operator!=(const iterator_l<T>& it) const;
+    bool operator==(const iterator_l<T>& it) const;
+
+private:
+    list_element<T>* ptr;
+    friend class list_t<T>;
 };
 
 #endif
