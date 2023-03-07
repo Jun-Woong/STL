@@ -107,8 +107,6 @@ inline iterator_l<T> list_t<T>::begin() const
 {
     iterator_l<T> iter;
     iter.ptr = head;
-    cout << " begin header : " << head << " left : " << head[0].left << " right : " << head[0].right << endl;
-    cout << " next left : " << (head[0].right->left) << " right : " << (head[0].right->right) << " value : " << (head[0].right->value) << endl;
     return iter;
 }
 
