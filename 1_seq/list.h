@@ -153,13 +153,10 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
         newElement->right = head;
         head = newElement;
         newElement->left = head;
-        cout << "AAAAA" << endl;
     }
     else {
         pos.ptr->left->right = newElement;
         pos.ptr->left = newElement;
-        cout << "BBBBB" << endl;
-
     }
     return pos;
 }
