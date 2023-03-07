@@ -140,7 +140,11 @@ int main () {
     l1.erase(temp_it);
     l1.pop_front();
     l1.pop_back();
-    
+
+    for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+
     l2 = l1;
     //l1.clear();
 
