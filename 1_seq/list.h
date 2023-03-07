@@ -123,13 +123,13 @@ inline iterator_l<T> list_t<T>::end() const
 {
     list_element<T> *tmp = array[0].right;
     cout << " ZZZZZZ " << tmp << endl;
-    //while (tmp != NULL) {
-    //    cout << " DDDDD " << tmp->value << endl;
-    //    tmp = tmp->right;
-    //}
+    while (tmp != NULL) {
+        cout << " DDDDD " << tmp->value << endl;
+        tmp = tmp->right;
+    }
     iterator_l<T> iter;
-    //cout << " AAAAA " << endl;
-    //iter.ptr = &(tmp->left->value);
+    cout << " AAAAA " << endl;
+    iter.ptr = &(tmp->value);
     return iter;
 }
 
