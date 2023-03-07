@@ -155,6 +155,25 @@ inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
 }
 
 template<typename T>
+inline iterator_l<T> list_t<T>::erase(const iterator pos)
+{
+    num_elements--;
+    if (pos.ptr->left == head) {
+        pos.ptr->right->left = pos.ptr->right;
+        head = pos.ptr->right;
+    }
+    else {
+        pos.ptr->left->right = pos.ptr->right;
+        pos.ptr->right->left = pos.ptr->left;
+    }
+    pos.ptr->left = NULL;
+    pos.ptr->right = NULL;
+    pos.ptr->value = "";
+
+    return pos;
+}
+
+template<typename T>
 inline void list_t<T>::push_back(const T& d)
 {
     if (num_elements == 0) {
