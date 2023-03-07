@@ -48,7 +48,7 @@ template<typename T>
 inline iterator_t<T>& iterator_t<T>::operator--()
 {
     ptr -= 1;
-    return iter;
+    return *this;
 }
 
 template<typename T>
