@@ -143,6 +143,7 @@ int main () {
     }
     cout << endl;
 
+
     l1.erase(temp_it);
 
     for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {

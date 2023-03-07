@@ -139,7 +139,6 @@ inline bool list_t<T>::empty() const
 template<typename T>
 inline iterator_l<T> list_t<T>::insert(const iterator& pos, const T& d)
 {
-    cout << "KKKKKKK" << pos.ptr << endl;
     num_elements++;
     list_element<T>* newElement = new list_element<T>;
     newElement->value = d;
@@ -162,20 +161,14 @@ template<typename T>
 inline iterator_l<T> list_t<T>::erase(const iterator& pos)
 {
     num_elements--;
-    cout << "CCCCCCCCCCCCCC" << pos.ptr << endl;
     if (pos.ptr == head) {
-        cout << "AAAAAA" << endl;
         pos.ptr->right->left = pos.ptr->right;
         head = pos.ptr->right;
     }
     else {
-        cout << " VVVVVVV " << pos.ptr << endl;
-
         pos.ptr->left->right = pos.ptr->right;
-        cout << "VVVVVVV" << endl;
         pos.ptr->right->left = pos.ptr->left;
     }
-    cout << "VVVVVVV" << endl;
     pos.ptr->left = NULL;
     pos.ptr->right = NULL;
     pos.ptr->value = "";
