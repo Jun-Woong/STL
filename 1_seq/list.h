@@ -25,7 +25,7 @@ inline iterator_l<T>::~iterator_l() { }
 template<typename T>
 inline T& iterator_l<T>::operator*() const
 {
-    return *ptr;
+    return *(ptr->value);
 }
 
 template<typename T>
@@ -112,7 +112,7 @@ template<typename T>
 inline iterator_l<T> list_t<T>::begin() const
 {
     iterator_l<T> iter;
-    iter.ptr = &(head[0].value);
+    iter.ptr = &(head[0]);
     cout << " begin header : " << head << " left : " << head[0].left << " right : " << head[0].right << endl;
     cout << " next left : " << (head[0].right->left) << " right : " << (head[0].right->right) << " value : " << (head[0].right->value) << endl;
     return iter;
