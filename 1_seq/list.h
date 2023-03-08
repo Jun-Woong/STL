@@ -285,14 +285,20 @@ inline void list_t<T>::clear()
 template<typename T>
 inline void list_t<T>::sort() // N^2 merge sort is better
 {
-    iterator_l<T> start, fin;
-    start.ptr = head->left;
+    iterator_l<T> start;
+    start.ptr = head;
+    iterator_l<T> fin;
     fin.ptr = NULL;
 
     for(list_t<T>::iterator it = start; it != fin; it++) {
         cout << "!!! *it    : " << *it << endl;
     }
     cout << endl;
+
+    while (head->right != NULL) {
+        cout << "@@@@ *it    : " << head->value << endl;
+        head = head->right;
+    }
 
 }
 
