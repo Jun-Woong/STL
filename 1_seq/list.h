@@ -5,8 +5,6 @@
 #include "list-def.h"
 #include <iostream>
 
-using namespace std;
-
 // your answer
 
 template<typename T>
