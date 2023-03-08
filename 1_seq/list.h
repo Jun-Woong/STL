@@ -301,10 +301,10 @@ template<typename T>
 inline void list_t<T>::merge(const list_t<T>& v)
 {
     for (list_t<T>::iterator i = this->begin(); i != this->end(); i++) {
-        cout << "*it    : " << *it << endl;
+        cout << "*it    : " << *i << endl;
     }
     for (list_t<T>::iterator i = v.begin(); i != v.end(); i++) {
-        cout << "*it    : " << *it << endl;
+        cout << "*it    : " << *i << endl;
     }
 
 }
