@@ -276,6 +276,7 @@ inline void list_t<T>::clear()
 {
     num_elements = 0;
     for (list_t<T>::iterator i = (this->begin())++; i != this->end(); i++) {
+        cout << *i << endl;
         delete(i.ptr->left);
     }
     //while (head->right != NULL) {
