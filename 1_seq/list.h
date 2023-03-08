@@ -423,8 +423,8 @@ inline void list_t<T>::unique()
         if (*it == same->value) {
             it.ptr->right->left = same;
             same->right = it.ptr->right;
-            same = it.ptr;
         }
+        same = it.ptr;
     }
 }
 
