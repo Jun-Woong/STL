@@ -300,6 +300,13 @@ inline void list_t<T>::sort() // N^2 // merge sort is better
 template<typename T>
 inline void list_t<T>::merge(const list_t<T>& v)
 {
+    for (list_t<T>::iterator i = this->begin(); i != this->end(); i++) {
+        cout << "*it    : " << *it << endl;
+    }
+    for (list_t<T>::iterator i = v.begin(); i != v.end(); i++) {
+        cout << "*it    : " << *it << endl;
+    }
+
 }
 
 #endif
