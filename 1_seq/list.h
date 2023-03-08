@@ -307,6 +307,10 @@ inline void list_t<T>::merge(const list_t<T>& v)
     list_t<T>::iterator f = this->begin();
     list_t<T>::iterator s = v.begin();
     
+    for (list_t<T>::iterator i = s; i != v.end(); i++) {
+        cout << "*it    : " << *i << endl;
+    }
+
     cout << " BBBBB " << endl;
     while (!((f == this->end()) && (s == v.end()))) {
         cout << " cccccc " << *f << " dddddd " << *s << endl;
