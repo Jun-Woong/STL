@@ -419,10 +419,10 @@ template<typename T>
 inline void list_t<T>::unique()
 {
     list_element<T>* same = head;
-    for (list_t<string>::iterator it = this->begin(); it != this->end(); it++) {
-        if (*it != same->value) {
-            it.ptr->left = same;
-            same->right = it.ptr;
+    for (list_t<string>::iterator it = ((this->begin())++); it != this->end(); it++) {
+        if (*it == same->value) {
+            it.ptr->right->left = same;
+            same->right = it.ptr->right;
             same = it.ptr;
         }
     }
