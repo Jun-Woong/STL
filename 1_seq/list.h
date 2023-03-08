@@ -301,7 +301,7 @@ template<typename T>
 inline void list_t<T>::merge(const list_t<T>& v)
 {
     num_elements = num_elements + v.num_elements;
-    list_t<T>* newList;
+    list_t<T>* newList = new list_t<T>;;
     list_element<T>* tmp = newList->head;
     list_t<T>::iterator f = this->begin();
     list_t<T>::iterator s = v.begin();
