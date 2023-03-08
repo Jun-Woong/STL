@@ -384,7 +384,19 @@ inline void list_t<T>::reverse()
     while (last->right != NULL) {
         last = last->right;
     }
-    cout << last->value << "\n";
+
+    list_element<T>* start = head;
+    size_t n = num_elements / 2;
+    T tmp;
+    for (size_t i = 0; i < n; i++)
+    {
+        tmp = start->value;
+        start->value = last->value;
+        last->value = tmp;
+
+        start = start->right;
+        last = last->left;
+    }
 }
 
 #endif
