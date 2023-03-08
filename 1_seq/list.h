@@ -347,7 +347,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             tmp->right = newElement1;
             newElement1->left = tmp;
             tmp = tmp->right;
-            if (f == NULL) {
+            if (f->right == NULL) {
                 a = "9999";
             }
             else {
@@ -361,7 +361,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             tmp->right = newElement2;
             newElement2->left = tmp;
             tmp = tmp->right;
-            if (s == NULL) {
+            if (s->right == NULL) {
                 b = "9999";
             }
             else {
