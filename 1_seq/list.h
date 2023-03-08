@@ -323,6 +323,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             }
             else {
                 f = f->right;
+                a = f->value;
             }
         }
         else if(b > a) {
@@ -336,6 +337,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             }
             else {
                 s = s->right;
+                b = s->value;
             }
         }
         else {
@@ -350,6 +352,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             }
             else {
                 f = f->right;
+                a = f->value;
             }
 
             cout << "@@@@@" << endl;
@@ -363,6 +366,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             }
             else {
                 s = s->right;
+                b = s->value;
             }
         }
     }
