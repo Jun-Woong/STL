@@ -62,6 +62,7 @@ public:
     void pop_front();
     void clear();
     void sort();
+    void merge(const list_t<T>& v);
 
 
 private:
