@@ -304,66 +304,65 @@ inline void list_t<T>::merge(const list_t<T>& v)
     num_elements = num_elements + v.num_elements;
     list_t<T>* newList = new list_t<T>;
     list_element<T>* tmp = newList->head;
-    list_t<T>::iterator f = this->begin();
-    list_t<T>::iterator s = v.begin();
+    list_element<T>* f = head;
+    list_element<T>* s = v.head;
     
     cout << " BBBBB " << endl;
-    while (!((f == this->end()) && (s == v.end()))) {
-        cout << " cccccc " << *f << " dddddd " << *s << endl;
-        if ((*f) < (*s)) {
-            tmp->value = (*f);
+    T a = f->value;
+    T b = s->value;
+    while (!((f == NULL) && (s == NULL))) {
+        cout << " cccccc " << a << " dddddd " << b << endl;
+        if (a < b) {
+            tmp->value = a;
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
             newElement->left = tmp;
             tmp = tmp->right;
-            if (f == this->end()) {
-                *f = "9999";
+            if (f == NULL) {
+                a = "9999";
             }
             else {
-                f++;
+                f = f->right;
             }
         }
-        else if((*f) > (*s)) {
-            tmp->value = (*s);
+        else if(b > a) {
+            tmp->value = b;
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
             newElement->left = tmp;
             tmp = tmp->right;
-            if (s == v.end()) {
-                *s = "9999";
+            if (s == NULL) {
+                b = "9999";
             }
             else {
-                s++;
+                s = s->right;
             }
         }
         else {
             cout << "!!!!!" << endl;
-            tmp->value = (*f);
-            list_element<T>* newElement1 = new list_element<T>;
-            tmp->right = newElement1;
-            newElement1->left = tmp;
+            tmp->value = a;
+            list_element<T>* newElement = new list_element<T>;
+            tmp->right = newElement;
+            newElement->left = tmp;
             tmp = tmp->right;
-            if (f == this->end()) {
-                *f = "9999";
+            if (f == NULL) {
+                a = "9999";
             }
             else {
-                f++;
+                f = f->right;
             }
 
             cout << "@@@@@" << endl;
-            tmp->value = (*s);
-            list_element<T>* newElement2 = new list_element<T>;
-            tmp->right = newElement2;
-            newElement2->left = tmp;
+            tmp->value = b;
+            list_element<T>* newElement = new list_element<T>;
+            tmp->right = newElement;
+            newElement->left = tmp;
             tmp = tmp->right;
-            cout << "######" << endl;
-            if (s == v.end()) {
-                cout << "&&&&&&" << endl;
-                *s = "9999";
+            if (s == NULL) {
+                b = "9999";
             }
             else {
-                cout << " ((((((( " << s.ptr->right->value << endl;
-                s++;
+                s = s->right;
             }
         }
     }
