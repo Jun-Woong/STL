@@ -422,8 +422,13 @@ inline void list_t<T>::unique()
     for (list_t<string>::iterator it = ((this->begin())++); it != this->end(); it++) {
         cout << " !!!!! " << same->value << endl;
         if (*it == same->value) {
-            it.ptr->right->left = same;
-            same->right = it.ptr->right;
+            if (it.ptr->right == NULL) {
+                same->right = it.ptr->right;
+            }
+            else {
+                it.ptr->right->left = same;
+                same->right = it.ptr->right;
+            }
         }
         same = it.ptr;
     }
