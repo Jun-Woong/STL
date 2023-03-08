@@ -308,27 +308,57 @@ inline void list_t<T>::merge(const list_t<T>& v)
     list_t<T>::iterator s = v.begin();
     
     cout << " BBBBB " << endl;
-    while (!((f == this->end()) && (s == this->end()))) {
+    while (!((f == this->end()) && (s == v.end()))) {
         cout << " cccccc " << *f << " dddddd " << *s << endl;
         if ((*f) < (*s)) {
             tmp->value = (*f);
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
             newElement->left = tmp;
-            cout << " KKKKK " << endl;
             tmp = tmp->right;
-            f++;
-            *f = (f == this->end()) ? "MAX" : *f;
+            if (f == this->end()) {
+                *f = "9999";
+            }
+            else {
+                f++;
+            }
         }
-        else {
+        else if((*f) > (*s)) {
             tmp->value = (*s);
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
             newElement->left = tmp;
-            cout << " TTTTT " << endl;
             tmp = tmp->right;
-            s++;
-            *s = (s == this->end()) ? "MAX" : *s;
+            if (s == v.end()) {
+                *s = "9999";
+            }
+            else {
+                s++;
+            }
+        }
+        else {
+            tmp->value = (*f);
+            list_element<T>* newElement = new list_element<T>;
+            tmp->right = newElement;
+            newElement->left = tmp;
+            tmp = tmp->right;
+            if (f == this->end()) {
+                *f = "9999";
+            }
+            else {
+                f++;
+            }
+            tmp->value = (*s);
+            list_element<T>* newElement = new list_element<T>;
+            tmp->right = newElement;
+            newElement->left = tmp;
+            tmp = tmp->right;
+            if (s == v.end()) {
+                *s = "9999";
+            }
+            else {
+                s++;
+            }
         }
     }
     
