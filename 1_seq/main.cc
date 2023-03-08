@@ -33,7 +33,7 @@ int main () {
 
     v1.pop_back();
     for (size_t i = 0; i < v1.size(); i++) {
-        cout << "v1[" << i << "]  : " << v1[i] << endl; //¿©±â¼­ operator[] »ç¿ë
+        cout << "v1[" << i << "]  : " << v1[i] << endl;
     }
     cout << endl;
 
