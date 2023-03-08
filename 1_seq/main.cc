@@ -142,6 +142,12 @@ int main () {
     l1.pop_front();
     l1.pop_back();
     l2 = l1;
+
+    for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
+
     l1.clear();
 
     for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
