@@ -61,6 +61,7 @@ public:
     void push_front(const T &d);
     void pop_front();
     void clear();
+    void sort();
 
 
 private:

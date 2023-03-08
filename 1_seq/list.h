@@ -282,4 +282,14 @@ inline void list_t<T>::clear()
     head->value = "";
 }
 
+template<typename T>
+inline void list_t<T>::sort() // N^2 merge sort is better
+{
+    for(list_t<string>::iterator it = head; it != NULL; it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
+
+}
+
 #endif
