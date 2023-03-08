@@ -420,7 +420,6 @@ inline void list_t<T>::unique()
 {
     list_element<T>* same = head;
     for (list_t<string>::iterator it = ((this->begin())++); it != this->end(); it++) {
-        cout << " !!!!! " << same->value << endl;
         if (*it == same->value) {
             if (it.ptr->right == NULL) {
                 same->right = it.ptr->right;
