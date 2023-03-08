@@ -148,6 +148,11 @@ int main () {
 
     l2 = l1;
 
+    for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
+        cout << "KKKKKit    : " << *it << endl;
+    }
+    cout << endl;
+
     l1.clear();
     list_t<string> l3(l2);
     l2.sort();

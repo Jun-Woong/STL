@@ -288,12 +288,11 @@ inline void list_t<T>::sort() // N^2 // merge sort is better
     T tmp;
     for (list_t<T>::iterator i = this->begin(); i != this->end(); i++) {
         for (list_t<T>::iterator j = this->begin(); j != this->end(); j++) {
-        {
-                if ((*i) > (*j)) {
+            if ((*i) > (*j)) {
                     tmp = *i;
                     *i = *j;
                     *j = tmp;
-                }
+            }
         }
     }
     cout << endl;
