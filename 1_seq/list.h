@@ -416,4 +416,11 @@ inline void list_t<T>::remove(const T& d)
     }
 }
 
+template<typename T>
+inline void list_t<T>::unique()
+{
+
+
+}
+
 #endif

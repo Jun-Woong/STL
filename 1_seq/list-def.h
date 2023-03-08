@@ -65,6 +65,7 @@ public:
     void merge(const list_t<T>& v);
     void reverse();
     void remove(const T& d);
+    void unique();
 
 private:
     class list_element<T>* head;
