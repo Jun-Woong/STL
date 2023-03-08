@@ -338,9 +338,9 @@ inline void list_t<T>::merge(const list_t<T>& v)
         }
         else {
             tmp->value = (*f);
-            list_element<T>* newElement = new list_element<T>;
-            tmp->right = newElement;
-            newElement->left = tmp;
+            list_element<T>* newElement1 = new list_element<T>;
+            tmp->right = newElement1;
+            newElement1->left = tmp;
             tmp = tmp->right;
             if (f == this->end()) {
                 *f = "9999";
@@ -349,9 +349,9 @@ inline void list_t<T>::merge(const list_t<T>& v)
                 f++;
             }
             tmp->value = (*s);
-            list_element<T>* newElement = new list_element<T>;
-            tmp->right = newElement;
-            newElement->left = tmp;
+            list_element<T>* newElement2 = new list_element<T>;
+            tmp->right = newElement2;
+            newElement2->left = tmp;
             tmp = tmp->right;
             if (s == v.end()) {
                 *s = "9999";
