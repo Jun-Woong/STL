@@ -337,6 +337,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             }
         }
         else {
+            cout << "!!!!!" << endl;
             tmp->value = (*f);
             list_element<T>* newElement1 = new list_element<T>;
             tmp->right = newElement1;
@@ -348,6 +349,8 @@ inline void list_t<T>::merge(const list_t<T>& v)
             else {
                 f++;
             }
+
+            cout << "@@@@@" << endl;
             tmp->value = (*s);
             list_element<T>* newElement2 = new list_element<T>;
             tmp->right = newElement2;
