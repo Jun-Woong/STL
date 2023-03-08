@@ -400,7 +400,7 @@ inline void list_t<T>::reverse()
 template<typename T>
 inline void list_t<T>::remove(const T& d)
 {
-    for (list_t<string>::iterator it = this->begin(); it != this->end(); it++) {
+    for (list_t<T>::iterator it = this->begin(); it != this->end(); it++) {
         if (*it == d) {
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
@@ -417,7 +417,7 @@ template<typename T>
 inline void list_t<T>::unique()
 {
     list_element<T>* same = head;
-    for (list_t<string>::iterator it = ((this->begin())++); it != this->end(); it++) {
+    for (list_t<T>::iterator it = ((this->begin())++); it != this->end(); it++) {
         if (*it == same->value) {
             if (it.ptr->right == NULL) {
                 same->right = it.ptr->right;
