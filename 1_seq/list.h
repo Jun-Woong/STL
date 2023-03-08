@@ -380,12 +380,11 @@ inline void list_t<T>::merge(const list_t<T>& v)
 template<typename T>
 inline void list_t<T>::reverse()
 {
-    list_t<string>::iterator it;
-    for (it = this->begin(); it != this->end(); it++) {
-        cout << "*it    : " << *it << endl;
+    list_element<T>* last = head->right;
+    while (last->right != NULL) {
+        last = last->right;
     }
-    cout << "!!!!it    : " << it.ptr->left->value << endl;
-    cout << endl;
+    cout << last->value << "\n";
 }
 
 #endif
