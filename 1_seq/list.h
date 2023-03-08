@@ -297,12 +297,6 @@ inline void list_t<T>::sort() // N^2 merge sort is better
         cout << "!!! *it    : " << *it << endl;
     }
     cout << endl;
-
-    while (head->right != NULL) {
-        cout << "@@@@ *it    : " << head->value << endl;
-        head = head->right;
-    }
-
 }
 
 #endif
