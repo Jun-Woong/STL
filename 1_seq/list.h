@@ -295,7 +295,6 @@ inline void list_t<T>::sort() // N^2 // merge sort is better
             }
         }
     }
-    cout << endl;
 }
 
 template<typename T>
