@@ -381,7 +381,7 @@ template<typename T>
 inline void list_t<T>::reverse()
 {
     list_t<string>::iterator it;
-    for (it = l2.begin(); it != l2.end(); it++) {
+    for (it = this->begin(); it != l2.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
     cout << "!!!!it    : " << *it << endl;
