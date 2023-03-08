@@ -275,11 +275,14 @@ template<typename T>
 inline void list_t<T>::clear()
 {
     num_elements = 0;
-    while (head->right != NULL) {
-        head = head->right;
-        delete(head->left);
+    for (list_t<T>::iterator i = (this->begin())++; i != this->end(); i++) {
+        delete(i.ptr->left);
     }
-    head->value = "";
+    //while (head->right != NULL) {
+    //    head = head->right;
+    //    delete(head->left);
+    //}
+    //head->value = "";
 }
 
 template<typename T>
@@ -300,7 +303,7 @@ inline void list_t<T>::sort() // N^2 // merge sort is better
 template<typename T>
 inline void list_t<T>::merge(const list_t<T>& v)
 {
-    cout << num_elements << endl;
+    num_elements << endl;
     cout << v.num_elements << endl;
 }
 

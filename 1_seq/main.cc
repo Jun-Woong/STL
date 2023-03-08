@@ -160,6 +160,16 @@ int main () {
 
     l2.merge(l3);
 
+    for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
+        cout << "22222 it    : " << *it << endl;
+    }
+    cout << endl;
+
+    for (list_t<string>::iterator it = l1.begin(); it != l1.end(); it++) {
+        cout << "11111 it    : " << *it << endl;
+    }
+    cout << endl;
+
     //for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
     //    cout << "*it    : " << *it << endl;
     //}
