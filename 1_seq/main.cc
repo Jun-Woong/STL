@@ -148,20 +148,9 @@ int main () {
 
     l2 = l1;
     l1.clear();
-
-    for(list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
-        cout << "*it    : " << *it << endl;
-    }
-    cout << endl;
-    
     list_t<string> l3(l2);
-
     l2.sort();
 
-    for(list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
-        cout << "*it    : " << *it << endl;
-    }
-    cout << endl;
 //
 //    l2.merge(l3);
 //
