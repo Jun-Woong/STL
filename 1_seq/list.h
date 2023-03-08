@@ -300,18 +300,15 @@ inline void list_t<T>::sort() // N^2 // merge sort is better
 template<typename T>
 inline void list_t<T>::merge(const list_t<T>& v)
 {
-    cout << " AAAAA " << endl;
     num_elements = num_elements + v.num_elements;
     list_t<T>* newList = new list_t<T>;
     list_element<T>* tmp = newList->head;
     list_element<T>* f = head;
     list_element<T>* s = v.head;
     
-    cout << " BBBBB " << endl;
     T a = f->value;
     T b = s->value;
     while (!((f->right == NULL) && (s->right == NULL))) {
-        cout << " cccccc " << a << " dddddd " << b << endl;
         if (a < b) {
             tmp->value = a;
             list_element<T>* newElement = new list_element<T>;
@@ -341,7 +338,6 @@ inline void list_t<T>::merge(const list_t<T>& v)
             }
         }
         else {
-            cout << "!!!!!" << endl;
             tmp->value = a;
             list_element<T>* newElement1 = new list_element<T>;
             tmp->right = newElement1;
@@ -355,7 +351,6 @@ inline void list_t<T>::merge(const list_t<T>& v)
                 a = f->value;
             }
 
-            cout << "@@@@@" << endl;
             tmp->value = b;
             list_element<T>* newElement2 = new list_element<T>;
             tmp->right = newElement2;
@@ -379,9 +374,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
         tmp->value = b;
     }
 
-    for (list_t<T>::iterator i = newList->begin(); i != newList->end(); i++) {
-        cout << "*it    : " << *i << endl;
-    }
+    head = newList->head;
 }
 
 #endif
