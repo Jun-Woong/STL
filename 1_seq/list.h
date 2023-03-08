@@ -300,18 +300,22 @@ inline void list_t<T>::sort() // N^2 // merge sort is better
 template<typename T>
 inline void list_t<T>::merge(const list_t<T>& v)
 {
+    cout << " AAAAA " << endl;
     num_elements = num_elements + v.num_elements;
     list_t<T>* newList = new list_t<T>;
     list_element<T>* tmp = newList->head;
     list_t<T>::iterator f = this->begin();
     list_t<T>::iterator s = v.begin();
     
+    cout << " BBBBB " << endl;
     while (!((f == this->end()) && (s == this->end()))) {
+        cout << " cccccc " << *f << " dddddd " << *s << endl;
         if ((*f) < (*s)) {
             tmp->value = (*f);
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
             newElement->left = tmp;
+            cout << " KKKKK " << endl;
             tmp = tmp->right;
             f++;
             *f = (f == this->end()) ? "MAX" : *f;
@@ -321,6 +325,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
             newElement->left = tmp;
+            cout << " TTTTT " << endl;
             tmp = tmp->right;
             s++;
             *s = (s == this->end()) ? "MAX" : *s;
