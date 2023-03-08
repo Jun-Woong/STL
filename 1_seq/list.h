@@ -286,7 +286,7 @@ template<typename T>
 inline void list_t<T>::sort() // N^2 merge sort is better
 {
     iterator_l<T> start, fin;
-    start.ptr = head->right;
+    start.ptr = head->left;
     fin.ptr = NULL;
 
     for(list_t<T>::iterator it = start; it != fin; it++) {
