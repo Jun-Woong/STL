@@ -319,7 +319,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             newElement->left = tmp;
             tmp = tmp->right;
             if (f->right == NULL) {
-                a = "9999";
+                a = "MAX";
             }
             else {
                 f = f->right;
@@ -333,7 +333,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             newElement->left = tmp;
             tmp = tmp->right;
             if (s->right == NULL) {
-                b = "9999";
+                b = "MAX";
             }
             else {
                 s = s->right;
@@ -348,7 +348,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             newElement1->left = tmp;
             tmp = tmp->right;
             if (f->right == NULL) {
-                a = "9999";
+                a = "MAX";
             }
             else {
                 f = f->right;
@@ -362,7 +362,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
             newElement2->left = tmp;
             tmp = tmp->right;
             if (s->right == NULL) {
-                b = "9999";
+                b = "MAX";
             }
             else {
                 s = s->right;
