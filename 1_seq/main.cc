@@ -164,13 +164,13 @@ int main () {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
-    //
-    //l2.reverse();
-    //
-    //for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
-    //    cout << "*it    : " << *it << endl;
-    //}
-    //cout << endl;
+    
+    l2.reverse();
+    
+    for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
+        cout << "*it    : " << *it << endl;
+    }
+    cout << endl;
     //
     //l2.remove("16");
     //

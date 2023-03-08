@@ -63,7 +63,7 @@ public:
     void clear();
     void sort();
     void merge(const list_t<T>& v);
-
+    void reverse();
 
 private:
     class list_element<T>* head;
