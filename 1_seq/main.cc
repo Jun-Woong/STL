@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main () {
+int main() {
     cout << endl;
 
     cout << " *** VECTOR *** " << endl;
@@ -164,24 +164,24 @@ int main () {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
-    
+
     l2.reverse();
-    
+
     for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
-    
+
     l2.remove("16");
-    
+
     for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
     cout << endl;
-    
+
     l2.sort();
     l2.unique();
-    
+
     for (list_t<string>::iterator it = l2.begin(); it != l2.end(); it++) {
         cout << "*it    : " << *it << endl;
     }
