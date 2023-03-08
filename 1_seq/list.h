@@ -404,6 +404,7 @@ inline void list_t<T>::remove(const T& d)
 {
     for (list_t<string>::iterator it = this->begin(); it != this->end(); it++) {
         if (*it == d) {
+            cout << *it << endl;
             it.ptr->left->right = it.ptr->right;
             it.ptr->right->left = it.ptr->left;
         }
