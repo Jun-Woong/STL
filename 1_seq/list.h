@@ -326,7 +326,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
                 a = f->value;
             }
         }
-        else if(b > a) {
+        else if(a > b) {
             tmp->value = b;
             list_element<T>* newElement = new list_element<T>;
             tmp->right = newElement;
