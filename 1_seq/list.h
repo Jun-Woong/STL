@@ -362,7 +362,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
                 *s = "9999";
             }
             else {
-                cout << " ((((((( " << s.ptr->right->value; << endl;
+                cout << " ((((((( " << s.ptr->right->value << endl;
                 s++;
             }
         }
