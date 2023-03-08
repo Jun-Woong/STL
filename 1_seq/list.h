@@ -371,9 +371,13 @@ inline void list_t<T>::merge(const list_t<T>& v)
         }
     }
     
-    cout << "*it    : " << a << endl;
-    cout << "*it    : " << b << endl;
+    if (a != "MAX") {
+        tmp->value = a;
+    } 
 
+    if (b != "MAX") {
+        tmp->value = b;
+    }
 
     for (list_t<T>::iterator i = newList->begin(); i != newList->end(); i++) {
         cout << "*it    : " << *i << endl;
