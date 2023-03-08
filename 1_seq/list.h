@@ -288,7 +288,8 @@ inline void list_t<T>::sort() // N^2 merge sort is better
     iterator_l<T> start, fin;
     start.ptr = head;
     fin.ptr = NULL;
-    for(list_t<string>::iterator it = start; it != fin; it++) {
+
+    for(list_t<T>::iterator it = start; it != fin; it++) {
         cout << "!!! *it    : " << *it << endl;
     }
     cout << endl;
