@@ -384,7 +384,7 @@ inline void list_t<T>::reverse()
     for (it = this->begin(); it != this->end(); it++) {
         cout << "*it    : " << *it << endl;
     }
-    cout << "!!!!it    : " << *it << endl;
+    cout << "!!!!it    : " << it.ptr->left->value << endl;
     cout << endl;
 }
 
