@@ -310,7 +310,7 @@ inline void list_t<T>::merge(const list_t<T>& v)
     cout << " BBBBB " << endl;
     T a = f->value;
     T b = s->value;
-    while (!((f == NULL) && (s == NULL))) {
+    while (!((f->right == NULL) && (s->right == NULL))) {
         cout << " cccccc " << a << " dddddd " << b << endl;
         if (a < b) {
             tmp->value = a;
