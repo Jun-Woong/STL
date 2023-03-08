@@ -3,7 +3,6 @@
 
 #include <cstdlib>
 #include "list-def.h"
-#include <iostream>
 
 // your answer
 
