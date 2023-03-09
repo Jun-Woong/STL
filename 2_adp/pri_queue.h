@@ -15,35 +15,32 @@ struct cmp{
 
 template <typename T, typename V, typename F>
 inline priority_queue<T, V, F>::priority_queue() :
-    queue(0),
-    queue_size(0) {
+{
 }
 
 template <typename T, typename V, typename F>
 inline priority_queue<T, V, F>::priority_queue(const priority_queue<T, V, F>& v)
 {
-    queue_size = v.queue_size;
-    queue = (T*)calloc(queue_size, sizeof(T));
-    for (size_t i = 0; i < queue_size; i++)
+    for (size_t i = 0; i < (v.queue).size(); i++)
     {
-        queue[i] = v.queue[i];
+        queue.push_back(v.queue[i]);
     }
 }
 
 template <typename T, typename V, typename F>
-inline priority_queue<T, V, F>::~priority_queue() { queue_size = 0; free(queue); }
+inline priority_queue<T, V, F>::~priority_queue() {}
 
 
 template <typename T, typename V, typename F>
 size_t priority_queue<T, V, F>::size() const
 {
-    return queue_size;
+    return queue.size();
 }
 
 template <typename T, typename V, typename F>
 inline bool priority_queue<T, V, F>::empty() const
 {
-    if (queue_size == 0) {
+    if (queue.size() == 0) {
         return true;
     }
     else {
@@ -60,36 +57,13 @@ inline T& priority_queue<T, V, F>::top() const
 template <typename T, typename V, typename F>
 inline void priority_queue<T, V, F>::push(const T& v)
 {
-    queue_size++;
-    T* newqueue = (T*)calloc(queue_size, sizeof(T));
-    for (size_t i = 0; i < (queue_size - 1); i++)
-    {
-        newqueue[i] = queue[i];
-    }
-    newqueue[queue_size - 1] = v;
-    free(queue);
-    queue = newqueue;
-    newqueue = NULL;
+    queue.push_back(v);
 }
 
 template <typename T, typename V, typename F>
 inline void priority_queue<T, V, F>::pop()
 {
-    if (queue_size >= 1) {
-        queue_size--;
-        T* newqueue = (T*)calloc(queue_size, sizeof(T));
-        for (size_t i = 1; i <= (queue_size); i++)
-        {
-            newqueue[i - 1] = queue[i];
-        }
-        free(queue);
-        queue = newqueue;
-        newqueue = NULL;
-    }
-    else {
-        throw "error!!!";
-    }
-
+    queue.pop_front();
 }
 
 #endif

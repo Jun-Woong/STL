@@ -286,6 +286,26 @@ inline void vector_t<T>::pop_back()
 }
 
 template<typename T>
+inline void vector_t<T>::pop_front()
+{
+    if (num_elements >= 1) {
+        num_elements--;
+        T* newArray = (T*)calloc(array_size, sizeof(T));
+        for (size_t i = 1; i <= (num_elements); i++)
+        {
+            newArray[i - 1] = array[i];
+        }
+        free(array);
+        array = newArray;
+        newArray = NULL;
+    }
+    else {
+        throw "error!!!";
+    }
+}
+
+
+template<typename T>
 inline void vector_t<T>::clear()
 {
     num_elements = 0;

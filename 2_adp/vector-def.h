@@ -51,6 +51,7 @@ public:
     iterator erase(const iterator pos);
     void push_back(const T &v);
     void pop_back();
+    void pop_front();
     void clear();
 
 private:

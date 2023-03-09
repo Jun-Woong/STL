@@ -19,8 +19,7 @@ public:
     void pop();
 
 private:
-    T* queue; 
-    size_t queue_size;
+    V queue; 
 };
 
 #endif
