@@ -52,13 +52,13 @@ inline bool priority_queue<T1,T2,T3>::empty() const
 }
 
 template <typename T1, typename T2, typename T3>
-inline T& priority_queue<T1,T2,T3>::back() const
+inline T1& priority_queue<T1,T2,T3>::top() const
 {
-    return queue[queue_size - 1];
+    return queue[0];
 }
 
 template <typename T1, typename T2, typename T3>
-inline void priority_queue<T1,T2,T3>::push(const T& v)
+inline void priority_queue<T1,T2,T3>::push(const T1& v)
 {
     queue_size++;
     T* newqueue = (T*)calloc(queue_size, sizeof(T));

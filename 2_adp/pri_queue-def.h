@@ -14,8 +14,8 @@ public:
 
     size_t size() const;
     bool empty() const;
-    T& back() const;
-    void push(const T& v);
+    T1& top() const;
+    void push(const T1& v);
     void pop();
 
 private:
