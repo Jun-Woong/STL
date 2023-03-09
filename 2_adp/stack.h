@@ -64,7 +64,7 @@ inline void stack_t<T>::push(const T& v)
 }
 
 template<typename T>
-inline void vector_t<T>::pop()
+inline void stack_t<T>::pop()
 {
     if (array_size >= 1) {
         array_size--;
