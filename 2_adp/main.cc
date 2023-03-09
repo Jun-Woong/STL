@@ -1,7 +1,7 @@
 #include <cstring>
 #include <iostream>
 #include "stack.h"
-//#include "queue.h"
+#include "queue.h"
 //#include "pri_queue.h"
 
 using namespace std;
@@ -46,43 +46,43 @@ int main () {
 
 
 
-    //cout << " *** QUEUE *** " << endl;
-    //cout << endl;
-    //
-    //queue_t<string> q1;
-    //
-    //cout << "empty? : " << (q1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << q1.size() << endl; 
-    //cout << endl;
-    //
-    //q1.push("8");
-    //q1.push("13");
-    //q1.push("21");
-    //q1.push("34");
-    //q1.push("55");
-    //cout << "empty? : " << (q1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << q1.size() << endl; 
-    //cout << endl;
-    //
-    //cout << "back   : " << q1.back() << endl;
-    //
-    //queue_t<string> q2(q1);
-    //
-    //q1.pop();
-    //q1.pop();
-    //cout << "empty? : " << (q1.empty() ? "yes" : "no") << endl; 
-    //cout << "back   : " << q1.back() << endl;
-    //cout << "size   : " << q1.size() << endl; 
-    //cout << endl;
-    //
-    //q1.swap(q2);
-    //cout << "empty? : " << (q2.empty() ? "yes" : "no") << endl; 
-    //cout << "back   : " << q2.back() << endl;
-    //cout << "size   : " << q2.size() << endl; 
-    //cout << endl;
-    //
-    //
-    //
+    cout << " *** QUEUE *** " << endl;
+    cout << endl;
+    
+    queue_t<string> q1;
+    
+    cout << "empty? : " << (q1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << q1.size() << endl; 
+    cout << endl;
+    
+    q1.push("8");
+    q1.push("13");
+    q1.push("21");
+    q1.push("34");
+    q1.push("55");
+    cout << "empty? : " << (q1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << q1.size() << endl; 
+    cout << endl;
+    
+    cout << "back   : " << q1.back() << endl;
+    
+    queue_t<string> q2(q1);
+    
+    q1.pop();
+    q1.pop();
+    cout << "empty? : " << (q1.empty() ? "yes" : "no") << endl; 
+    cout << "back   : " << q1.back() << endl;
+    cout << "size   : " << q1.size() << endl; 
+    cout << endl;
+    
+    q1.swap(q2);
+    cout << "empty? : " << (q2.empty() ? "yes" : "no") << endl; 
+    cout << "back   : " << q2.back() << endl;
+    cout << "size   : " << q2.size() << endl; 
+    cout << endl;
+    
+    
+    
     //cout << " *** PRIORITY QUEUE *** " << endl;
     //cout << endl;
     //
