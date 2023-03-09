@@ -23,7 +23,7 @@ template <typename T1, typename T2, typename T3>
 inline priority_queue<T1, T2, T3>::priority_queue(const priority_queue<T1, T2, T3>& v)
 {
     queue_size = v.queue_size;
-    queue = (T*)calloc(queue_size, sizeof(T));
+    queue = (T1*)calloc(queue_size, sizeof(T1));
     for (size_t i = 0; i < queue_size; i++)
     {
         queue[i] = v.queue[i];
@@ -61,7 +61,7 @@ template <typename T1, typename T2, typename T3>
 inline void priority_queue<T1,T2,T3>::push(const T1& v)
 {
     queue_size++;
-    T* newqueue = (T*)calloc(queue_size, sizeof(T));
+    T1* newqueue = (T1*)calloc(queue_size, sizeof(T1));
     for (size_t i = 0; i < (queue_size - 1); i++)
     {
         newqueue[i] = queue[i];
@@ -77,7 +77,7 @@ inline void priority_queue<T1,T2,T3>::pop()
 {
     if (queue_size >= 1) {
         queue_size--;
-        T* newqueue = (T*)calloc(queue_size, sizeof(T));
+        T1* newqueue = (T1*)calloc(queue_size, sizeof(T1));
         for (size_t i = 1; i <= (queue_size); i++)
         {
             newqueue[i - 1] = queue[i];
