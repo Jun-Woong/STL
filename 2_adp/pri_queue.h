@@ -13,35 +13,35 @@ struct cmp{
     };
 };
 
-template <typename T1, typename T2, typename T3>
-inline priority_queue<T1,T2,T3>::priority_queue() :
+template <typename T, typename V, typename F>
+inline priority_queue<T, V, F>::priority_queue() :
     queue(0),
     queue_size(0) {
 }
 
-template <typename T1, typename T2, typename T3>
-inline priority_queue<T1, T2, T3>::priority_queue(const priority_queue<T1, T2, T3>& v)
+template <typename T, typename V, typename F>
+inline priority_queue<T, V, F>::priority_queue(const priority_queue<T, V, F>& v)
 {
     queue_size = v.queue_size;
-    queue = (T1*)calloc(queue_size, sizeof(T1));
+    queue = (T*)calloc(queue_size, sizeof(T));
     for (size_t i = 0; i < queue_size; i++)
     {
         queue[i] = v.queue[i];
     }
 }
 
-template <typename T1, typename T2, typename T3>
-inline priority_queue<T1,T2,T3>::~priority_queue() { queue_size = 0; free(queue); }
+template <typename T, typename V, typename F>
+inline priority_queue<T, V, F>::~priority_queue() { queue_size = 0; free(queue); }
 
 
-template <typename T1, typename T2, typename T3>
-size_t priority_queue<T1,T2,T3>::size() const
+template <typename T, typename V, typename F>
+size_t priority_queue<T, V, F>::size() const
 {
     return queue_size;
 }
 
-template <typename T1, typename T2, typename T3>
-inline bool priority_queue<T1,T2,T3>::empty() const
+template <typename T, typename V, typename F>
+inline bool priority_queue<T, V, F>::empty() const
 {
     if (queue_size == 0) {
         return true;
@@ -51,17 +51,17 @@ inline bool priority_queue<T1,T2,T3>::empty() const
     }
 }
 
-template <typename T1, typename T2, typename T3>
-inline T1& priority_queue<T1,T2,T3>::top() const
+template <typename T, typename V, typename F>
+inline T& priority_queue<T, V, F>::top() const
 {
     return queue[0];
 }
 
-template <typename T1, typename T2, typename T3>
-inline void priority_queue<T1,T2,T3>::push(const T1& v)
+template <typename T, typename V, typename F>
+inline void priority_queue<T, V, F>::push(const T& v)
 {
     queue_size++;
-    T1* newqueue = (T1*)calloc(queue_size, sizeof(T1));
+    T* newqueue = (T*)calloc(queue_size, sizeof(T));
     for (size_t i = 0; i < (queue_size - 1); i++)
     {
         newqueue[i] = queue[i];
@@ -72,12 +72,12 @@ inline void priority_queue<T1,T2,T3>::push(const T1& v)
     newqueue = NULL;
 }
 
-template <typename T1, typename T2, typename T3>
-inline void priority_queue<T1,T2,T3>::pop()
+template <typename T, typename V, typename F>
+inline void priority_queue<T, V, F>::pop()
 {
     if (queue_size >= 1) {
         queue_size--;
-        T1* newqueue = (T1*)calloc(queue_size, sizeof(T1));
+        T* newqueue = (T*)calloc(queue_size, sizeof(T));
         for (size_t i = 1; i <= (queue_size); i++)
         {
             newqueue[i - 1] = queue[i];

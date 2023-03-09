@@ -5,21 +5,21 @@
 
 struct cmp;
 
-template <typename T1, typename T2, typename T3>
+template <typename T, typename V, typename F>
 class priority_queue {
 public:
     priority_queue();
-    priority_queue(const priority_queue<T1,T2,T3>& v);
+    priority_queue(const priority_queue<T, V, F>& v);
     ~priority_queue();
 
     size_t size() const;
     bool empty() const;
-    T1& top() const;
-    void push(const T1& v);
+    T& top() const;
+    void push(const T& v);
     void pop();
 
 private:
-    T1* queue;
+    V* queue;
     size_t queue_size;
 };
 
