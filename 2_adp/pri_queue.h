@@ -14,9 +14,7 @@ struct cmp{
 };
 
 template <typename T, typename V, typename F>
-inline priority_queue<T, V, F>::priority_queue() :
-{
-}
+inline priority_queue<T, V, F>::priority_queue(){}
 
 template <typename T, typename V, typename F>
 inline priority_queue<T, V, F>::priority_queue(const priority_queue<T, V, F>& v)
