@@ -2,7 +2,7 @@
 #include <iostream>
 #include "stack.h"
 #include "queue.h"
-//#include "pri_queue.h"
+#include "pri_queue.h"
 
 using namespace std;
 
@@ -83,41 +83,41 @@ int main () {
     
     
     
-    //cout << " *** PRIORITY QUEUE *** " << endl;
-    //cout << endl;
-    //
-    //priority_queue<string, vector_t<string>, cmp> q3;
-    //
-    //q3.push("100");
-    //q3.push("1");
-    //q3.push("10");
-    //q3.push("10000");
-    //q3.push("1000");
-    //q3.push("0");
-    //q3.push("100000");
-    //cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << q3.size() << endl; 
-    //cout << endl;
-    //
-    //cout << "top    : " << q3.top() << endl;
-    //cout << endl;
-    //
-    //q3.pop();
-    //cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
-    //cout << "top    : " << q3.top() << endl;
-    //cout << "size   : " << q3.size() << endl; 
-    //cout << endl;
-    //
-    //q3.pop();
-    //cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
-    //cout << "top    : " << q3.top() << endl;
-    //cout << "size   : " << q3.size() << endl; 
-    //cout << endl;
-    //
-    //q3.pop();
-    //cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
-    //cout << "top    : " << q3.top() << endl;
-    //cout << "size   : " << q3.size() << endl; 
-    //cout << endl;
+    cout << " *** PRIORITY QUEUE *** " << endl;
+    cout << endl;
+    
+    priority_queue<string, vector_t<string>, cmp> q3;
+    
+    q3.push("100");
+    q3.push("1");
+    q3.push("10");
+    q3.push("10000");
+    q3.push("1000");
+    q3.push("0");
+    q3.push("100000");
+    cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << q3.size() << endl; 
+    cout << endl;
+    
+    cout << "top    : " << q3.top() << endl;
+    cout << endl;
+    
+    q3.pop();
+    cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
+    cout << "top    : " << q3.top() << endl;
+    cout << "size   : " << q3.size() << endl; 
+    cout << endl;
+    
+    q3.pop();
+    cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
+    cout << "top    : " << q3.top() << endl;
+    cout << "size   : " << q3.size() << endl; 
+    cout << endl;
+    
+    q3.pop();
+    cout << "empty? : " << (q3.empty() ? "yes" : "no") << endl; 
+    cout << "top    : " << q3.top() << endl;
+    cout << "size   : " << q3.size() << endl; 
+    cout << endl;
 
 }
