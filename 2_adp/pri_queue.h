@@ -17,17 +17,7 @@ template <typename T, typename V, typename F>
 inline priority_queue<T, V, F>::priority_queue(){}
 
 template <typename T, typename V, typename F>
-inline priority_queue<T, V, F>::priority_queue(const priority_queue<T, V, F>& v)
-{
-    for (size_t i = 0; i < (v.queue).size(); i++)
-    {
-        queue.push_back(v.queue[i]);
-    }
-}
-
-template <typename T, typename V, typename F>
-inline priority_queue<T, V, F>::~priority_queue() {}
-
+inline priority_queue<T, V, F>::~priority_queue() { ~queue(); }
 
 template <typename T, typename V, typename F>
 size_t priority_queue<T, V, F>::size() const

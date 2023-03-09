@@ -9,7 +9,6 @@ template <typename T, typename V, typename F>
 class priority_queue {
 public:
     priority_queue();
-    priority_queue(const priority_queue<T, V, F>& v);
     ~priority_queue();
 
     size_t size() const;
