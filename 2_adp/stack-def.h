@@ -13,7 +13,7 @@ public:
     T& top() const;
     void push(const T& v);
     void pop();
-    void swap();
+    void swap(stack_t<T>& v);
 
 private:
     T* array;

@@ -75,4 +75,17 @@ inline void stack_t<T>::pop()
     }
 }
 
+template<typename T>
+inline void stack_t<T>::swap(stack_t<T>& v)
+{
+    T* tmp_array = v.array;
+    size_t tmp_array_size = v.array_size;
+
+    v.array = array;
+    v.array_size = array_size;
+
+    array = tmp_array;
+    array_size = tmp_array_size;
+}
+
 #endif

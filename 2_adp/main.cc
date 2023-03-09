@@ -38,7 +38,7 @@ int main () {
     cout << "size   : " << s1.size() << endl; 
     cout << endl;
 
-    //s1.swap(s2);
+    s1.swap(s2);
     cout << "empty? : " << (s2.empty() ? "yes" : "no") << endl; 
     cout << "top    : " << s2.top() << endl;
     cout << "size   : " << s2.size() << endl; 
