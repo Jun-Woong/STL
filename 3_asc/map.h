@@ -141,7 +141,6 @@ inline map_element<K, V>* map_t<K, V>::operator[](K s) const
         }
     }
 
-    num_elements = num_elements + 1;
     if (this->size() == 0) {
         head->key = s;
         return head;
