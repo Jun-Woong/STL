@@ -59,7 +59,7 @@ public:
     iterator find(const T& d); // o
     void clear();
     void sort();
-    bool count(const T& d);
+    size_t count(const T& d);
 
 private:
     class set_element<T>* head;
