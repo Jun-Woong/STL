@@ -59,7 +59,6 @@ public:
     void clear();
     void sort();
     size_t count(const T& d);
-    void unique();
 
 private:
     class set_element<T>* head;
