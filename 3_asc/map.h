@@ -219,7 +219,7 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
     return it;
 }
 
-template <typename K, typename V>
+template <typename K, typename V> 
 inline void map_t<K, V>::clear()
 {
     num_elements = 0;
