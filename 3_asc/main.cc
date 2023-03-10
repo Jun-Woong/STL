@@ -1,16 +1,13 @@
 #include <cstring>
 #include <iostream>
-#include "stdlib.h"
-#include "string.h"
 #include "set.h"
 #include "map.h"
 
 using namespace std;
 
 string to_string(size_t d) {
-    string tmp;
-    itoa(d, tmp, 10);
-    return tmp;
+    string tmp = ToText(d);
+    return tmp
 }
 
 int main () {
