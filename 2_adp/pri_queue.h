@@ -9,7 +9,7 @@ using namespace std;
 
 struct cmp{
     bool operator()(string a, string b){
-        return a > b;
+        return a > b;  // less (0 is top)
     };
 };
 
@@ -34,6 +34,12 @@ inline bool priority_queue<T, V, F>::empty() const
     else {
         return false;
     }
+
+    for (size_t i = 0; i < queue.size(); i++)
+    {
+        cout << "!!!!!" << queue[i] << endl;
+    }
+    cout << "!!!!!" << endl;
 }
 
 template <typename T, typename V, typename F>
