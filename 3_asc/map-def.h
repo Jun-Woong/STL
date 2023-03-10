@@ -61,6 +61,7 @@ public:
     bool empty() const;
     void erase(const K& d);
     void erase(const iterator pos);
+    map_element<K, V> insert(const K& d);
     iterator find(const K& d);
     void clear();
     void sort();

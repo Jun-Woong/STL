@@ -141,20 +141,7 @@ inline map_element<K, V>* map_t<K, V>::operator[](K s) const
         }
     }
 
-    if (this->size() == 0) {
-        head->key = s;
-        return head;
-    }
-    else {
-        map_element<K, V>* newElement = new map_element<K, V>;
-        head->left = newElement;
-        newElement->right = head;
-        head = newElement;
-        newElement->left = head;
-        newElement->key = s;
-        this->sort();
-        return newElement;
-    }
+    return *this->insert(s);
 }
 
 template <typename K, typename V>
@@ -203,6 +190,26 @@ inline void map_t<K, V>::erase(const K& d)
                 it.ptr->right->left = it.ptr->left;
             }
         }
+    }
+}
+
+template<typename K, typename V>
+inline map_element<K, V> map_t<K, V>::insert(const K& d)
+{
+    num_elements++;
+    if (this->size() == 0) {
+        head->key = s;
+        return head;
+    }
+    else {
+        map_element<K, V>* newElement = new map_element<K, V>;
+        head->left = newElement;
+        newElement->right = head;
+        head = newElement;
+        newElement->left = head;
+        newElement->key = s;
+        this->sort();
+        return newElement;
     }
 }
 
