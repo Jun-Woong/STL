@@ -28,18 +28,18 @@ size_t priority_queue<T, V, F>::size() const
 template <typename T, typename V, typename F>
 inline bool priority_queue<T, V, F>::empty() const
 {
+    for (size_t i = 0; i < queue.size(); i++)
+    {
+        cout << "!!!!!" << queue[i] << endl;
+    }
+    cout << "!!!!!" << endl;
+
     if (queue.size() == 0) {
         return true;
     }
     else {
         return false;
     }
-
-    for (size_t i = 0; i < queue.size(); i++)
-    {
-        cout << "!!!!!" << queue[i] << endl;
-    }
-    cout << "!!!!!" << endl;
 }
 
 template <typename T, typename V, typename F>
