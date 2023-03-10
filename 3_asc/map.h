@@ -153,7 +153,7 @@ inline map_element<K, V>* map_t<K, V>::operator[](K s) const
         head = newElement;
         newElement->left = head;
         newElement->key = s;
-        //this->sort();
+        this->sort();
         return newElement;
     }
 }
@@ -233,13 +233,17 @@ inline void map_t<K, V>::clear()
 template <typename K, typename V>
 inline void map_t<K, V>::sort()
 {
-    K tmp;
+    K tmp1;
+    V tmp2;
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
         for (map_t<K, V>::iterator j = (this->begin())++; j != this->end(); j++) {
-            if ((*i) < (*j)) {
-                tmp = *i;
-                *i = *j;
-                *j = tmp;
+            if ((i.first) < (j.first)) {
+                tmp1 = i.first;
+                tmp2 = i.second;
+                i.first = j.first;
+                i.second = j.second;
+                j.first = tmp1;
+                j.second = tmp2;
             }
         }
     }
