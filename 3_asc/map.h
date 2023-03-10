@@ -121,7 +121,7 @@ inline V& map_t<K, V>::operator[](K s) const
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::begin() const
 {
-    iterator_t<V> iter;
+    iterator_m<K, V> iter;
     iter.ptr = array;
     return iter;
 }
@@ -129,7 +129,7 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::end() const
 {
-    iterator_t<V> iter;
+    iterator_m<K, V> iter;
     iter.ptr = array + num_elements;
     return iter;
 }
@@ -154,16 +154,10 @@ inline bool map_t<K, V>::empty() const
 template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)
 {
-    for (size_t i = 0; i < (num_elements); i++)
+    array[d] = "";
+    for (size_t j = d; j < num_elements - 1; j++)
     {
-        if (pos.ptr == (array + i)) {
-            array[i] = "";
-            for (size_t j = i; j < num_elements - 1; j++)
-            {
-                array[j] = array[j + 1];
-            }
-            break;
-        }
+        array[j] = array[j + 1];
     }
     num_elements--;
 }
