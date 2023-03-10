@@ -103,7 +103,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 {
     num_elements = v.num_elements;
     free(array);
-    array = (T*)calloc(num_elements, sizeof(T));
+    array = (V*)calloc(num_elements, sizeof(V));
     for (size_t i = 0; i < num_elements; i++)
     {
         array[i] = v.array[i];
@@ -121,7 +121,7 @@ inline V& map_t<K, V>::operator[](K s) const
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::begin() const
 {
-    iterator_t<T> iter;
+    iterator_t<V> iter;
     iter.ptr = array;
     return iter;
 }
@@ -129,7 +129,7 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::end() const
 {
-    iterator_t<T> iter;
+    iterator_t<V> iter;
     iter.ptr = array + num_elements;
     return iter;
 }
@@ -157,7 +157,7 @@ inline void map_t<K, V>::erase(const K& d)
     for (size_t i = 0; i < (num_elements); i++)
     {
         if (pos.ptr == (array + i)) {
-            array[i] = static_cast<T>("");
+            array[i] = "";
             for (size_t j = i; j < num_elements - 1; j++)
             {
                 array[j] = array[j + 1];
@@ -185,7 +185,7 @@ inline void map_t<K, V>::clear()
 {
     num_elements = 0;
     free(array);
-    array = (T*)calloc(1, sizeof(K));
+    array = (V*)calloc(1, sizeof(K));
 }
 
 template <typename K, typename V>
