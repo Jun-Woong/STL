@@ -33,19 +33,6 @@ public:
 #define _MAP_DEF_H_
 
 template <typename K, typename V>
-class map_element {
-public:
-    map_element();
-    map_element<K, V>* left;
-    map_element<K, V>* right;
-    K key;
-    V value;
-
-public:
-    void operator=(const V d);
-};
-
-template <typename K, typename V>
 class map_t {
 public:
     map_t();
@@ -54,7 +41,7 @@ public:
 
     typedef iterator_m<K, V> iterator;
 
-    map_element<K, V>* operator[](K s) const; // insert
+    V& operator[](K s) const;
     iterator begin() const;
     iterator end() const;
     size_t size() const;
@@ -67,7 +54,7 @@ public:
     void sort();
 
 private:
-    class map_element<K, V>* head;
+    V* array;
     size_t num_elements;
 };
 

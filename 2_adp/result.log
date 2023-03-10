@@ -1,104 +1,55 @@
 
- *** VECTOR ***
+ *** STACK ***
 
 empty? : yes
-cap    : 0
 size   : 0
-
-empty? : yes
-cap    : 2
-size   : 0
-
-
-v1[0]  : 16
-v1[1]  : 32
-
-v1[0]  : 16
-v1[1]  : 32
-v1[2]  : 128
-
-cap    : 4
-size   : 0
-
-front  : yes
-back   : yes
-
-*it    : 16
-*it    : 32
-*it    : 128
-
- *** DEQUE ***
 
 empty? : no
-size   : 4
+size   : 5
 
-size   : 2
+top    : 5
+empty? : no
+top    : 2
+size   : 3
 
-d1[0]  : 1024
-d1[1]  : 2048
-d1[2]  : 16
-d1[3]  : 512
+empty? : no
+top    : 2
+size   : 3
 
-*it    : 1024
-*it    : 2048
-*it    : 16
-*it    : 512
-
-d2[0] : 2048
-d2[1] : 16
-d2[2] : 512
-
-front : 2048
-back  : 512
-
- *** LIST ***
+ *** QUEUE ***
 
 empty? : yes
 size   : 0
 
-*it    : 64
-*it    : 32
-*it    : 16
-*it    : 8
-*it    : 2
-*it    : 4
+empty? : no
+size   : 5
 
-*it    : 64
-*it    : 16
-*it    : 8
-*it    : 2
+back   : 55
+empty? : no
+back   : 55
+size   : 3
 
-*it    : 16
-*it    : 2
-*it    : 64
-*it    : 8
+empty? : no
+back   : 55
+size   : 3
 
-*it    : 16
-*it    : 2
-*it    : 64
-*it    : 64
-*it    : 16
-*it    : 8
-*it    : 8
-*it    : 2
+ *** PRIORITY QUEUE ***
 
-*it    : 2
-*it    : 8
-*it    : 8
-*it    : 16
-*it    : 64
-*it    : 64
-*it    : 2
-*it    : 16
+empty? : no
+size   : 7
 
-*it    : 2
-*it    : 8
-*it    : 8
-*it    : 64
-*it    : 64
-*it    : 2
+top    : 100000
 
-*it    : 2
-*it    : 64
-*it    : 8
+empty? : no
+top    : 10000
+size   : 6
+
+empty? : no
+top    : 1000
+size   : 5
+
+empty? : no
+top    : 100
+size   : 4
+
 
