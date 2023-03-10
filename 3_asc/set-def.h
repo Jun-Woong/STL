@@ -61,7 +61,7 @@ public:
     void sort();
     size_t count(const T& d);
 
-public:
+private:
     class set_element<T>* head;
     size_t num_elements;
 };
