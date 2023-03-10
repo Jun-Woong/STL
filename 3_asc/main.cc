@@ -5,10 +5,7 @@
 
 using namespace std;
 
-string to_string(size_t d) {
-    string tmp = cstring::ToText(d);
-    return tmp;
-}
+string to_string(size_t d);
 
 int main () {
     cout << endl;
@@ -112,4 +109,36 @@ int main () {
     //cout << "size   : " << m2.size() << endl; 
     //cout << endl;
 
+}
+
+string to_string(size_t d) {
+    string tmp;
+    if (d == 10) {
+        tmp == "10";
+    }
+    if (d == 20) {
+        tmp == "20";
+    }
+    if (d == 30) {
+        tmp == "30";
+    }
+    if (d == 40) {
+        tmp == "40";
+    }
+    if (d == 50) {
+        tmp == "50";
+    }
+    if (d == 60) {
+        tmp == "60";
+    }
+    if (d == 70) {
+        tmp == "70";
+    }
+    if (d == 80) {
+        tmp == "80";
+    }
+    if (d == 90) {
+        tmp == "90";
+    }
+    return tmp;
 }
