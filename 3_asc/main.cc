@@ -112,8 +112,9 @@ int main () {
 
 }
 
-string to_string(unsigned long d) {
+string to_string(unsigned int d) {
     string tmp;
+    cout << " XXXXX  " << d << endl;
     if (d == 10) {
         tmp == "10";
     }
