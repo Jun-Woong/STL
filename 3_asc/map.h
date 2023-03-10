@@ -113,7 +113,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s) const
 {
-    cout << array[s] << endl;
+    std::cout << array[s] << "\n";
 
     return array[s];
 }
