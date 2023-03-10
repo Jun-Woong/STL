@@ -112,7 +112,7 @@ int main () {
 
 }
 
-string to_string(size_t d) {
+string to_string(int d) {
     string tmp;
     if (d == 10) {
         tmp == "10";
