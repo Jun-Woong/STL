@@ -133,7 +133,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 }
 
 template<typename K, typename V>
-inline map_element<K, V>& map_t<K, V>::operator[](K s) const
+inline map_element<K, V>* map_t<K, V>::operator[](K s) const
 {
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
         if (i.first == s) {
