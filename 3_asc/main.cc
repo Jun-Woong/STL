@@ -71,8 +71,8 @@ int main () {
     cout << "size   : " << m1.size() << endl; 
     cout << endl;
     
-    // hello world
-    //m1[0] = "hel";
+     //hello world
+    m1[0] = "hel";
     //m1[1] = "lo";
     //m1[2] = " ";
     //m1[3] = "wor";
