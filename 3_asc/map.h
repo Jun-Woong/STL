@@ -114,7 +114,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s) const
 {
-    std::cout << ((arrayCheck[s]==NULL) ? "OK" : "AAAA") << "\n";
+    std::cout << ((arrayCheck[s]=="") ? "OK" : "AAAA") << "\n";
     return arrayCheck[s];
 }
 
