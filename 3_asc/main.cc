@@ -48,15 +48,15 @@ int main () {
     if ( it1 == s1.end() ) cout << "cannot find !!!" << endl;
     cout << endl;
     
-    //for(unsigned i = 10; i < 100; i += 10) {
-    //    string tmp = to_string(i);
-    //    if(s1.count(tmp)) cout << "here   : " << tmp << endl;
-    //}
-    //
-    //s1.clear();
-    //cout << "empty? : " << (s1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << s1.size() << endl; 
-    //cout << endl;
+    for(unsigned i = 10; i < 100; i += 10) {
+        string tmp = to_string(i);
+        if(s1.count(tmp)) cout << "here   : " << tmp << endl;
+    }
+    
+    s1.clear();
+    cout << "empty? : " << (s1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << s1.size() << endl; 
+    cout << endl;
 
 
 
