@@ -9,7 +9,7 @@ using namespace std;
 
 struct cmp{
     bool operator()(string a, string b){
-        return a < b;
+        return a > b;
     };
 };
 
