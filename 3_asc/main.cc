@@ -61,15 +61,15 @@ int main () {
 
 
 
-    //cout << " *** MAP *** " << endl;
-    //cout << endl;
-    //
-    //map_t<int, string> m1;
-    //map_t<int, string> m2;
-    //
-    //cout << "empty? : " << (m1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << m1.size() << endl; 
-    //cout << endl;
+    cout << " *** MAP *** " << endl;
+    cout << endl;
+    
+    map_t<int, string> m1;
+    map_t<int, string> m2;
+    
+    cout << "empty? : " << (m1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << m1.size() << endl; 
+    cout << endl;
     //
     //// hello world
     //m1[0] = "hel";
