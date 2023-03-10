@@ -63,7 +63,7 @@ public:
     void clear();
     void sort();
 
-private:
+public:
     class map_element<K, V>* head;
     size_t num_elements;
 };
