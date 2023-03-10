@@ -100,11 +100,7 @@ inline map_element<K, V>::map_element() :
 template<typename K, typename V>
 inline void map_element<K, V>::operator=(const V d)
 {
-    for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
-        for (map_t<K, V>::iterator j = (this->begin())++; j != this->end(); j++) {
-            if()
-        }
-    }
+    this->value = d;
 }
 
 template <typename K, typename V>
@@ -137,18 +133,18 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 }
 
 template<typename K, typename V>
-inline V& map_t<K, V>::operator[](K s) const
+inline map_element<K, V>& map_t<K, V>::operator[](K s) const
 {
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
         if (i.first == s) {
-            return i.second;
+            return i.ptr;
         }
     }
 
     if (num_elements == 0) {
         num_elements++;
         head->key = s;
-        return head->value;
+        return head;
     }
     else {
         map_element<K, V>* newElement = new map_element<K, V>;
@@ -159,7 +155,7 @@ inline V& map_t<K, V>::operator[](K s) const
         newElement->key = s;
         this->sort();
         num_elements++;
-        return newElement->value;
+        return newElement;
     }
 }
 

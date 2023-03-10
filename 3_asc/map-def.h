@@ -52,7 +52,7 @@ public:
 
     typedef iterator_m<K, V> iterator;
 
-    V& operator[](K s) const; // insert
+    map_element<K, V>& operator[](K s) const; // insert
     iterator begin() const;
     iterator end() const;
     size_t size() const;
