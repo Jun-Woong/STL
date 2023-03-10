@@ -268,7 +268,7 @@ template<typename T>
 inline bool set_t<T>::count(const T& d)
 {
     for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
-        std::cout << "BBBBBB" << *it << "CCCCCCC" << d << "\n";
+        std::cout << " BBBBBB " << *it << " CCCCCCC " << d << "\n";
         if (*it == d) {
             return true;
         }
