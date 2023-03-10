@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include "set-def.h"
+#include <iostream>
 
 // your answer
 
@@ -267,7 +268,7 @@ template<typename T>
 inline bool set_t<T>::count(const T& d)
 {
     for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
-        cout << "BBBBBB" << *it << "CCCCCCC" << d << endl;
+        std::cout << "BBBBBB" << *it << "CCCCCCC" << d << endl;
         if (*it == d) {
             return true;
         }
