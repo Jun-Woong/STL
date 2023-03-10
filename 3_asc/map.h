@@ -64,7 +64,7 @@ template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator-(int s)
 {
     iterator_m<K, V> iter;
-    return iter; map_t<K, V>;
+    return iter;
 }
 
 template <typename K, typename V>
