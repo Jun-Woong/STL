@@ -20,7 +20,8 @@ public:
     bool operator==(const iterator_s<T>& it) const;
 
 public:
-    set_element<T>* ptr;
+    set_element<T>* first;
+    bool second;
     friend class set_t<T>;
 };
 
@@ -52,19 +53,12 @@ public:
     iterator end() const;
     size_t size() const;
     bool empty() const;
-    T& front() const;
-    T& back() const;
-    iterator insert(const iterator& pos, const T& d);
-    iterator erase(const iterator& pos);
-    void push_back(const T& d);
-    void pop_back();
-    void push_front(const T& d);
-    void pop_front();
+    iterator insert(const iterator& pos, const T& d); // o
+    iterator erase(const iterator& pos);  // o
+    iterator find(const iterator& pos, const T& d); // o
     void clear();
     void sort();
-    void merge(const set_t<T>& v);
-    void reverse();
-    void remove(const T& d);
+    size_t count(const T& d);
     void unique();
 
 private:

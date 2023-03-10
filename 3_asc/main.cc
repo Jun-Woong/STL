@@ -1,5 +1,6 @@
 #include <cstring>
 #include <iostream>
+#include <string>
 #include "set.h"
 #include "map.h"
 

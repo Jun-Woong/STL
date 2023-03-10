@@ -8,7 +8,8 @@
 
 template<typename T>
 inline iterator_s<T>::iterator_s() :
-    ptr(0) {
+    first(0),
+    second(0) {
 }
 
 template<typename T>
@@ -22,15 +23,15 @@ inline iterator_s<T>::~iterator_s() { }
 template<typename T>
 inline T& iterator_s<T>::operator*() const
 {
-    return ptr->value;
+    return first->value;
 }
 
 template<typename T>
 inline iterator_s<T> iterator_s<T>::operator++(int)
 {
     iterator_s<T> iter;
-    iter.ptr = ptr; // Postfix Operator
-    ptr = ptr->right;
+    iter.first = first; // Postfix Operator
+    first = first->right;
     return iter;
 }
 
@@ -58,7 +59,7 @@ inline iterator_s<T> iterator_s<T>::operator-(int s)
 template<typename T>
 inline bool iterator_s<T>::operator!=(const iterator_s<T>& it) const
 {
-    if (it.ptr == ptr) {
+    if (it.first == first) {
         return false;
     }
     else {
@@ -69,7 +70,7 @@ inline bool iterator_s<T>::operator!=(const iterator_s<T>& it) const
 template<typename T>
 inline bool iterator_s<T>::operator==(const iterator_s<T>& it) const
 {
-    if (it.ptr == ptr) {
+    if (it.first == first) {
         return true;
     }
     else {
@@ -139,7 +140,7 @@ template<typename T>
 inline iterator_s<T> set_t<T>::begin() const
 {
     iterator_s<T> iter;
-    iter.ptr = head;
+    iter.first = head;
     return iter;
 }
 
@@ -147,7 +148,7 @@ template<typename T>
 inline iterator_s<T> set_t<T>::end() const
 {
     iterator_s<T> iter;
-    iter.ptr = NULL;
+    iter.first = NULL;
     return iter;
 }
 
@@ -171,20 +172,31 @@ inline bool set_t<T>::empty() const
 template<typename T>
 inline iterator_s<T> set_t<T>::insert(const iterator& pos, const T& d)
 {
-    num_elements++;
-    set_element<T>* newElement = new set_element<T>;
-    newElement->value = d;
-    if (pos.ptr == head) {
-        head->left = newElement;
-        newElement->right = head;
-        head = newElement;
-        newElement->left = head;
+    bool check = true;
+    for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
+        if (*it == d) {
+            check = false;
+        }
     }
-    else {
-        pos.ptr->left->right = newElement;
-        newElement->right = pos.ptr;
-        pos.ptr->left = newElement;
+
+    if (check) {
+        num_elements++;
+        set_element<T>* newElement = new set_element<T>;
+        newElement->value = d;
+        if (pos.first == head) {
+            head->left = newElement;
+            newElement->right = head;
+            head = newElement;
+            newElement->left = head;
+        }
+        else {
+            pos.first->left->right = newElement;
+            newElement->right = pos.first;
+            pos.first->left = newElement;
+        }
+        this->sort();
     }
+    pos.second = check;
     return pos;
 }
 
@@ -192,80 +204,31 @@ template<typename T>
 inline iterator_s<T> set_t<T>::erase(const iterator& pos)
 {
     num_elements--;
-    if (pos.ptr == head) {
-        pos.ptr->right->left = pos.ptr->right;
-        head = pos.ptr->right;
+    if (pos.first == head) {
+        pos.first->right->left = pos.first->right;
+        head = pos.first->right;
     }
     else {
-        pos.ptr->left->right = pos.ptr->right;
-        pos.ptr->right->left = pos.ptr->left;
+        pos.first->left->right = pos.first->right;
+        pos.first->right->left = pos.first->left;
     }
-    pos.ptr->left = NULL;
-    pos.ptr->right = NULL;
-    pos.ptr->value = "";
+    pos.first->left = NULL;
+    pos.first->right = NULL;
+    pos.first->value = "";
 
     return pos;
 }
 
 template<typename T>
-inline void set_t<T>::push_back(const T& d)
+inline iterator_s<T> set_t<T>::find(const iterator& pos, const T& d)
 {
-    if (num_elements == 0) {
-        head->value = d;
-    }
-    else {
-        set_element<T>* newElement = new set_element<T>;
-        newElement->value = d;
-        set_element<T>* last = head;
-        while (last->right != NULL) {
-            last = last->right;
+    set_t<T>::iterator it;
+    for (it = this->begin(); it != this->end(); it++) {
+        if (*it == d) {
+            return it;
         }
-        last->right = newElement;
-        newElement->left = last;
     }
-    num_elements++;
-}
-
-template<typename T>
-inline void set_t<T>::pop_back()
-{
-    num_elements--;
-    set_element<T>* deleteElement = head->right;
-    while (deleteElement->right != NULL) {
-        deleteElement = deleteElement->right;
-    }
-    deleteElement->left->right = NULL;
-    deleteElement->left = NULL;
-    deleteElement->value = "";
-}
-
-template<typename T>
-inline void set_t<T>::push_front(const T& d)
-{
-    if (num_elements == 0) {
-        head->value = d;
-    }
-    else {
-        set_element<T>* newElement = new set_element<T>;
-        head->left = newElement;
-        newElement->right = head;
-        head = newElement;
-        newElement->left = head;
-        newElement->value = d;
-    }
-    num_elements++;
-}
-
-template<typename T>
-inline void set_t<T>::pop_front()
-{
-    num_elements--;
-    set_element<T>* deleteElement = head;
-    head->right->left = head->right;
-    head = head->right;
-    deleteElement->left = NULL;
-    deleteElement->right = NULL;
-    deleteElement->value = "";
+    return it;
 }
 
 template<typename T>
@@ -280,7 +243,7 @@ inline void set_t<T>::clear()
 }
 
 template<typename T>
-inline void set_t<T>::sort() // N^2 // merge sort is better
+inline void set_t<T>::sort()
 {
     T tmp;
     for (set_t<T>::iterator i = this->begin(); i != this->end(); i++) {
@@ -295,139 +258,15 @@ inline void set_t<T>::sort() // N^2 // merge sort is better
 }
 
 template<typename T>
-inline void set_t<T>::merge(const set_t<T>& v)
+inline size_t set_t<T>::count(const T& d)
 {
-    num_elements = num_elements + v.num_elements;
-    set_t<T>* newList = new set_t<T>;
-    set_element<T>* tmp = newList->head;
-    set_element<T>* f = head;
-    set_element<T>* s = v.head;
-
-    T a = f->value;
-    T b = s->value;
-    while (!((f->right == NULL) && (s->right == NULL))) {
-        if (a < b) {
-            tmp->value = a;
-            set_element<T>* newElement = new set_element<T>;
-            tmp->right = newElement;
-            newElement->left = tmp;
-            tmp = tmp->right;
-            if (f->right == NULL) {
-                a = "MAX";
-            }
-            else {
-                f = f->right;
-                a = f->value;
-            }
-        }
-        else if (a > b) {
-            tmp->value = b;
-            set_element<T>* newElement = new set_element<T>;
-            tmp->right = newElement;
-            newElement->left = tmp;
-            tmp = tmp->right;
-            if (s->right == NULL) {
-                b = "MAX";
-            }
-            else {
-                s = s->right;
-                b = s->value;
-            }
-        }
-        else {
-            tmp->value = a;
-            set_element<T>* newElement1 = new set_element<T>;
-            tmp->right = newElement1;
-            newElement1->left = tmp;
-            tmp = tmp->right;
-            if (f->right == NULL) {
-                a = "MAX";
-            }
-            else {
-                f = f->right;
-                a = f->value;
-            }
-
-            tmp->value = b;
-            set_element<T>* newElement2 = new set_element<T>;
-            tmp->right = newElement2;
-            newElement2->left = tmp;
-            tmp = tmp->right;
-            if (s->right == NULL) {
-                b = "MAX";
-            }
-            else {
-                s = s->right;
-                b = s->value;
-            }
-        }
-    }
-
-    if (a != "MAX") {
-        tmp->value = a;
-    }
-
-    if (b != "MAX") {
-        tmp->value = b;
-    }
-
-    head = newList->head;
-}
-
-template<typename T>
-inline void set_t<T>::reverse()
-{
-    set_element<T>* last = head->right;
-    while (last->right != NULL) {
-        last = last->right;
-    }
-
-    set_element<T>* start = head;
-    size_t n = num_elements / 2;
-    T tmp;
-    for (size_t i = 0; i < n; i++)
-    {
-        tmp = start->value;
-        start->value = last->value;
-        last->value = tmp;
-
-        start = start->right;
-        last = last->left;
-    }
-}
-
-template<typename T>
-inline void set_t<T>::remove(const T& d)
-{
+    size_t cnt = 0;
     for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
         if (*it == d) {
-            if (it.ptr->right == NULL) {
-                it.ptr->left->right = NULL;
-            }
-            else {
-                it.ptr->left->right = it.ptr->right;
-                it.ptr->right->left = it.ptr->left;
-            }
+            cnt++
         }
     }
-}
-
-template<typename T>
-inline void set_t<T>::unique()
-{
-    set_element<T>* same = head;
-    for (set_t<T>::iterator it = ((this->begin())++); it != this->end(); it++) {
-        if (*it == same->value) {
-            if (it.ptr->right == NULL) {
-                same->right = it.ptr->right;
-            }
-            else {
-                it.ptr->right->left = same;
-                same->right = it.ptr->right;
-            }
-        }
-        same = it.ptr;
-    }
+    return cnt;
 }
 
 #endif
