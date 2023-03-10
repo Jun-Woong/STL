@@ -36,6 +36,15 @@ inline iterator_s<T> iterator_s<T>::operator++(int)
 }
 
 template<typename T>
+inline iterator_s<T> iterator_s<T>::operator++()
+{
+    iterator_s<T> iter;
+    first = first->right;
+    iter.first = first; // Prefix Operator
+    return iter;
+}
+
+template<typename T>
 inline iterator_s<T> iterator_s<T>::operator+(int s)
 {
     iterator_s<T> iter;
@@ -205,12 +214,12 @@ inline void set_t<T>::erase(const T& d)
 {
     for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
         if (*it == d) {
-            if (it.ptr->right == NULL) {
-                it.ptr->left->right = NULL;
+            if (it.first->right == NULL) {
+                it.first->left->right = NULL;
             }
             else {
-                it.ptr->left->right = it.ptr->right;
-                it.ptr->right->left = it.ptr->left;
+                it.first->left->right = it.first->right;
+                it.first->right->left = it.first->left;
             }
         }
     }
