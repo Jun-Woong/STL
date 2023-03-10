@@ -141,7 +141,7 @@ inline map_element<K, V>* map_t<K, V>::operator[](K s) const
         }
     }
 
-    return *this->insert(s);
+    return this->insert(s);
 }
 
 template <typename K, typename V>
@@ -198,7 +198,7 @@ inline map_element<K, V> map_t<K, V>::insert(const K& d)
 {
     num_elements++;
     if (this->size() == 0) {
-        head->key = s;
+        head->key = d;
         return head;
     }
     else {
@@ -207,7 +207,7 @@ inline map_element<K, V> map_t<K, V>::insert(const K& d)
         newElement->right = head;
         head = newElement;
         newElement->left = head;
-        newElement->key = s;
+        newElement->key = d;
         this->sort();
         return newElement;
     }
