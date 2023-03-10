@@ -51,7 +51,7 @@ int main () {
     
     for(unsigned i = 10; i < 100; i += 10) {
         string tmp = to_string(i);
-        cout << " AAAAAAA " << tmp << endl;
+        cout << " AAAAAAA  " << tmp << endl;
         if(s1.count(tmp)) cout << "here   : " << tmp << endl;
     }
     
