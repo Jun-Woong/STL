@@ -111,7 +111,7 @@ int main () {
 
 }
 
-string to_string(unsigned d) {
+string to_string(size_t d) {
     string tmp;
     if (d == 10) {
         tmp == "10";

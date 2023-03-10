@@ -264,15 +264,14 @@ inline void set_t<T>::sort()
 }
 
 template<typename T>
-inline size_t set_t<T>::count(const T& d)
+inline bool set_t<T>::count(const T& d)
 {
-    size_t cnt = 0;
     for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
         if (*it == d) {
-            cnt++;
+            return true;
         }
     }
-    return cnt;
+    return false;
 }
 
 #endif
