@@ -19,35 +19,35 @@ int main () {
     cout << endl;
 
     cout << "insert : " << (s1.insert("20").second ? "yes" : "no") << endl; 
-    //cout << "insert : " << (s1.insert("40").second ? "yes" : "no") << endl; 
-    //s1.insert("80");
-    //cout << "empty? : " << (s1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << s1.size() << endl; 
-    //cout << endl;
-    //
-    //set_t<string>::iterator it1;
-    //for (it1 = s1.begin(); it1 != s1.end(); ++it1){
-    //    cout << "*it1   : " << *it1 << endl;
-    //}
-    //cout << endl;
-    //
-    //cout << "insert : " << (s1.insert("20").second ? "yes" : "no") << endl; 
-    //cout << "insert : " << (s1.insert("40").second ? "yes" : "no") << endl; 
-    //cout << "empty? : " << (s1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << s1.size() << endl; 
-    //cout << endl;
-    //
-    //s1.erase("40");
-    //s1.insert("4");
-    //for (it1 = s1.begin(); it1 != s1.end(); ++it1){
-    //    cout << "*it1   : " << *it1 << endl;
-    //}
-    //cout << endl;
-    //
-    //it1 = s1.find("100");
-    //if ( it1 == s1.end() ) cout << "cannot find !!!" << endl;
-    //cout << endl;
-    //
+    cout << "insert : " << (s1.insert("40").second ? "yes" : "no") << endl; 
+    s1.insert("80");
+    cout << "empty? : " << (s1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << s1.size() << endl; 
+    cout << endl;
+    
+    set_t<string>::iterator it1;
+    for (it1 = s1.begin(); it1 != s1.end(); ++it1){
+        cout << "*it1   : " << *it1 << endl;
+    }
+    cout << endl;
+    
+    cout << "insert : " << (s1.insert("20").second ? "yes" : "no") << endl; 
+    cout << "insert : " << (s1.insert("40").second ? "yes" : "no") << endl; 
+    cout << "empty? : " << (s1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << s1.size() << endl; 
+    cout << endl;
+    
+    s1.erase("40");
+    s1.insert("4");
+    for (it1 = s1.begin(); it1 != s1.end(); ++it1){
+        cout << "*it1   : " << *it1 << endl;
+    }
+    cout << endl;
+    
+    it1 = s1.find("100");
+    if ( it1 == s1.end() ) cout << "cannot find !!!" << endl;
+    cout << endl;
+    
     //for(unsigned i = 10; i < 100; i += 10) {
     //    string tmp = to_string(i);
     //    if(s1.count(tmp)) cout << "here   : " << tmp << endl;
