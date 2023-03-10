@@ -6,8 +6,8 @@
 using namespace std;
 
 string to_string(size_t d) {
-    string tmp = ToText(d);
-    return tmp
+    string tmp = cstring::ToText(d);
+    return tmp;
 }
 
 int main () {
