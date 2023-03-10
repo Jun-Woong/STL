@@ -49,7 +49,7 @@ int main () {
     if ( it1 == s1.end() ) cout << "cannot find !!!" << endl;
     cout << endl;
     
-    for(unsigned i = 10; i < 100; i += 10) {
+    for(size_t i = 10; i < 100; i += 10) {
         string tmp = to_string(i);
         cout << " AAAAAAA  " << tmp << endl;
         if(s1.count(tmp)) cout << "here   : " << tmp << endl;
@@ -112,7 +112,7 @@ int main () {
 
 }
 
-string to_string(unsigned int d) {
+string to_string(size_t d) {
     string tmp;
     cout << " XXXXX  " << d << endl;
     if (d == 10) {
