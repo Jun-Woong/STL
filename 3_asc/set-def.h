@@ -53,9 +53,9 @@ public:
     iterator end() const;
     size_t size() const;
     bool empty() const;
-    iterator insert(const iterator& pos, const T& d); // o
-    iterator erase(const iterator& pos);  // o
-    iterator find(const iterator& pos, const T& d); // o
+    iterator insert(const T& d); // o
+    void erase(const T& d);  // o
+    iterator find(const T& d); // o
     void clear();
     void sort();
     size_t count(const T& d);

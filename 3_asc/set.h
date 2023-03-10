@@ -170,57 +170,54 @@ inline bool set_t<T>::empty() const
 }
 
 template<typename T>
-inline iterator_s<T> set_t<T>::insert(const iterator& pos, const T& d)
+inline iterator_s<T> set_t<T>::insert(const T& d)
 {
+    set_t<T>::iterator it;
     bool check = true;
-    for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
+    for (it = this->begin(); it != this->end(); it++) {
         if (*it == d) {
             check = false;
+            break;
         }
     }
 
     if (check) {
-        num_elements++;
-        set_element<T>* newElement = new set_element<T>;
-        newElement->value = d;
-        if (pos.first == head) {
+        if (num_elements == 0) {
+            head->value = d;
+        }
+        else {
+            set_element<T>* newElement = new set_element<T>;
             head->left = newElement;
             newElement->right = head;
             head = newElement;
             newElement->left = head;
+            newElement->value = d;
         }
-        else {
-            pos.first->left->right = newElement;
-            newElement->right = pos.first;
-            pos.first->left = newElement;
-        }
+        num_elements++;
         this->sort();
     }
-    pos.second = check;
-    return pos;
+    it.second = check;
+    return it;
 }
 
 template<typename T>
-inline iterator_s<T> set_t<T>::erase(const iterator& pos)
+inline void set_t<T>::erase(const T& d)
 {
-    num_elements--;
-    if (pos.first == head) {
-        pos.first->right->left = pos.first->right;
-        head = pos.first->right;
+    for (set_t<T>::iterator it = this->begin(); it != this->end(); it++) {
+        if (*it == d) {
+            if (it.ptr->right == NULL) {
+                it.ptr->left->right = NULL;
+            }
+            else {
+                it.ptr->left->right = it.ptr->right;
+                it.ptr->right->left = it.ptr->left;
+            }
+        }
     }
-    else {
-        pos.first->left->right = pos.first->right;
-        pos.first->right->left = pos.first->left;
-    }
-    pos.first->left = NULL;
-    pos.first->right = NULL;
-    pos.first->value = "";
-
-    return pos;
 }
 
 template<typename T>
-inline iterator_s<T> set_t<T>::find(const iterator& pos, const T& d)
+inline iterator_s<T> set_t<T>::find(const T& d)
 {
     set_t<T>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
