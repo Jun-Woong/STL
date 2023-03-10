@@ -153,7 +153,7 @@ inline map_element<K, V>* map_t<K, V>::operator[](K s) const
         head = newElement;
         newElement->left = head;
         newElement->key = s;
-        this->sort();
+        //this->sort();
         num_elements++;
         return newElement;
     }
