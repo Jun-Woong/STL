@@ -55,6 +55,7 @@ public:
 
 private:
     V* array;
+    V* arrayCheck;
     size_t num_elements;
 };
 

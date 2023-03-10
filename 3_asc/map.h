@@ -93,6 +93,7 @@ template <typename K, typename V>
 inline map_t<K, V>::map_t() :
     array(0),
     num_elements(0) {
+    arrayCheck = (V*)calloc(5, sizeof(V));
 }
 
 template <typename K, typename V>
@@ -113,9 +114,8 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s) const
 {
-    std::cout << array[s] << "\n";
-
-    return array[s];
+    std::cout << arrayCheck[s] << "\n";
+    return arrayCheck[s];
 }
 
 template <typename K, typename V>
