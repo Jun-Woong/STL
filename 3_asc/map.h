@@ -97,6 +97,16 @@ inline map_element<K, V>::map_element() :
     value("") {
 }
 
+template<typename K, typename V>
+inline void map_element<K, V>::operator=(const V d)
+{
+    for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
+        for (map_t<K, V>::iterator j = (this->begin())++; j != this->end(); j++) {
+            if()
+        }
+    }
+}
+
 template <typename K, typename V>
 inline map_t<K, V>::map_t() :
     num_elements(0) {
@@ -124,6 +134,33 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
     map_element<K, V>* newElement = new map_element<K, V>;
     ntmp->right = newElement;
     newElement->value = tmp->value;
+}
+
+template<typename K, typename V>
+inline V& map_t<K, V>::operator[](K s) const
+{
+    for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
+        if (i.first == s) {
+            return i.second;
+        }
+    }
+
+    if (num_elements == 0) {
+        num_elements++;
+        head->key = s;
+        return head->value;
+    }
+    else {
+        map_element<K, V>* newElement = new map_element<K, V>;
+        head->left = newElement;
+        newElement->right = head;
+        head = newElement;
+        newElement->left = head;
+        newElement->key = s;
+        this->sort();
+        num_elements++;
+        return newElement->value;
+    }
 }
 
 template <typename K, typename V>
@@ -158,37 +195,6 @@ inline bool map_t<K, V>::empty() const
         return false;
     }
 }
-
-//template <typename K, typename V>
-//inline iterator_m<K, V> map_t<K, V>::insert(const K& d)
-//{
-//    map_t<K, V>::iterator it;
-//    bool check = true;
-//    for (it = this->begin(); it != this->end(); it++) {
-//        if (*it == d) {
-//            check = false;
-//            break;
-//        }
-//    }
-//
-//    if (check) {
-//        if (num_elements == 0) {
-//            head->value = d;
-//        }
-//        else {
-//            map_element<K, V>* newElement = new map_element<K, V>;
-//            head->left = newElement;
-//            newElement->right = head;
-//            head = newElement;
-//            newElement->left = head;
-//            newElement->value = d;
-//        }
-//        num_elements++;
-//        this->sort();
-//    }
-//    it.second = check;
-//    return it;
-//}
 
 template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)

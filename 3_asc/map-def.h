@@ -38,6 +38,9 @@ public:
     map_element<K, V>* right;
     K key;
     V value;
+
+public:
+    void operator=(const V d);
 };
 
 template <typename K, typename V>
