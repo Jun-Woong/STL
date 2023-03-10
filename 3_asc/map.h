@@ -64,7 +64,7 @@ template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator-(int s)
 {
     iterator_m<K, V> iter;
-    return iter;map_t<K, V>
+    return iter; map_t<K, V>;
 }
 
 template <typename K, typename V>
@@ -159,36 +159,36 @@ inline bool map_t<K, V>::empty() const
     }
 }
 
-template <typename K, typename V>
-inline iterator_m<K, V> map_t<K, V>::insert(const K& d)
-{
-    map_t<K, V>::iterator it;
-    bool check = true;
-    for (it = this->begin(); it != this->end(); it++) {
-        if (*it == d) {
-            check = false;
-            break;
-        }
-    }
-
-    if (check) {
-        if (num_elements == 0) {
-            head->value = d;
-        }
-        else {
-            map_element<K, V>* newElement = new map_element<K, V>;
-            head->left = newElement;
-            newElement->right = head;
-            head = newElement;
-            newElement->left = head;
-            newElement->value = d;
-        }
-        num_elements++;
-        this->sort();
-    }
-    it.second = check;
-    return it;
-}
+//template <typename K, typename V>
+//inline iterator_m<K, V> map_t<K, V>::insert(const K& d)
+//{
+//    map_t<K, V>::iterator it;
+//    bool check = true;
+//    for (it = this->begin(); it != this->end(); it++) {
+//        if (*it == d) {
+//            check = false;
+//            break;
+//        }
+//    }
+//
+//    if (check) {
+//        if (num_elements == 0) {
+//            head->value = d;
+//        }
+//        else {
+//            map_element<K, V>* newElement = new map_element<K, V>;
+//            head->left = newElement;
+//            newElement->right = head;
+//            head = newElement;
+//            newElement->left = head;
+//            newElement->value = d;
+//        }
+//        num_elements++;
+//        this->sort();
+//    }
+//    it.second = check;
+//    return it;
+//}
 
 template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)
