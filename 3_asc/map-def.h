@@ -27,6 +27,8 @@ public:
     friend class map_t<K, V>;
 };
 
+#endif
+
 #ifndef _MAP_DEF_H_
 #define _MAP_DEF_H_
 
