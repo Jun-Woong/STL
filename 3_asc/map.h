@@ -35,8 +35,8 @@ template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator++()
 {
     iterator_m<K, V> iter;
-    //iter.first = ptr->key;
-    //iter.second = ptr->value;
+    iter.first = ptr->key;
+    iter.second = ptr->value;
     ptr = ptr->right;
     iter.ptr = ptr; // Prefix Operator
     return iter;
