@@ -234,11 +234,12 @@ inline void map_t<K, V>::erase(const iterator pos)
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 {
-    map_t<K, V>::iterator it;
-    for (it = this->begin(); it != this->end(); it++) {
+    map_t<K, V>::iterator tmp;
+    for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == d) {
-            std::cout << " 11111 " << it.ptr->key << "\n";
-            return it;
+            tmp.ptr = it.ptr;
+            std::cout << " 11111 " << it.ptr << "   " << tmp.ptr << "\n";
+            return tmp;
         }
     }
     return it;
