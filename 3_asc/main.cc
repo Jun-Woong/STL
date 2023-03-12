@@ -77,8 +77,9 @@ int main () {
     m1[2] = " ";
     m1[3] = "wor";
     m1[4] = "ld";
+
     for (map_t<int, string>::iterator it2 = m1.begin(); it2 != m1.end(); ++it2) {
-        cout << "*it2 k : " << it2.first << endl;
+        cout << "*it2 k : " << it2.ptr->key << endl;
     }
 
     //map_t<int, string>::iterator it2;
