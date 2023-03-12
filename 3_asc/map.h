@@ -207,8 +207,8 @@ inline void map_t<K, V>::erase(const iterator pos)
                 it.ptr->left->right = NULL;
             }
             else {
-                it.ptr->left->right = it.ptr->right;
-                it.ptr->right->left = it.ptr->left;
+                //it.ptr->left->right = it.ptr->right;
+                //it.ptr->right->left = it.ptr->left;
             }
             break;
         }
