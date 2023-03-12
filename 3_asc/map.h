@@ -158,6 +158,9 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
     iter.ptr = head;
+    for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
+        std::cout << " !!!! " << i.ptr->key << " @@@@@ " << i.ptr->value << "\n";
+    }
     return iter;
 }
 
@@ -231,7 +234,6 @@ inline void map_t<K, V>::sort()
     K tmp1;
     V tmp2;
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
-        std::cout << " !!!! " << i.ptr->key << " @@@@@ " << i.ptr->value << "\n";
         for (map_t<K, V>::iterator j = (this->begin())++; j != this->end(); j++) {
             if ((i.ptr->key) > (j.ptr->key)) {
                 tmp1 = i.ptr->key;
