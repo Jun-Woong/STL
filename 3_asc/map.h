@@ -126,7 +126,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 }
 
 template<typename K, typename V>
-inline V map_t<K, V>::operator[](K s)
+inline V& map_t<K, V>::operator[](K s)
 {
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
@@ -148,7 +148,7 @@ inline V map_t<K, V>::operator[](K s)
         head = newElement;
         newElement->left = head;
         newElement->key = s;
-        this->sort();
+        //this->sort();
         return newElement->value;
     }
 }
@@ -158,7 +158,7 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
     iter.ptr = head;
-    std::cout << " !!!! " << head->key << " @@@@@ " << head->value << "\n"; 
+    std::cout << " $$$$ " << head->key << " %%%% " << head->value << "\n"; 
     return iter;
 }
 

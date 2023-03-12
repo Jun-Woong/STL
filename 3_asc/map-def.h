@@ -50,7 +50,7 @@ public:
 
     typedef iterator_m<K, V> iterator;
 
-    V operator[](K s); // insert
+    V& operator[](K s); // insert
     iterator begin() const;
     iterator end() const;
     size_t size() const;
