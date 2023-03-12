@@ -234,7 +234,7 @@ inline void map_t<K, V>::sort()
     V tmp2;
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
         for (map_t<K, V>::iterator j = (this->begin())++; j != this->end(); j++) {
-            if ((i.first) < (j.first)) {
+            if ((i.first) > (j.first)) {
                 tmp1 = i.first;
                 tmp2 = i.second;
                 i.first = j.first;
