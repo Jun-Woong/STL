@@ -21,8 +21,8 @@ public:
 
 public:
     map_element<K, V>* ptr;
-    K* first;
-    V* second;
+    K& first;
+    V& second;
     friend class map_t<K, V>;
 };
 
