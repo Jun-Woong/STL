@@ -77,15 +77,15 @@ int main () {
     m1[2] = " ";
     m1[3] = "wor";
     m1[4] = "ld";
-    map_t<int, string>::iterator* it2;
+    map_t<int, string>::iterator it2;
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
         cout << "*it2 k : " << it2->first << endl;
     }
     cout << endl;
-    for (it2 = m1.begin(); it2 != m1.end(); ++it2){
-        cout << "*it2 v : " << it2->second << endl;
-    }
-    cout << endl;
+    //for (it2 = m1.begin(); it2 != m1.end(); ++it2){
+    //    cout << "*it2 v : " << it2->second << endl;
+    //}
+    //cout << endl;
     //
     //m2 = m1;
     //it2 = m2.find(2);
