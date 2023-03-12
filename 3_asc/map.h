@@ -214,7 +214,7 @@ template<typename K, typename V>
 inline void map_t<K, V>::erase(const iterator pos)
 {
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
-        if (it.ptr== pos.ptr) {
+        if (it== pos) {
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
             }
