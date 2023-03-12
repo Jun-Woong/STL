@@ -55,7 +55,7 @@ public:
     iterator end() const;
     size_t size() const;
     bool empty() const;
-    iterator_m<K, V> erase(map_element<K, V>* pos);
+    iterator_m<K, V> erase(const iterator &pos);
     void erase(const K& d);
     iterator find(const K& d);
     void clear();

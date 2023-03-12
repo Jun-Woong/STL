@@ -197,12 +197,12 @@ inline bool map_t<K, V>::empty() const
 }
 
 template<typename K, typename V>
-inline iterator_m<K, V> map_t<K, V>::erase(map_element<K, V>* pos)
+inline iterator_m<K, V> map_t<K, V>::erase(const iterator& pos)
 {
-    std::cout << " 12312123 " << pos<<"\n";
+    std::cout << " 12312123 " << pos.ptr<<"\n";
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
-        if (it.ptr == pos) {
+        if (it.ptr == pos.ptr) {
             std::cout << " !!!!!!!! " << "\n";
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
@@ -222,7 +222,6 @@ inline iterator_m<K, V> map_t<K, V>::erase(map_element<K, V>* pos)
 template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)
 {
-    std::cout << " $$$$$$ " << "\n";
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == d) {
             if (it.ptr->right == NULL) {
@@ -240,13 +239,17 @@ inline void map_t<K, V>::erase(const K& d)
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 {
+    //iterator_m<K, V> iter;
+    //for (iterator_m<K, V> it = this->begin(); it != this->end(); it++) {
+    //    if (it.ptr->key == d) {
+    //        iter.ptr = it.ptr;
+    //        return iter;
+    //    }
+    //}
+    //return iter;
+
     iterator_m<K, V> iter;
-    for (iterator_m<K, V> it = this->begin(); it != this->end(); it++) {
-        if (it.ptr->key == d) {
-            iter.ptr = it.ptr;
-            return iter;
-        }
-    }
+    iter.ptr = head;
     return iter;
 }
 
