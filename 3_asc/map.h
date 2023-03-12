@@ -22,6 +22,12 @@ inline iterator_m<K, V>::iterator_m(const iterator_m<K, V>& it)
 template <typename K, typename V>
 inline iterator_m<K, V>::~iterator_m() { }
 
+template<typename K, typename V>
+inline K& iterator_m<K, V>::operator*()
+{
+    return ptr->key;
+}
+
 template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator++(int)
 {
@@ -128,28 +134,30 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s)
 {
-    for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
-        if (i.first == s) {
-            return i.ptr->value;
+    map_t<K, V>::iterator it;
+    bool check = true;
+    for (it = this->begin(); it != this->end(); it++) {
+        if (*it == s) {
+            return *it;
         }
     }
 
-    num_elements++;
-    if (this->size() == 0) {
-        head->key = s;
-        head->value = "";
-        return head->value;
-    }
-    else {
-        map_element<K, V>* newElement = new map_element<K, V>;
-        head->left = newElement;
-        newElement->right = head;
-        head = newElement;
-        newElement->left = head;
-        newElement->key = s;
-        newElement->value = "";
-        //this->sort();
-        return newElement->value;
+    if (check) {
+        num_elements++;
+        if (num_elements == 0) {
+            head->key = d;
+            return head->value;
+        }
+        else {
+            set_element<T>* newElement = new set_element<T>;
+            head->left = newElement;
+            newElement->right = head;
+            head = newElement;
+            newElement->left = head;
+            newElement->key = d;
+            this->sort();
+            return newElement->value;
+        }
     }
 }
 
