@@ -92,12 +92,12 @@ int main () {
 
     for (it2 = m1.begin(); it2 != m1.end(); ++it2) {
         cout << it2.ptr << " ####### " << it2.first() << " !!!!! ";
-        cout << it2.second();
+        cout << it2.second() << "\n";
     }
     cout << endl;
     for (it2 = m2.begin(); it2 != m2.end(); ++it2) {
         cout << it2.ptr << " %%%%%%%%% "<< it2.first() << " @@@@@ ";
-        cout << it2.second();
+        cout << it2.second() << "\n";
     }
     cout << endl;
     cout << endl;
