@@ -56,7 +56,7 @@ public:
     size_t size() const;
     bool empty() const;
     void erase(const K& d);
-    void erase(iterator pos);
+    void erase(const iterator pos);
     iterator find(const K& d);
     void clear();
     void sort();
