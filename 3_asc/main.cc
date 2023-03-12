@@ -73,14 +73,17 @@ int main () {
     
      //hello world
     m1[0] = "hel";
-    //m1[1] = "lo";
-    //m1[2] = " ";
-    //m1[3] = "wor";
-    //m1[4] = "ld";
-    map_t<int, string>::iterator it2;
-    m1.begin();
+    m1[1] = "lo";
+    m1[2] = " ";
+    m1[3] = "wor";
+    m1[4] = "ld";
+    for (map_t<int, string>::iterator it2 = m1.begin(); it2 != m1.end(); ++it2) {
+        cout << "*it2 k : " << it2.first << endl;
+    }
+
+    //map_t<int, string>::iterator it2;
     //for (it2 = m1.begin(); it2 != m1.end(); ++it2){
-    //    cout << "*it2 k : " << it2.first << endl;
+    //    cout << "*it2 k : " << it2->first << endl;
     //}
     //cout << endl;
     //for (it2 = m1.begin(); it2 != m1.end(); ++it2){
