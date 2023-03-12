@@ -202,12 +202,11 @@ inline iterator_m<K, V> map_t<K, V>::erase(const iterator pos)
     std::cout << " 12312123 " << pos.ptr << " " << pos.ptr<< "\n";
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
-        if (it.ptr == pos.ptr) {
+        if (it.ptr->key == 2) {
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
             }
             else {
-                std::cout << " @@@@@@ " << "\n";
                 it.ptr->left->right = it.ptr->right;
                 it.ptr->right->left = it.ptr->left;
                 it.ptr = NULL;
