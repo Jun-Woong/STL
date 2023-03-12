@@ -124,7 +124,7 @@ template<typename K, typename V>
 inline void map_t<K, V>::push_back(const V& v)
 {
     num_elements++;
-    T* newArray = (T*)calloc(num_elements, sizeof(T));
+    V* newArray = (V*)calloc(num_elements, sizeof(V));
     for (size_t i = 0; i < (num_elements - 1); i++)
     {
         newArray[i] = array[i];
