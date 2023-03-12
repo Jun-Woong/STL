@@ -42,6 +42,7 @@ public:
     typedef iterator_m<K, V> iterator;
 
     V& operator[](K s) const;
+    void push_back(const V& v);
     iterator begin() const;
     iterator end() const;
     size_t size() const;

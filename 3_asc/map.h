@@ -114,8 +114,25 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s) const
 {
-    std::cout << ((arrayCheck[s]=="") ? "OK" : "AAAA") << "\n";
-    return arrayCheck[s];
+    if (arrayCheck[s] == "") {
+        this->push_back(s);
+    }
+    return array[s];
+}
+
+template<typename K, typename V>
+inline void map_t<K, V>::push_back(const V& v)
+{
+    num_elements++;
+    T* newArray = (T*)calloc(num_elements, sizeof(T));
+    for (size_t i = 0; i < (num_elements - 1); i++)
+    {
+        newArray[i] = array[i];
+    }
+    newArray[num_elements - 1] = v;
+    free(array);
+    array = newArray;
+    newArray = NULL;
 }
 
 template <typename K, typename V>
