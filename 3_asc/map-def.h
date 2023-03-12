@@ -11,7 +11,6 @@ public:
     iterator_m(const iterator_m<K, V>& it);
     ~iterator_m();
 
-    K& operator*() const;
     iterator_m<K, V> operator++(int);
     iterator_m<K, V> operator++();
     iterator_m<K, V> operator+(int s);
