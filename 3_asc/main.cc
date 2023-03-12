@@ -73,7 +73,7 @@ int main () {
     
      //hello world
     m1[0] = "hel";
-    m1[1] = "lo";
+    //m1[1] = "lo";
     //m1[2] = " ";
     //m1[3] = "wor";
     //m1[4] = "ld";
