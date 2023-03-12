@@ -101,14 +101,14 @@ int main () {
     }
     cout << endl;
     cout << endl;
-    //
-    //m1.clear();
-    //m2.clear();
-    //cout << "empty? : " << (m1.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << m1.size() << endl; 
-    //cout << "empty? : " << (m2.empty() ? "yes" : "no") << endl; 
-    //cout << "size   : " << m2.size() << endl; 
-    //cout << endl;
+    
+    m1.clear();
+    m2.clear();
+    cout << "empty? : " << (m1.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << m1.size() << endl; 
+    cout << "empty? : " << (m2.empty() ? "yes" : "no") << endl; 
+    cout << "size   : " << m2.size() << endl; 
+    cout << endl;
 
 }
 
