@@ -23,7 +23,7 @@ template <typename K, typename V>
 inline iterator_m<K, V>::~iterator_m() { }
 
 template <typename K, typename V>
-inline iterator_m<K, V> iterator_m<K, V>::operator->()
+inline iterator_m<K, V> iterator_m<K, V>::operator->(int)
 {
     return *this;
 }
