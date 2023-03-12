@@ -199,7 +199,6 @@ inline bool map_t<K, V>::empty() const
 template<typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::erase(const iterator &pos)
 {
-    std::cout << " 22222 " << pos.ptr << "\n";
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
         if (it.ptr == pos.ptr) {
