@@ -9,9 +9,7 @@
 
 template <typename K, typename V>
 inline iterator_m<K, V>::iterator_m() :
-    ptr(0),
-    first(0),
-    second("") {
+    ptr(0) {
 }
 
 template <typename K, typename V>
@@ -84,13 +82,13 @@ inline bool iterator_m<K, V>::operator==(const iterator_m<K, V>& it) const
 }
 
 template<typename K, typename V>
-inline K& iterator_m<K, V>::operator->first() const
+inline K& iterator_m<K, V>::first() const
 {
     return ptr->key;
 }
 
 template<typename K, typename V>
-inline V& iterator_m<K, V>::operator->second() const
+inline V& iterator_m<K, V>::second() const
 {
     return ptr->value;
 }
