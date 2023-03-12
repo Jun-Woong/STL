@@ -126,7 +126,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 }
 
 template<typename K, typename V>
-inline V& map_t<K, V>::operator[](K s)
+inline V map_t<K, V>::operator[](K s)
 {
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
