@@ -23,12 +23,6 @@ template <typename K, typename V>
 inline iterator_m<K, V>::~iterator_m() { }
 
 template <typename K, typename V>
-inline iterator_m<K, V> iterator_m<K, V>::operator->(int) 
-{
-    return *this;
-}
-
-template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator++(int)
 {
     iterator_m<K, V> iter;
@@ -38,12 +32,12 @@ inline iterator_m<K, V> iterator_m<K, V>::operator++(int)
 }
 
 template <typename K, typename V>
-inline iterator_m<K, V> iterator_m<K, V>::operator++()
+inline iterator_m<K, V>* iterator_m<K, V>::operator++()
 {
     iterator_m<K, V> iter;
     ptr = ptr->right;
     iter.ptr = ptr; // Prefix Operator
-    return iter;
+    return *iter;
 }
 
 template <typename K, typename V>
@@ -156,19 +150,19 @@ inline V& map_t<K, V>::operator[](K s)
 }
 
 template <typename K, typename V>
-inline iterator_m<K, V> map_t<K, V>::begin() const
+inline iterator_m<K, V>* map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
     iter.ptr = head;
-    return iter;
+    return *iter;
 }
 
 template <typename K, typename V>
-inline iterator_m<K, V> map_t<K, V>::end() const
+inline iterator_m<K, V>* map_t<K, V>::end() const
 {
     iterator_m<K, V> iter;
     iter.ptr = NULL;
-    return iter;
+    return *iter;
 }
 
 template <typename K, typename V>
