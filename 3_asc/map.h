@@ -22,12 +22,6 @@ inline iterator_m<K, V>::iterator_m(const iterator_m<K, V>& it)
 template <typename K, typename V>
 inline iterator_m<K, V>::~iterator_m() { }
 
-template<typename K, typename V>
-inline K& iterator_m<K, V>::operator*()
-{
-    return ptr->key;
-}
-
 template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator++(int)
 {
@@ -137,8 +131,8 @@ inline V& map_t<K, V>::operator[](K s)
     map_t<K, V>::iterator it;
     bool check = true;
     for (it = this->begin(); it != this->end(); it++) {
-        if (*it == s) {
-            return *it;
+        if (it.ptr->key == s) {
+            return it.ptr->value;
         }
     }
 
