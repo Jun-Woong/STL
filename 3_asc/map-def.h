@@ -23,8 +23,8 @@ public:
 
 public:
     map_element<K, V>* ptr;
-    K* A = first();
-    V* B = second();
+    //K* A = first();
+    //V* B = second();
     friend class map_t<K, V>;
 };
 
