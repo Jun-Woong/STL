@@ -8,8 +8,10 @@ template <typename K, typename V>
 class iterator_m {
 public:
     iterator_m();
+    iterator_m(const iterator_m<K, V>& it);
     ~iterator_m();
 
+    iterator_m<K, V> operator->();
     iterator_m<K, V> operator++(int);
     iterator_m<K, V> operator++();
     iterator_m<K, V> operator+(int s);
@@ -20,8 +22,8 @@ public:
 
 public:
     map_element<K, V>* ptr;
-    K& first;
-    V& second;
+    K first;
+    V second;
     friend class map_t<K, V>;
 };
 
