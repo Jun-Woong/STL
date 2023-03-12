@@ -203,6 +203,7 @@ inline iterator_m<K, V> map_t<K, V>::erase(const iterator& pos)
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == pos.ptr->key) {
+            std::cout << " !!!!!!!! " << "\n";
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
             }
