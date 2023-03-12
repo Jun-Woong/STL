@@ -248,7 +248,7 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
     //return iter;
 
     iterator_m<K, V> iter;
-    iter.ptr = head;
+    iter.ptr = head->right;
     return iter;
 }
 
