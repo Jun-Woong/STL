@@ -116,12 +116,14 @@ template<typename K, typename V>
 inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 {
     num_elements = v.num_elements;
+    head->key = v.head->key;
     head->value = v.head->value;
     map_element<K, V>* tmp = v.head->right;
     map_element<K, V>* ntmp = head;
     while (tmp->right != NULL) {
         map_element<K, V>* newElement = new map_element<K, V>;
         ntmp->right = newElement;
+        newElement->key = tmp->key;
         newElement->value = tmp->value;
         tmp = tmp->right;
         ntmp = ntmp->right;
