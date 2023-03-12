@@ -125,6 +125,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
         ntmp->right = newElement;
         newElement->key = tmp->key;
         newElement->value = tmp->value;
+        newElement->left = ntmp;
         tmp = tmp->right;
         ntmp = ntmp->right;
     }
@@ -132,6 +133,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
     ntmp->right = newElement;
     newElement->key = tmp->key;
     newElement->value = tmp->value;
+    newElement->left = ntmp;
 }
 
 template<typename K, typename V>
@@ -207,6 +209,8 @@ inline void map_t<K, V>::erase(const iterator pos)
                 it.ptr->left->right = NULL;
             }
             else {
+                it.ptr->left->right = it.ptr->right;
+                it.ptr->right->left = it.ptr->left;
                 it.ptr->value = "";
             }
             break;
@@ -225,6 +229,7 @@ inline void map_t<K, V>::erase(const K& d)
             else {
                 it.ptr->left->right = it.ptr->right;
                 it.ptr->right->left = it.ptr->left;
+                it.ptr->value = "";
             }
             break;
         }
