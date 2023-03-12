@@ -241,7 +241,7 @@ template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 {
     iterator_m<K, V> iter;
-    for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
+    for (iterator_m<K, V> it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == d) {
             iter.ptr = it.ptr;
             return iter;
