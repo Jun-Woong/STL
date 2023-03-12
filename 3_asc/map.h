@@ -214,7 +214,6 @@ inline void map_t<K, V>::erase(const iterator pos)
             break;
         }
     }
-    return it;
 }
 
 template <typename K, typename V>
