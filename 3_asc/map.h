@@ -232,7 +232,7 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 {
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
-        std::cout << " 000000 " << it.ptr->key <<"\n";
+        std::cout << " 000000 " << it.ptr->key <<"\n"; 
         if (it.ptr->key == d) {
             std::cout << " 111111 " << "\n";
             return it;
