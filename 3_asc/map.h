@@ -197,7 +197,7 @@ inline bool map_t<K, V>::empty() const
 }
 
 template<typename K, typename V>
-inline iterator_m<K, V> map_t<K, V>::erase(const iterator &pos)
+inline iterator_m<K, V> map_t<K, V>::erase(const iterator& pos)
 {
     std::cout << " 12312123 " << "\n";
     map_t<K, V>::iterator it;
