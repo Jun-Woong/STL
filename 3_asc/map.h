@@ -240,14 +240,14 @@ inline void map_t<K, V>::erase(const K& d)
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 {
-    map_t<K, V>::iterator tmp;
+    iterator_m<K, V> iter;
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == d) {
-            tmp.ptr = it.ptr;
-            return tmp;
+            iter.ptr = it.ptr;
+            return iter;
         }
     }
-    return tmp;
+    returniter;
 }
 
 template <typename K, typename V>
