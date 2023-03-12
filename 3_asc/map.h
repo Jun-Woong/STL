@@ -9,9 +9,9 @@
 
 template <typename K, typename V>
 inline iterator_m<K, V>::iterator_m() :
-    ptr(0),
-    first(0),
-    second("") {
+    ptr(0) { 
+    first = ptr->key;
+    second = ptr->value;
 }
 
 template <typename K, typename V>
