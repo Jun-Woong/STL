@@ -130,6 +130,7 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
     }
     map_element<K, V>* newElement = new map_element<K, V>;
     ntmp->right = newElement;
+    newElement->key = tmp->key;
     newElement->value = tmp->value;
 }
 
