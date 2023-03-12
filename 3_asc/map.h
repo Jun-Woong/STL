@@ -209,6 +209,7 @@ inline iterator_m<K, V> map_t<K, V>::erase(const iterator& pos)
             }
             else {
                 std::cout << " @@@@@@ " << "\n";
+                it.ptr->value ="asdfasdbasdfbasdb";
                 it.ptr->left->right = it.ptr->right;
                 it.ptr->right->left = it.ptr->left;
             }
