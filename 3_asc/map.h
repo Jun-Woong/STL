@@ -115,20 +115,20 @@ inline map_t<K, V>::~map_t() { num_elements = 0; free(head); }
 template<typename K, typename V>
 inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 {
-    //num_elements = v.num_elements;
-    //head->value = v.head->value;
-    //map_element<K, V>* tmp = v.head->right;
-    //map_element<K, V>* ntmp = head;
-    //while (tmp->right != NULL) {
-    //    map_element<K, V>* newElement = new map_element<K, V>;
-    //    ntmp->right = newElement;
-    //    newElement->value = tmp->value;
-    //    tmp = tmp->right;
-    //    ntmp = ntmp->right;
-    //}
-    //map_element<K, V>* newElement = new map_element<K, V>;
-    //ntmp->right = newElement;
-    //newElement->value = tmp->value;
+    num_elements = v.num_elements;
+    head->value = v.head->value;
+    map_element<K, V>* tmp = v.head->right;
+    map_element<K, V>* ntmp = head;
+    while (tmp->right != NULL) {
+        map_element<K, V>* newElement = new map_element<K, V>;
+        ntmp->right = newElement;
+        newElement->value = tmp->value;
+        tmp = tmp->right;
+        ntmp = ntmp->right;
+    }
+    map_element<K, V>* newElement = new map_element<K, V>;
+    ntmp->right = newElement;
+    newElement->value = tmp->value;
 }
 
 template<typename K, typename V>
@@ -197,7 +197,7 @@ template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)
 {
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
-        if (*it == d) {
+        if (it.ptr->key == d) {
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
             }
@@ -205,6 +205,24 @@ inline void map_t<K, V>::erase(const K& d)
                 it.ptr->left->right = it.ptr->right;
                 it.ptr->right->left = it.ptr->left;
             }
+            break;
+        }
+    }
+}
+
+template<typename K, typename V>
+inline void map_t<K, V>::erase(const iterator pos)
+{
+    for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
+        if (it.ptr == pos.ptr) {
+            if (it.ptr->right == NULL) {
+                it.ptr->left->right = NULL;
+            }
+            else {
+                it.ptr->left->right = it.ptr->right;
+                it.ptr->right->left = it.ptr->left;
+            }
+            break;
         }
     }
 }
@@ -214,7 +232,7 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 {
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
-        if (*it == d) {
+        if (it.ptr->key == d) {
             return it;
         }
     }
