@@ -143,7 +143,7 @@ inline V& map_t<K, V>::operator[](K s)
 
         num_elements++;
         map_element<K, V>* newElement = new map_element<K, V>;
-        newElement->value = d;
+        newElement->value = s;
         map_element<K, V>* last = head;
         while (last->right != NULL) {
             last = last->right;
