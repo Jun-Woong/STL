@@ -199,21 +199,21 @@ inline bool map_t<K, V>::empty() const
 template<typename K, typename V>
 inline void map_t<K, V>::erase(const iterator pos)
 {
-    K tmp = 2;
-    map_t<K, V>::iterator it;
-    for (it = this->begin(); it != this->end(); it++) {
-        if (it.ptr->key == tmp) {
-            if (it.ptr->right == NULL) {
-                it.ptr->left->right = NULL;
-            }
-            else {
-                it.ptr->left->right = it.ptr->right;
-                it.ptr->right->left = it.ptr->left;
-                it.ptr = NULL;
-            }
-            break;
-        }
-    }
+    //K tmp = 2;
+    //map_t<K, V>::iterator it;
+    //for (it = this->begin(); it != this->end(); it++) {
+    //    if (it.ptr->key == tmp) {
+    //        if (it.ptr->right == NULL) {
+    //            it.ptr->left->right = NULL;
+    //        }
+    //        else {
+    //            it.ptr->left->right = it.ptr->right;
+    //            it.ptr->right->left = it.ptr->left;
+    //            it.ptr = NULL;
+    //        }
+    //        break;
+    //    }
+    //}
 }
 
 template <typename K, typename V>
