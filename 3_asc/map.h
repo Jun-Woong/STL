@@ -158,7 +158,7 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
     iter.ptr = head;
-    std::cout << " !!!! " << head->key << " @@@@@ " << head->value << "\n";
+    std::cout << " !!!! " << head->key << " @@@@@ " << head->value << "\n"; 
     return iter;
 }
 
