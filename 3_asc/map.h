@@ -107,6 +107,8 @@ inline map_t<K, V>::map_t() :
 template <typename K, typename V>
 inline map_t<K, V>::~map_t() { num_elements = 0; free(head); }
 
+
+template<typename K, typename V>
 inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 {
     num_elements = v.num_elements;
