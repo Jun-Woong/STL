@@ -216,7 +216,7 @@ inline void map_t<K, V>::erase(const K& d)
 template<typename K, typename V>
 inline void map_t<K, V>::erase(const iterator pos)
 {
-    std::cout << " 22222 " << pos.ptr->key << "\n";
+    //std::cout << " 22222 " << pos.ptr->key << "\n";
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
         if (it.ptr == pos.ptr) {
             if (it.ptr->right == NULL) {
