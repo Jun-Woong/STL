@@ -114,8 +114,6 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s)
 {
-    num_elements++;
-
     if (arrayCheck[s] == "") {
         this->push_back("");
     }
@@ -132,7 +130,6 @@ inline void map_t<K, V>::push_back(const V& v)
         newArray[i] = array[i];
     }
     newArray[num_elements - 1] = v;
-    free(array);
     array = newArray;
     newArray = NULL;
 }
