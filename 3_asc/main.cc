@@ -93,11 +93,11 @@ int main () {
     m1.erase(2);
     m2.erase(it2);
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
-        cout << it2.second();
+        cout << it2.first() <<it2.second();
     }
     cout << endl;
     for (it2 = m2.begin(); it2 != m2.end(); ++it2){
-        cout << it2.second();
+        cout << it2.first() << it2.second();
     }
     cout << endl;
     cout << endl;
