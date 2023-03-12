@@ -91,7 +91,7 @@ int main () {
     m2 = m1;
     it2 = m2.find(2);
     m1.erase(2);
-    m2.erase(begin());
+    m2.erase(m2.begin());
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
         cout << it2.second();
     }
