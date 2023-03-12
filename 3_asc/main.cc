@@ -79,7 +79,7 @@ int main () {
     m1[4] = "ld";
     map_t<int, string>::iterator it2;
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
-        cout << "*it2 k : " << it2->value << endl;
+        cout << "*it2 k : " << it2->first << endl;
     }
     cout << endl;
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
