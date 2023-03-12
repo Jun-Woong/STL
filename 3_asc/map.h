@@ -162,7 +162,7 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
     iter.second = head->value;
     
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
-        cout << i.first << i.second << "\n";
+        std::cout << " !!!!!!! " << i.first << " @@@@@@ " << i.second << "\n";
     
     }
 
