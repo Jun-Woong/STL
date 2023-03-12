@@ -231,7 +231,7 @@ inline void map_t<K, V>::sort()
     K tmp1;
     V tmp2;
     for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
-        cout << " !!!! " << i.ptr->key << " @@@@@ " << i.ptr->value << "\n";
+        std::cout << " !!!! " << i.ptr->key << " @@@@@ " << i.ptr->value << "\n";
         for (map_t<K, V>::iterator j = (this->begin())++; j != this->end(); j++) {
             if ((i.ptr->key) > (j.ptr->key)) {
                 tmp1 = i.ptr->key;
