@@ -90,8 +90,8 @@ int main () {
     
     m2 = m1;
     it2 = m2.find(2);
-    cout << "!!!!!!" << it2.ptr << "\n";
     m2.erase(it2);
+    cout << "!!!!!!" << it2.ptr << "\n";
     m1.erase(2);
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
         cout << it2.second();
