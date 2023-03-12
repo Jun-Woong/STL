@@ -142,22 +142,20 @@ inline V& map_t<K, V>::operator[](K s)
         }
     }
 
-    if (check) {
-        num_elements++;
-        if (num_elements == 0) {
-            head->key = d;
-            return head->value;
-        }
-        else {
-            set_element<T>* newElement = new set_element<T>;
-            head->left = newElement;
-            newElement->right = head;
-            head = newElement;
-            newElement->left = head;
-            newElement->key = d;
-            this->sort();
-            return newElement->value;
-        }
+    num_elements++;
+    if (num_elements == 0) {
+        head->key = d;
+        return head->value;
+    }
+    else {
+        set_element<T>* newElement = new set_element<T>;
+        head->left = newElement;
+        newElement->right = head;
+        head = newElement;
+        newElement->left = head;
+        newElement->key = d;
+        this->sort();
+        return newElement->value;
     }
 }
 
