@@ -109,20 +109,20 @@ inline map_t<K, V>::~map_t() { num_elements = 0; free(head); }
 template<typename K, typename V>
 inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 {
-    num_elements = v.num_elements;
-    head->value = v.head->value;
-    map_element<K, V>* tmp = v.head->right;
-    map_element<K, V>* ntmp = head;
-    while (tmp->right != NULL) {
-        map_element<K, V>* newElement = new map_element<K, V>;
-        ntmp->right = newElement;
-        newElement->value = tmp->value;
-        tmp = tmp->right;
-        ntmp = ntmp->right;
-    }
-    map_element<K, V>* newElement = new map_element<K, V>;
-    ntmp->right = newElement;
-    newElement->value = tmp->value;
+    //num_elements = v.num_elements;
+    //head->value = v.head->value;
+    //map_element<K, V>* tmp = v.head->right;
+    //map_element<K, V>* ntmp = head;
+    //while (tmp->right != NULL) {
+    //    map_element<K, V>* newElement = new map_element<K, V>;
+    //    ntmp->right = newElement;
+    //    newElement->value = tmp->value;
+    //    tmp = tmp->right;
+    //    ntmp = ntmp->right;
+    //}
+    //map_element<K, V>* newElement = new map_element<K, V>;
+    //ntmp->right = newElement;
+    //newElement->value = tmp->value;
 }
 
 template<typename K, typename V>
