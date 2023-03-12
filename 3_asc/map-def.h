@@ -18,6 +18,8 @@ public:
     iterator_m<K, V> operator-(int s);
     bool operator!=(const iterator_m<K, V>& it) const;
     bool operator==(const iterator_m<K, V>& it) const;
+    K& operator->first() const;
+    V& operator->second() const;
 
 public:
     map_element<K, V>* ptr;

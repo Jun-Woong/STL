@@ -35,8 +35,6 @@ template <typename K, typename V>
 inline iterator_m<K, V> iterator_m<K, V>::operator++()
 {
     iterator_m<K, V> iter;
-    iter.first = ptr->key;
-    iter.second = ptr->value;
     ptr = ptr->right;
     iter.ptr = ptr; // Prefix Operator
     return iter;
@@ -83,6 +81,18 @@ inline bool iterator_m<K, V>::operator==(const iterator_m<K, V>& it) const
     else {
         return false;
     }
+}
+
+template<typename K, typename V>
+inline K& iterator_m<K, V>::operator->first() const
+{
+    return ptr->key;
+}
+
+template<typename K, typename V>
+inline V& iterator_m<K, V>::operator->second() const
+{
+    return ptr->value;
 }
 
 template <typename K, typename V>
@@ -157,8 +167,6 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
     iter.ptr = head;
-    iter.first = head->key;
-    iter.second = head->value;
     return iter;
 }
 
