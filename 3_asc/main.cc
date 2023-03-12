@@ -73,6 +73,8 @@ int main () {
     
      //hello world
     m1[0] = "hel";
+    cout << " !!!!!! " <<m1[0] << endl;
+    cout << endl;
     //m1[1] = "lo";
     //m1[2] = " ";
     //m1[3] = "wor";
