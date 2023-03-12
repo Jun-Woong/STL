@@ -112,10 +112,10 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 }
 
 template<typename K, typename V>
-inline V& map_t<K, V>::operator[](K s) const
+inline V& map_t<K, V>::operator[](K s)
 {
     if (arrayCheck[s] == "") {
-        push_back("");
+        this->push_back("");
     }
     return array[s];
 }
