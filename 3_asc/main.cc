@@ -89,10 +89,9 @@ int main () {
     cout << endl;
     
     m2 = m1;
-    it2 = m2.find(2);
-    m2.erase(it2);
-    cout << "!!!!!!" << it2.ptr << "@@@@" << m2.find(2).ptr << "\n";
+    it2 = m2.find(3);
     m1.erase(2);
+    m2.erase(it2);
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
         cout << it2.second();
     }

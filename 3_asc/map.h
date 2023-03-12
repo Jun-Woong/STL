@@ -240,7 +240,6 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == d) {
             tmp.ptr = it.ptr;
-            std::cout << " 11111 " << it.ptr << "   " << tmp.ptr << "\n";
             return tmp;
         }
     }
