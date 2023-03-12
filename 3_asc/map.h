@@ -247,7 +247,7 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
             return iter;
         }
     }
-    returniter;
+    return iter;
 }
 
 template <typename K, typename V>
