@@ -156,9 +156,9 @@ template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
-    iter.first = head->key;
-    iter.second = head->value;
     iter.ptr = head;
+    //iter.first = head->key;
+    //iter.second = head->value;
     return iter;
 }
 
