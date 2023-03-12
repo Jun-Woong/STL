@@ -115,8 +115,7 @@ template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s) const
 {
     if (arrayCheck[s] == "") {
-        num_elements++;
-        this->push_back("");
+        push_back("");
     }
     return array[s];
 }
