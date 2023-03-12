@@ -219,6 +219,7 @@ inline iterator_m<K, V> map_t<K, V>::erase(const iterator &pos)
 template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)
 {
+    cout << " $$$$$$ " << endl;
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == d) {
             if (it.ptr->right == NULL) {
