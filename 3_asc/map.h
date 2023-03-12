@@ -137,7 +137,7 @@ inline V& map_t<K, V>::operator[](K s)
 
     if (num_elements == 0) {
         num_elements++;
-        head->key = d;
+        head->key = s;
         return head->value;
     }
     else {
@@ -147,7 +147,7 @@ inline V& map_t<K, V>::operator[](K s)
         newElement->right = head;
         head = newElement;
         newElement->left = head;
-        newElement->key = d;
+        newElement->key = s;
         this->sort();
         return newElement->value;
     }
