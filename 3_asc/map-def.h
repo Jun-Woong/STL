@@ -55,8 +55,8 @@ public:
     iterator end() const;
     size_t size() const;
     bool empty() const;
+    iterator_m<K, V> erase(const iterator pos);
     void erase(const K& d);
-    void erase(const iterator pos);
     iterator find(const K& d);
     void clear();
     void sort();

@@ -196,11 +196,13 @@ inline bool map_t<K, V>::empty() const
     }
 }
 
-template <typename K, typename V>
-inline void map_t<K, V>::erase(const K& d)
+template<typename K, typename V>
+inline iterator_m<K, V> map_t<K, V>::erase(const iterator pos)
 {
-    for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
-        if (it.ptr->key == d) {
+    std::cout << " 22222 " << pos.ptr << "\n";
+    map_t<K, V>::iterator it;
+    for (it = this->begin(); it != this->end(); it++) {
+        if (it.ptr == pos.ptr) {
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
             }
@@ -211,14 +213,14 @@ inline void map_t<K, V>::erase(const K& d)
             break;
         }
     }
+    return it;
 }
 
-template<typename K, typename V>
-inline void map_t<K, V>::erase(const iterator pos)
+template <typename K, typename V>
+inline void map_t<K, V>::erase(const K& d)
 {
-    std::cout << " 22222 " << pos.ptr << "\n";
     for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
-        if (it.ptr == pos.ptr) {
+        if (it.ptr->key == d) {
             if (it.ptr->right == NULL) {
                 it.ptr->left->right = NULL;
             }
