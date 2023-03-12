@@ -55,13 +55,13 @@ public:
     iterator end() const;
     size_t size() const;
     bool empty() const;
-    iterator_m<K, V> erase(const iterator &pos);
+    iterator_m<K, V> erase(const iterator pos);
     void erase(const K& d);
     iterator find(const K& d);
     void clear();
     void sort();
 
-public:
+private:
     class map_element<K, V>* head;
     size_t num_elements;
 };
