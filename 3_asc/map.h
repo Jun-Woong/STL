@@ -148,7 +148,7 @@ inline V& map_t<K, V>::operator[](K s)
         newElement->left = head;
         newElement->key = s;
         newElement->value = "";
-        this->sort();
+        //this->sort();
         return newElement->value;
     }
 }
