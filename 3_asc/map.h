@@ -249,7 +249,7 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
 
     iterator_m<K, V> iter;
     std::cout << " 12312123 " << head->right->value << "\n";
-    iter.ptr = head->left;
+    iter.ptr = head->right;
     return iter;
 }
 
