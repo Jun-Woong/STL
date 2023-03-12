@@ -15,11 +15,6 @@ inline iterator_m<K, V>::iterator_m() :
 }
 
 template <typename K, typename V>
-inline iterator_m<K, V>::iterator_m(const iterator_m<K, V>& it)
-{
-}
-
-template <typename K, typename V>
 inline iterator_m<K, V>::~iterator_m() { }
 
 template <typename K, typename V>

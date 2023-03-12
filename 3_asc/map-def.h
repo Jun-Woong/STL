@@ -8,7 +8,6 @@ template <typename K, typename V>
 class iterator_m {
 public:
     iterator_m();
-    iterator_m(const iterator_m<K, V>& it);
     ~iterator_m();
 
     iterator_m<K, V> operator++(int);
