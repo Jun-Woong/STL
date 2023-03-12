@@ -203,9 +203,9 @@ inline void map_t<K, V>::erase(const iterator pos)
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == tmp) {
-            //if (it.ptr->right == NULL) {
-            //    it.ptr->left->right = NULL;
-            //}
+            if (it.ptr->right == NULL) {
+                it.ptr->left->right = NULL;
+            }
             //else {
             //    it.ptr->left->right = it.ptr->right;
             //    it.ptr->right->left = it.ptr->left;
