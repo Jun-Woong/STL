@@ -128,19 +128,23 @@ inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s)
 {
+
     map_t<K, V>::iterator it;
     for (it = this->begin(); it != this->end(); it++) {
+        std::cout << " 1111111111 " << "\n";
         if (it.ptr->key == s) {
             return it.ptr->value;
         }
     }
 
     if (num_elements == 0) {
+        std::cout << " 222222222222 " << "\n";
         num_elements++;
         head->key = s;
         return head->value;
     }
     else {
+        std::cout << " 3333333333 " << "\n";
         num_elements++;
         map_element<K, V>* newElement = new map_element<K, V>;
         head->left = newElement;
