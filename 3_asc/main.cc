@@ -89,20 +89,8 @@ int main () {
     cout << endl;
     
     m2 = m1;
-
-    for (it2 = m1.begin(); it2 != m1.end(); ++it2) {
-        cout << it2.ptr << " ####### " << it2.first() << " !!!!! ";
-        cout << it2.second() << "\n";
-    }
-    cout << endl;
-    for (it2 = m2.begin(); it2 != m2.end(); ++it2) {
-        cout << it2.ptr << " %%%%%%%%% "<< it2.first() << " @@@@@ ";
-        cout << it2.second() << "\n";
-    }
-    cout << endl;
-    cout << endl;
-
     it2 = m2.find(2);
+    cout << "!!!!!!" << it2.ptr << "\n";
     m1.erase(2);
     m2.erase(it2);
     for (it2 = m1.begin(); it2 != m1.end(); ++it2){
