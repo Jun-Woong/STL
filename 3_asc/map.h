@@ -143,12 +143,13 @@ inline V& map_t<K, V>::operator[](K s)
 
         num_elements++;
         map_element<K, V>* newElement = new map_element<K, V>;
-        head->left = newElement;
-        newElement->right = head;
-        head = newElement;
-        newElement->left = head;
-        newElement->key = s;
-        this->sort();
+        newElement->value = d;
+        map_element<K, V>* last = head;
+        while (last->right != NULL) {
+            last = last->right;
+        }
+        last->right = newElement;
+        newElement->left = last;
         return newElement->value;
     }
 }
