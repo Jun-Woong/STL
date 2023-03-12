@@ -129,20 +129,20 @@ template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s)
 {
     map_t<K, V>::iterator it;
-    bool check = true;
     for (it = this->begin(); it != this->end(); it++) {
         if (it.ptr->key == s) {
             return it.ptr->value;
         }
     }
 
-    num_elements++;
     if (num_elements == 0) {
+        num_elements++;
         head->key = d;
         return head->value;
     }
     else {
-        set_element<T>* newElement = new set_element<T>;
+        num_elements++;
+        map_element<K, V>* newElement = new map_element<K, V>;
         head->left = newElement;
         newElement->right = head;
         head = newElement;
