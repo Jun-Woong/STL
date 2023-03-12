@@ -28,6 +28,8 @@ inline iterator_m<K, V> iterator_m<K, V>::operator++(int)
     iterator_m<K, V> iter;
     iter.ptr = ptr; // Postfix Operator
     ptr = ptr->right;
+    iter.first = ptr->key;
+    iter.second = ptr->value;
     return iter;
 }
 
@@ -36,6 +38,8 @@ inline iterator_m<K, V> iterator_m<K, V>::operator++()
 {
     iterator_m<K, V> iter;
     ptr = ptr->right;
+    iter.first = ptr->key;
+    iter.second = ptr->value;
     iter.ptr = ptr; // Prefix Operator
     return iter;
 }
@@ -154,6 +158,8 @@ inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
     iter.ptr = head;
+    iter.first = head->key;
+    iter.second = head->value;
     return iter;
 }
 
