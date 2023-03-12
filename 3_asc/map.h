@@ -90,55 +90,74 @@ inline bool iterator_m<K, V>::operator==(const iterator_m<K, V>& it) const
 }
 
 template <typename K, typename V>
-inline map_t<K, V>::map_t() :
-    array(0),
-    num_elements(0) {
-    arrayCheck = (V*)calloc(5, sizeof(V));
+inline map_element<K, V>::map_element() :
+    left(0),
+    right(0),
+    key(0),
+    value("") {
 }
 
 template <typename K, typename V>
-inline map_t<K, V>::~map_t() { num_elements = 0; free(array); }
+inline map_t<K, V>::map_t() :
+    num_elements(0) {
+    head = new map_element<K, V>;
+    head->left = head;
+}
 
 template <typename K, typename V>
+inline map_t<K, V>::~map_t() { num_elements = 0; free(head); }
+
 inline void map_t<K, V>::operator=(const map_t<K, V>& v)
 {
     num_elements = v.num_elements;
-    free(array);
-    array = (V*)calloc(num_elements, sizeof(V));
-    for (size_t i = 0; i < num_elements; i++)
-    {
-        array[i] = v.array[i];
+    head->value = v.head->value;
+    map_element<K, V>* tmp = v.head->right;
+    map_element<K, V>* ntmp = head;
+    while (tmp->right != NULL) {
+        map_element<K, V>* newElement = new map_element<K, V>;
+        ntmp->right = newElement;
+        newElement->value = tmp->value;
+        tmp = tmp->right;
+        ntmp = ntmp->right;
     }
+    map_element<K, V>* newElement = new map_element<K, V>;
+    ntmp->right = newElement;
+    newElement->value = tmp->value;
 }
 
 template<typename K, typename V>
 inline V& map_t<K, V>::operator[](K s)
 {
-    if (arrayCheck[s] == "") {
-        this->push_back("");
+    for (map_t<K, V>::iterator i = this->begin(); i != this->end(); i++) {
+        if (i.first == s) {
+            return i.ptr->value;
+        }
     }
-    return array[s];
-}
 
-template<typename K, typename V>
-inline void map_t<K, V>::push_back(const V& v)
-{
     num_elements++;
-    V* newArray = (V*)calloc(num_elements, sizeof(V));
-    for (size_t i = 0; i < (num_elements - 1); i++)
-    {
-        newArray[i] = array[i];
+    if (this->size() == 0) {
+        head->key = s;
+        head->value = "";
+        return head->value;
     }
-    newArray[num_elements - 1] = v;
-    array = newArray;
-    newArray = NULL;
+    else {
+        map_element<K, V>* newElement = new map_element<K, V>;
+        head->left = newElement;
+        newElement->right = head;
+        head = newElement;
+        newElement->left = head;
+        newElement->key = s;
+        newElement->value = "";
+        this->sort();
+        return newElement->value;
+    }
 }
 
 template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::begin() const
 {
     iterator_m<K, V> iter;
-    iter.ptr = array;
+    iter.ptr = head;
     return iter;
 }
 
@@ -146,7 +165,7 @@ template <typename K, typename V>
 inline iterator_m<K, V> map_t<K, V>::end() const
 {
     iterator_m<K, V> iter;
-    iter.ptr = array + num_elements;
+    iter.ptr = NULL;
     return iter;
 }
 
@@ -170,12 +189,17 @@ inline bool map_t<K, V>::empty() const
 template <typename K, typename V>
 inline void map_t<K, V>::erase(const K& d)
 {
-    array[d] = "";
-    for (size_t j = d; j < num_elements - 1; j++)
-    {
-        array[j] = array[j + 1];
+    for (map_t<K, V>::iterator it = this->begin(); it != this->end(); it++) {
+        if (*it == d) {
+            if (it.ptr->right == NULL) {
+                it.ptr->left->right = NULL;
+            }
+            else {
+                it.ptr->left->right = it.ptr->right;
+                it.ptr->right->left = it.ptr->left;
+            }
+        }
     }
-    num_elements--;
 }
 
 template <typename K, typename V>
@@ -190,12 +214,15 @@ inline iterator_m<K, V> map_t<K, V>::find(const K& d)
     return it;
 }
 
-template <typename K, typename V> 
+template <typename K, typename V>
 inline void map_t<K, V>::clear()
 {
     num_elements = 0;
-    free(array);
-    array = (V*)calloc(1, sizeof(K));
+    while (head->right != NULL) {
+        head = head->right;
+        delete(head->left);
+    }
+    head->value = "";
 }
 
 template <typename K, typename V>
